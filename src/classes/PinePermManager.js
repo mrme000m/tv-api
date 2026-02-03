@@ -1,4 +1,4 @@
-const axios = require('axios');
+const http = require('../http');
 const { genAuthCookies } = require('../utils');
 
 /**

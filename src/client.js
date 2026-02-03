@@ -6,6 +6,15 @@ const protocol = require('./protocol');
 const quoteSessionGenerator = require('./quote/session');
 const chartSessionGenerator = require('./chart/session');
 
+// Reconnection configuration
+const RECONNECTION_CONFIG = {
+  maxRetries: 10,
+  baseDelay: 1000, // 1 second
+  maxDelay: 30000, // 30 seconds
+  jitter: true,
+  multiplier: 2
+};
+
 /**
  * @typedef {Object} Session
  * @prop {'quote' | 'chart' | 'replay'} type Session type
@@ -39,15 +48,23 @@ module.exports = class Client {
   #ws;
 
   #logged = false;
+  
+  // Connection management properties
+  #reconnectionAttempts = 0;
+  #isReconnecting = false;
+  #connectionClosedManually = false;
+  #reconnectionTimeoutId = null;
+  #heartbeatIntervalId = null;
+  #lastHeartbeatReceived = Date.now();
 
   /** If the client is logged in */
   get isLogged() {
     return this.#logged;
   }
 
-  /** If the cient was closed */
+  /** If the client is connected */
   get isOpen() {
-    return this.#ws.readyState === this.#ws.OPEN;
+    return this.#ws && this.#ws.readyState === this.#ws.OPEN;
   }
 
   /** @type {SessionList} */
@@ -76,6 +93,167 @@ module.exports = class Client {
   #handleError(...msgs) {
     if (this.#callbacks.error.length === 0) console.error(...msgs);
     else this.#handleEvent('error', ...msgs);
+  }
+
+  /**
+   * Calculate delay with exponential backoff and jitter
+   * @param {number} attempt - Current attempt number
+   * @returns {number} Delay in milliseconds
+   */
+  #calculateReconnectionDelay(attempt) {
+    let delay = RECONNECTION_CONFIG.baseDelay * Math.pow(RECONNECTION_CONFIG.multiplier, attempt);
+    
+    // Apply maximum delay cap
+    delay = Math.min(delay, RECONNECTION_CONFIG.maxDelay);
+    
+    // Add jitter to prevent thundering herd
+    if (RECONNECTION_CONFIG.jitter) {
+      const jitter = Math.random() * 0.3; // 30% jitter
+      delay = delay * (1 + jitter);
+    }
+    
+    return Math.round(delay);
+  }
+
+  /**
+   * Handle reconnection attempts
+   */
+  #scheduleReconnection() {
+    if (this.#connectionClosedManually || this.#reconnectionAttempts >= RECONNECTION_CONFIG.maxRetries) {
+      return;
+    }
+
+    this.#isReconnecting = true;
+    this.#reconnectionAttempts++;
+
+    const delay = this.#calculateReconnectionDelay(this.#reconnectionAttempts - 1);
+    console.log(`Attempting to reconnect in ${delay}ms (attempt ${this.#reconnectionAttempts}/${RECONNECTION_CONFIG.maxRetries})`);
+
+    this.#reconnectionTimeoutId = setTimeout(() => {
+      this.#attemptReconnection();
+    }, delay);
+  }
+
+  /**
+   * Attempt to reconnect the WebSocket
+   */
+  async #attemptReconnection() {
+    try {
+      // Clear the old WebSocket if it still exists
+      if (this.#ws) {
+        this.#ws.removeAllListeners();
+      }
+
+      // Reinitialize the WebSocket connection
+      const server = this.clientOptions?.server || 'data';
+      this.#ws = new WebSocket(`wss://${server}.tradingview.com/socket.io/websocket?type=chart`, {
+        origin: 'https://www.tradingview.com',
+      });
+
+      // Setup event listeners for the new connection
+      this.#setupWebSocketEventHandlers();
+
+      // If we were authenticated before, re-authenticate
+      if (this.clientOptions?.token) {
+        // Wait for connection to be established before sending auth
+        this.#ws.once('open', () => {
+          misc.getUser(
+            this.clientOptions.token,
+            this.clientOptions.signature ? this.clientOptions.signature : '',
+            this.clientOptions.location ? this.clientOptions.location : 'https://tradingview.com',
+          ).then((user) => {
+            this.#sendQueue.unshift(protocol.formatWSPacket({
+              m: 'set_auth_token',
+              p: [user.authToken],
+            }));
+            this.#logged = true;
+            this.sendQueue();
+          }).catch((err) => {
+            this.#handleError('Credentials error during reconnection:', err.message);
+            // If auth fails, schedule another reconnection
+            this.#scheduleReconnection();
+          });
+        });
+      }
+    } catch (error) {
+      console.error('Reconnection attempt failed:', error);
+      this.#scheduleReconnection(); // Try again
+    }
+  }
+
+  /**
+   * Setup WebSocket event handlers
+   */
+  #setupWebSocketEventHandlers() {
+    this.#ws.on('open', () => {
+      this.#reconnectionAttempts = 0; // Reset on successful connection
+      this.#isReconnecting = false;
+      this.#handleEvent('connected');
+      this.sendQueue();
+      
+      // Start heartbeat mechanism
+      this.#startHeartbeat();
+    });
+
+    this.#ws.on('close', (code, reason) => {
+      this.#stopHeartbeat();
+      
+      if (this.#connectionClosedManually) {
+        this.#logged = false;
+        this.#handleEvent('disconnected');
+        return;
+      }
+
+      console.log(`Connection closed (code: ${code}, reason: ${reason || 'unknown'}). Attempting to reconnect...`);
+      this.#scheduleReconnection();
+    });
+
+    this.#ws.on('error', (err) => {
+      this.#handleError('WebSocket error:', err.message);
+    });
+
+    this.#ws.on('message', (data) => {
+      // Normalize incoming payload to string (ws may provide Buffer)
+      const payload = (typeof data === 'string') ? data : (data && typeof data.toString === 'function' ? data.toString('utf8') : String(data));
+      this.#parsePacket(payload);
+      // Update last heartbeat received time
+      this.#lastHeartbeatReceived = Date.now();
+    });
+  }
+
+  /**
+   * Start heartbeat mechanism to detect connection issues
+   */
+  #startHeartbeat() {
+    // Clear any existing heartbeat
+    this.#stopHeartbeat();
+
+    this.#heartbeatIntervalId = setInterval(() => {
+      if (!this.isOpen) {
+        this.#stopHeartbeat();
+        return;
+      }
+
+      // Check if we've received a heartbeat recently
+      const now = Date.now();
+      const timeSinceLastHeartbeat = now - this.#lastHeartbeatReceived;
+
+      // If no activity for too long, consider connection dead
+      if (timeSinceLastHeartbeat > 35000) { // 35 seconds without response
+        console.log('Heartbeat timeout detected, closing connection for reconnection...');
+        this.#ws.close(4000, 'Heartbeat timeout');
+      }
+    }, 10000); // Check every 10 seconds
+  }
+
+  /**
+   * Stop heartbeat mechanism
+   */
+  #stopHeartbeat() {
+    if (this.#heartbeatIntervalId) {
+      clearInterval(this.#heartbeatIntervalId);
+      this.#heartbeatIntervalId = null;
+    }
   }
 
   /**
@@ -226,6 +404,9 @@ module.exports = class Client {
    */
   constructor(clientOptions = {}) {
     if (clientOptions.DEBUG) global.TW_DEBUG = clientOptions.DEBUG;
+    
+    // Store client options for reconnection purposes
+    this.clientOptions = clientOptions;
 
     const server = clientOptions.server || 'data';
     this.#ws = new WebSocket(`wss://${server}.tradingview.com/socket.io/websocket?type=chart`, {
@@ -256,21 +437,8 @@ module.exports = class Client {
       this.sendQueue();
     }
 
-    this.#ws.on('open', () => {
-      this.#handleEvent('connected');
-      this.sendQueue();
-    });
-
-    this.#ws.on('close', () => {
-      this.#logged = false;
-      this.#handleEvent('disconnected');
-    });
-
-    this.#ws.on('error', (err) => {
-      this.#handleError('WebSocket error:', err.message);
-    });
-
-    this.#ws.on('message', (data) => this.#parsePacket(data));
+    // Use the new event handler setup
+    this.#setupWebSocketEventHandlers();
   }
 
   /** @type {ClientBridge} */
@@ -290,9 +458,39 @@ module.exports = class Client {
    * @return {Promise<void>} When websocket is closed
    */
   end() {
-    return new Promise((cb) => {
-      if (this.#ws.readyState) this.#ws.close();
-      cb();
+    // Mark connection as manually closed to prevent reconnection attempts
+    this.#connectionClosedManually = true;
+    
+    // Clear reconnection timer if active
+    if (this.#reconnectionTimeoutId) {
+      clearTimeout(this.#reconnectionTimeoutId);
+      this.#reconnectionTimeoutId = null;
+    }
+    
+    // Stop heartbeat
+    this.#stopHeartbeat();
+
+    return new Promise((resolve) => {
+      // If already closed/closing, resolve when close event fires.
+      if (this.#ws.readyState === WebSocket.CLOSED) {
+        resolve();
+        return;
+      }
+
+      const done = () => {
+        this.#ws.off('close', done);
+        resolve();
+      };
+
+      this.#ws.on('close', done);
+
+      // Trigger close if needed
+      if (this.#ws.readyState === WebSocket.OPEN || this.#ws.readyState === WebSocket.CONNECTING) {
+        this.#ws.close();
+      }
+
+      // Safety: don't hang forever if the underlying ws implementation never emits 'close'
+      setTimeout(done, 5000).unref?.();
     });
   }
 };

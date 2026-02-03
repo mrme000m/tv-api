@@ -1,5 +1,6 @@
 const os = require('os');
-const axios = require('axios');
+
+const http = require('./http');
 
 const PineIndicator = require('./classes/PineIndicator');
 const { genAuthCookies } = require('./utils');
@@ -10,7 +11,7 @@ const indicators = ['Recommend.Other', 'Recommend.All', 'Recommend.MA'];
 const builtInIndicList = [];
 
 async function fetchScanData(tickers = [], columns = []) {
-  const { data } = await axios.post(
+  const { data } = await http.post(
     'https://scanner.tradingview.com/global/scan',
     {
       symbols: { tickers },
@@ -95,7 +96,7 @@ module.exports = {
    * @deprecated Use searchMarketV3 instead
    */
   async searchMarket(search, filter = '') {
-    const { data } = await axios.get(
+    const { data } = await http.get(
       'https://symbol-search.tradingview.com/symbol_search',
       {
         params: {
@@ -139,7 +140,7 @@ module.exports = {
   async searchMarketV3(search, filter = '', offset = 0) {
     const splittedSearch = search.toUpperCase().replace(/ /g, '+').split(':');
 
-    const request = await axios.get(
+    const request = await http.get(
       'https://symbol-search.tradingview.com/symbol_search/v3',
       {
         params: {
@@ -199,7 +200,7 @@ module.exports = {
   async searchIndicator(search = '') {
     if (!builtInIndicList.length) {
       await Promise.all(['standard', 'candlestick', 'fundamental'].map(async (type) => {
-        const { data } = await axios.get(
+        const { data } = await http.get(
           'https://pine-facade.tradingview.com/pine-facade/list',
           {
             params: {
@@ -212,7 +213,7 @@ module.exports = {
       }));
     }
 
-    const { data } = await axios.get(
+    const { data } = await http.get(
       'https://www.tradingview.com/pubscripts-suggest-json',
       {
         params: {
@@ -278,7 +279,7 @@ module.exports = {
   async getIndicator(id, version = 'last', session = '', signature = '') {
     const indicID = id.replace(/ |%/g, '%25');
 
-    const { data } = await axios.get(
+    const { data } = await http.get(
       `https://pine-facade.tradingview.com/pine-facade/translate/${indicID}/${version}`,
       {
         headers: {
@@ -380,7 +381,7 @@ module.exports = {
    * @returns {Promise<User>} Token
    */
   async loginUser(username, password, remember = true, UA = 'TWAPI/3.0') {
-    const { data, headers } = await axios.post(
+    const { data, headers } = await http.post(
       'https://www.tradingview.com/accounts/signin/',
       `username=${username}&password=${password}${remember ? '&remember=on' : ''}`,
       {
@@ -430,7 +431,7 @@ module.exports = {
    * @returns {Promise<User>} Token
    */
   async getUser(session, signature = '', location = 'https://www.tradingview.com/') {
-    const { data, headers } = await axios.get(location, {
+    const { data, headers } = await http.get(location, {
       headers: {
         cookie: genAuthCookies(session, signature),
       },
@@ -475,7 +476,7 @@ module.exports = {
    * @returns {Promise<SearchIndicatorResult[]>} Search results
    */
   async getPrivateIndicators(session, signature = '') {
-    const { data } = await axios.get(
+    const { data } = await http.get(
       'https://pine-facade.tradingview.com/pine-facade/list',
       {
         headers: {
@@ -533,7 +534,7 @@ module.exports = {
         : { id: -1, session: null, signature: null }
     );
 
-    const { data } = await axios.get(
+    const { data } = await http.get(
       'https://www.tradingview.com/chart-token',
       {
         headers: {
@@ -586,7 +587,7 @@ module.exports = {
   async getDrawings(layout, symbol = '', credentials = {}, chartID = '_shared') {
     const chartToken = await module.exports.getChartToken(layout, credentials);
 
-    const { data } = await axios.get(
+    const { data } = await http.get(
       `https://charts-storage.tradingview.com/charts-storage/get/layout/${
         layout
       }/sources`,

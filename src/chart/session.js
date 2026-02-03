@@ -136,9 +136,31 @@ module.exports = (client) => class ChartSession {
    */
   #periods = {};
 
+  /** Cached sorted periods (newest first) */
+  #periodsCache = [];
+
+  /** Whether cache must be recomputed */
+  #periodsDirty = true;
+
+  /** Track oldest/newest bar time for fetchMore */
+  #oldestTime = null;
+
+  #newestTime = null;
+
+  /** Max number of stored periods (grows with fetchMore) */
+  #maxPeriods = null;
+
+  /** Backpressured request_more_data queue */
+  #moreQueue = [];
+
+  #moreInFlight = null;
+
   /** @return {PricePeriod[]} List of periods values */
   get periods() {
-    return Object.values(this.#periods).sort((a, b) => b.time - a.time);
+    if (!this.#periodsDirty) return this.#periodsCache;
+    this.#periodsCache = Object.values(this.#periods).sort((a, b) => b.time - a.time);
+    this.#periodsDirty = false;
+    return this.#periodsCache;
   }
 
   /**
@@ -211,16 +233,28 @@ module.exports = (client) => class ChartSession {
               if (!periods || !periods.s) return;
 
               periods.s.forEach((p) => {
-                [this.#chartSession.indexes[p.i]] = p.v;
+                // p.i is an index into the chart's internal time array; map it to timestamp
+                this.#chartSession.indexes[p.i] = p.v[0];
+
+                const time = p.v[0];
+                if (this.#oldestTime === null || time < this.#oldestTime) this.#oldestTime = time;
+                if (this.#newestTime === null || time > this.#newestTime) this.#newestTime = time;
+
+                const vol = Number(p.v[5] ?? 0);
                 this.#periods[p.v[0]] = {
-                  time: p.v[0],
+                  time,
                   open: p.v[1],
                   close: p.v[4],
                   max: p.v[2],
                   min: p.v[3],
-                  volume: Math.round(p.v[5] * 100) / 100,
+                  volume: Math.round(vol * 100) / 100,
                 };
               });
+
+              this.#trimPeriodsIfNeeded();
+
+              this.#periodsDirty = true;
+              this.#maybeResolveMoreData();
 
               return;
             }
@@ -310,6 +344,21 @@ module.exports = (client) => class ChartSession {
     const calcRange = !reference ? range : ['bar_count', reference, range];
 
     this.#periods = {};
+    this.#periodsDirty = true;
+    this.#periodsCache = [];
+    this.#oldestTime = null;
+    this.#newestTime = null;
+    this.#chartSession.indexes = {};
+
+    const numericRange = Number(range);
+    this.#maxPeriods = Number.isFinite(numericRange) ? Math.max(0, numericRange + 2) : null;
+
+    // TradingView expects a range argument on create_series.
+    // For modify_series, passing a plain numeric range can trigger a protocol_error.
+    // We only include the bar_count tuple when a reference ('to') is provided.
+    const seriesRangeArg = this.#seriesCreated
+      ? (reference ? calcRange : '')
+      : calcRange;
 
     this.#client.send(`${this.#seriesCreated ? 'modify' : 'create'}_series`, [
       this.#chartSessionID,
@@ -317,7 +366,7 @@ module.exports = (client) => class ChartSession {
       's1',
       `ser_${this.#currentSeries}`,
       timeframe,
-      this.#seriesCreated ? '' : calcRange,
+      seriesRangeArg,
     ]);
 
     this.#seriesCreated = true;
@@ -340,6 +389,11 @@ module.exports = (client) => class ChartSession {
    */
   setMarket(symbol, options = {}) {
     this.#periods = {};
+    this.#periodsDirty = true;
+    this.#periodsCache = [];
+    this.#oldestTime = null;
+    this.#newestTime = null;
+    this.#chartSession.indexes = {};
 
     if (this.#replayMode) {
       this.#replayMode = false;
@@ -402,6 +456,11 @@ module.exports = (client) => class ChartSession {
    */
   setTimezone(timezone) {
     this.#periods = {};
+    this.#periodsDirty = true;
+    this.#periodsCache = [];
+    this.#oldestTime = null;
+    this.#newestTime = null;
+    this.#chartSession.indexes = {};
     this.#client.send('switch_timezone', [this.#chartSessionID, timezone]);
   }
 
@@ -410,7 +469,109 @@ module.exports = (client) => class ChartSession {
    * @param {number} number Number of additional periods/candles you want to fetch
    */
   fetchMore(number = 1) {
+    // Fire-and-forget (original behavior). For reliable deep history fetching
+    // with backpressure/timeout, use fetchMoreAsync.
+    if (this.#maxPeriods !== null) this.#maxPeriods += Math.abs(Number(number) || 0);
     this.#client.send('request_more_data', [this.#chartSessionID, '$prices', number]);
+  }
+
+  /**
+   * Fetch x additional previous periods/candles values (backpressured)
+   * Resolves once a $prices update is received after the request.
+   * @param {number} number Number of additional periods/candles you want to fetch
+   * @param {number} [timeoutMs] Timeout in ms
+   * @returns {Promise<{ gotMore: boolean, added: number }>} Whether new bars were added and the added count
+   */
+  fetchMoreAsync(number = 1, timeoutMs = 15000) {
+    const n = Number(number);
+    if (!Number.isFinite(n) || n === 0) return Promise.resolve({ gotMore: false, added: 0 });
+
+    if (this.#maxPeriods !== null) this.#maxPeriods += Math.abs(n);
+
+    return new Promise((resolve, reject) => {
+      this.#moreQueue.push({
+        number: n,
+        timeoutMs: Number(timeoutMs) || 15000,
+        resolve,
+        reject,
+      });
+      this.#flushMoreDataQueue();
+    });
+  }
+
+  #flushMoreDataQueue() {
+    if (this.#moreInFlight) return;
+    const req = this.#moreQueue.shift();
+    if (!req) return;
+
+    const beforeOldest = this.#oldestTime;
+    const beforeLen = Object.keys(this.#periods).length;
+
+    const timer = setTimeout(() => {
+      if (!this.#moreInFlight || this.#moreInFlight.req !== req) return;
+      this.#moreInFlight = null;
+      try {
+        req.resolve({ gotMore: false, added: 0 });
+      } finally {
+        this.#flushMoreDataQueue();
+      }
+    }, req.timeoutMs);
+
+    this.#moreInFlight = {
+      req,
+      beforeOldest,
+      beforeLen,
+      timer,
+      sawPricesUpdate: false,
+    };
+
+    this.#client.send('request_more_data', [this.#chartSessionID, '$prices', req.number]);
+  }
+
+  #maybeResolveMoreData() {
+    if (!this.#moreInFlight) return;
+
+    const inflight = this.#moreInFlight;
+    inflight.sawPricesUpdate = true;
+
+    const afterLen = Object.keys(this.#periods).length;
+    const afterOldest = this.#oldestTime;
+
+    const gotMore = (inflight.beforeOldest !== null && afterOldest !== null)
+      ? afterOldest < inflight.beforeOldest
+      : afterLen > inflight.beforeLen;
+
+    const added = Math.max(0, afterLen - inflight.beforeLen);
+
+    // Resolve on the first $prices update after our request.
+    clearTimeout(inflight.timer);
+    this.#moreInFlight = null;
+    try {
+      inflight.req.resolve({ gotMore, added });
+    } finally {
+      this.#flushMoreDataQueue();
+    }
+  }
+
+  #trimPeriodsIfNeeded() {
+    if (this.#maxPeriods === null) return;
+    const keys = Object.keys(this.#periods);
+    if (keys.length <= this.#maxPeriods) return;
+
+    const times = keys.map(Number).filter((t) => Number.isFinite(t)).sort((a, b) => a - b);
+    const toRemove = Math.max(0, times.length - this.#maxPeriods);
+    for (let i = 0; i < toRemove; i += 1) {
+      delete this.#periods[times[i]];
+    }
+
+    if (times.length === 0 || toRemove >= times.length) {
+      this.#oldestTime = null;
+      this.#newestTime = null;
+      return;
+    }
+
+    this.#oldestTime = times[toRemove];
+    this.#newestTime = times[times.length - 1];
   }
 
   /**
@@ -424,6 +585,8 @@ module.exports = (client) => class ChartSession {
         this.#handleError('No replay session');
         return;
       }
+
+      if (this.#maxPeriods !== null) this.#maxPeriods += Math.abs(Number(number) || 0);
 
       const reqID = genSessionID('rsq_step');
       this.#client.send('replay_step', [this.#replaySessionID, reqID, number]);
