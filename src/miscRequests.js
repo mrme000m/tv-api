@@ -7,6 +7,23 @@ const { genAuthCookies } = require('./utils');
 
 const validateStatus = (status) => status < 500;
 
+const PINE_FACADE_BASE = 'https://pine-facade.tradingview.com/pine-facade';
+
+function buildFormData(fields) {
+  const boundary = `----WebKitFormBoundary${Date.now().toString(36)}${Math.random().toString(36).slice(2)}`;
+  const body = fields.map(({ name, value = '' }) => (
+    `--${boundary}\r\nContent-Disposition: form-data; name="${name}"\r\n\r\n${value}\r\n`
+  )).join('') + `--${boundary}--\r\n`;
+
+  return { boundary, body };
+}
+
+function buildAuthHeaders(credentials = {}) {
+  const cookie = genAuthCookies(credentials.session, credentials.signature);
+  if (!cookie) return {};
+  return { cookie };
+}
+
 const indicators = ['Recommend.Other', 'Recommend.All', 'Recommend.MA'];
 const builtInIndicList = [];
 
@@ -510,6 +527,221 @@ module.exports = {
         );
       },
     }));
+  },
+
+  /**
+   * Translate a Pine script before it gets saved by hitting TradingView's light translator.
+   * @param {string} source Pine source code
+   * @param {{ userName?: string, version?: number|string, credentials?: { session?: string, signature?: string } }} [options]
+   * @returns {Promise<any>} Raw translation payload
+   */
+  async translateScriptLight(source, options = {}) {
+    const { userName = '', version = 3, credentials } = options;
+    const { boundary, body } = buildFormData([{ name: 'source', value: source }]);
+    const params = { v: version };
+    if (userName) params.user_name = userName;
+
+    const { data } = await http.post(
+      `${PINE_FACADE_BASE}/translate_light`,
+      body,
+      {
+        headers: {
+          'Content-Type': `multipart/form-data; boundary=${boundary}`,
+          ...buildAuthHeaders(credentials),
+        },
+        params,
+        validateStatus,
+      },
+    );
+
+    return data;
+  },
+
+  /**
+   * Ask TradingView how it would title a script before saving.
+   * @param {string} source Pine source code
+   * @param {{ userName?: string, credentials?: { session?: string, signature?: string } }} [options]
+   * @returns {Promise<any>} Parser response payload
+   */
+  async parseScriptTitle(source, options = {}) {
+    const { userName = '', credentials } = options;
+    const fields = [];
+    if (userName) fields.push({ name: 'user_name', value: userName });
+    fields.push({ name: 'source', value: source });
+
+    const { boundary, body } = buildFormData(fields);
+
+    const { data } = await http.post(
+      `${PINE_FACADE_BASE}/parse_title`,
+      body,
+      {
+        headers: {
+          'Content-Type': `multipart/form-data; boundary=${boundary}`,
+          ...buildAuthHeaders(credentials),
+        },
+        validateStatus,
+      },
+    );
+
+    return data;
+  },
+
+  /**
+   * Save a new Pine script for the authenticated user.
+   * @param {{ name: string, source: string, userName?: string, allowOverwrite?: boolean, credentials?: { session?: string, signature?: string } }} options
+   * @returns {Promise<any>} Save endpoint response (typically plain text)
+   */
+  async saveScriptNew(options = {}) {
+    const {
+      name,
+      source,
+      userName = '',
+      allowOverwrite = true,
+      credentials,
+    } = options;
+
+    if (!name) throw new Error('Script name is required');
+    if (!source) throw new Error('Script source is required');
+
+    const params = {
+      name,
+      allow_overwrite: allowOverwrite,
+    };
+    if (userName) params.user_name = userName;
+
+    const { boundary, body } = buildFormData([{ name: 'source', value: source }]);
+
+    const { data } = await http.post(
+      `${PINE_FACADE_BASE}/save/new`,
+      body,
+      {
+        params,
+        headers: {
+          'Content-Type': `multipart/form-data; boundary=${boundary}`,
+          ...buildAuthHeaders(credentials),
+        },
+        validateStatus,
+      },
+    );
+
+    return data;
+  },
+
+  /**
+   * Rename an existing version of a saved script.
+   * @param {string} pineId Indicator id (USER;..., PUB;...)
+   * @param {string|number} version Version identifier
+   * @param {string} name New name to apply
+   * @param {{ session?: string, signature?: string }} [credentials]
+   * @returns {Promise<void>}
+   */
+  async renameScriptVersion(pineId, version, name, credentials = {}) {
+    if (!pineId || !version || !name) throw new Error('pineId, version and name are required');
+
+    const { data } = await http.put(
+      `${PINE_FACADE_BASE}/name/${encodeURIComponent(pineId)}/${encodeURIComponent(version)}`,
+      null,
+      {
+        params: { name },
+        headers: buildAuthHeaders(credentials),
+        validateStatus,
+      },
+    );
+
+    return data;
+  },
+
+  /**
+   * List the versions exposed for a saved script.
+   * @param {string} pineId Indicator id
+   * @param {{ session?: string, signature?: string }} [credentials]
+   * @returns {Promise<any>} Versions payload
+   */
+  async listScriptVersions(pineId, credentials = {}) {
+    const { data } = await http.get(
+      `${PINE_FACADE_BASE}/versions/${encodeURIComponent(pineId)}`,
+      {
+        headers: buildAuthHeaders(credentials),
+        validateStatus,
+      },
+    );
+
+    return data;
+  },
+
+  /**
+   * Retrieve a saved script for a given version identifier.
+   * @param {string} pineId Indicator id
+   * @param {string|number} version Version identifier
+   * @param {{ session?: string, signature?: string }} [credentials]
+   * @returns {Promise<any>} Script payload (text/plain)
+   */
+  async getScriptVersion(pineId, version, credentials = {}) {
+    const { data } = await http.get(
+      `${PINE_FACADE_BASE}/get/${encodeURIComponent(pineId)}/${encodeURIComponent(version)}`,
+      {
+        headers: buildAuthHeaders(credentials),
+        validateStatus,
+      },
+    );
+
+    return data;
+  },
+
+  /**
+   * Attempt to delete a script version or whole script. This is best-effort
+   * because TradingView does not document a single delete endpoint. We try
+   * several plausible endpoints and methods observed in practice.
+   * @param {string} pineId Indicator id (USER;..., PUB;...)
+   * @param {string|number} [version] Optional version to delete; if omitted
+   * deletes the whole script if endpoint supports it.
+   * @param {{ session?: string, signature?: string }} [credentials]
+   * @returns {Promise<any>} Response of the first successful call, or null
+   */
+  async deleteScriptVersion(pineId, version = '', credentials = {}) {
+    if (!pineId) throw new Error('pineId is required');
+
+    const candidates = [];
+
+    // Common REST patterns
+    if (version) {
+      candidates.push({ method: 'delete', url: `${PINE_FACADE_BASE}/save/${encodeURIComponent(pineId)}/${encodeURIComponent(version)}` });
+      candidates.push({ method: 'delete', url: `${PINE_FACADE_BASE}/delete/${encodeURIComponent(pineId)}/${encodeURIComponent(version)}` });
+      candidates.push({ method: 'delete', url: `${PINE_FACADE_BASE}/remove/${encodeURIComponent(pineId)}/${encodeURIComponent(version)}` });
+      candidates.push({ method: 'post', url: `${PINE_FACADE_BASE}/save/delete`, params: { pine_id: pineId, version } });
+      // POST /delete/<pineId>?user_name=... used by the CLI
+      candidates.push({ method: 'post', url: `${PINE_FACADE_BASE}/delete/${encodeURIComponent(pineId)}`, params: {} });
+    }
+
+    // Whole-script deletions
+    candidates.push({ method: 'delete', url: `${PINE_FACADE_BASE}/save/${encodeURIComponent(pineId)}` });
+    candidates.push({ method: 'delete', url: `${PINE_FACADE_BASE}/delete/${encodeURIComponent(pineId)}` });
+    candidates.push({ method: 'post', url: `${PINE_FACADE_BASE}/save/remove`, params: { pine_id: pineId } });
+    // CLI style: POST /delete/<pineId>?user_name=...
+    candidates.push({ method: 'post', url: `${PINE_FACADE_BASE}/delete/${encodeURIComponent(pineId)}`, params: {} });
+
+    for (const c of candidates) {
+      try {
+        const opts = { headers: buildAuthHeaders(credentials), validateStatus };
+        if (c.params) opts.params = c.params;
+        // Some endpoints (observed from the web UI / CLI) expect a user_name query param
+        if (!opts.params && c.url.includes('/delete/') && credentials && credentials.userName) {
+          opts.params = { user_name: credentials.userName };
+        }
+
+        let res;
+        if (c.method === 'delete') res = await http.delete(c.url, opts);
+        else if (c.method === 'post') res = await http.post(c.url, null, opts);
+        else res = await http.request({ method: c.method, url: c.url, ...opts });
+
+        if (res && (res.status === 200 || res.status === 204 || res.status === 201)) return res.data;
+      } catch (e) {
+        // ignore and try next
+        if (global.TW_DEBUG) console.warn('delete candidate failed', c.url, e?.response?.status);
+      }
+    }
+
+    return null;
   },
 
   /**
