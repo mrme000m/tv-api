@@ -1,0 +1,1148 @@
+tv_id,symbol,description,exchange,type,quote_currency,typespecs,provider_id,prefix,pro_name,original_name,logo_logoid,logo_logoid2
+KUCOIN:HYPEUSDT,HYPEUSDT,Hyperliquid / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHYPEH,crypto/XTVCUSDT
+KUCOIN:BTCUSDT,BTCUSDT,Bitcoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBTC,crypto/XTVCUSDT
+KUCOIN:SOLUSDT,SOLUSDT,Solana / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSOL,crypto/XTVCUSDT
+KUCOIN:ETHUSDT,ETHUSDT,Ethereum / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCETH,crypto/XTVCUSDT
+KUCOIN:XMRUSDT,XMRUSDT,Monero / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXMR,crypto/XTVCUSDT
+KUCOIN:XRPUSDT,XRPUSDT,Ripple / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXRP,crypto/XTVCUSDT
+KUCOIN:ZECUSDT,ZECUSDT,ZEC / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCZEC,crypto/XTVCUSDT
+KUCOIN:TELUSDT,TELUSDT,Telcoin / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCTEL,crypto/XTVCUSDT
+KUCOIN:VELOUSDT,VELOUSDT,VELO / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCVELO,crypto/XTVCUSDT
+KUCOIN:KASUSDT,KASUSDT,KASPA / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKAS,crypto/XTVCUSDT
+KUCOIN:VRAUSDT,VRAUSDT,Verasity / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCVRA,crypto/XTVCUSDT
+KUCOIN:CCUSDT,CCUSDT,Canton Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCCCA,crypto/XTVCUSDT
+KUCOIN:ADAUSDT,ADAUSDT,Cardano / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCADA,crypto/XTVCUSDT
+KUCOIN:SUIUSDT,SUIUSDT,SUI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSUI,crypto/XTVCUSDT
+KUCOIN:XDCUSDT,XDCUSDT,XDC Mainnet / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXDC,crypto/XTVCUSDT
+KUCOIN:ONDOUSDT,ONDOUSDT,Ondo / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCONDO,crypto/XTVCUSDT
+KUCOIN:LUNCUSDT,LUNCUSDT,Terra Classic / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCLUNC,crypto/XTVCUSDT
+KUCOIN:PYRUSDT,PYRUSDT,Vulcan Forged PYR / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPYR,crypto/XTVCUSDT
+KUCOIN:AKTUSDT,AKTUSDT,Akash Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAKT,crypto/XTVCUSDT
+KUCOIN:DOGEUSDT,DOGEUSDT,Dogecoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDOGE,crypto/XTVCUSDT
+KUCOIN:TAOUSDT,TAOUSDT,Bittensor / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTAOB,crypto/XTVCUSDT
+KUCOIN:CROUSDT,CROUSDT,Cronos / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCRO,crypto/XTVCUSDT
+KUCOIN:TONUSDT,TONUSDT,Ton / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTON,crypto/XTVCUSDT
+KUCOIN:AVAXUSDT,AVAXUSDT,Avalanche / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAVAX,crypto/XTVCUSDT
+KUCOIN:DAGUSDT,DAGUSDT,Constellation / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDAG,crypto/XTVCUSDT
+KUCOIN:LINKUSDT,LINKUSDT,Chainlink / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCLINK,crypto/XTVCUSDT
+KUCOIN:ANYONEUSDT,ANYONEUSDT,ANyONe Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCANYONE,crypto/XTVCUSDT
+KUCOIN:AIOZUSDT,AIOZUSDT,AIOZ Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAIOZ,crypto/XTVCUSDT
+KUCOIN:AEROUSDT,AEROUSDT,Aerodrome Finance / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAEROD,crypto/XTVCUSDT
+KUCOIN:JUPUSDT,JUPUSDT,Jupiter / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCJUPI,crypto/XTVCUSDT
+KUCOIN:SHIBUSDT,SHIBUSDT,SHIBA INU / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSHIB,crypto/XTVCUSDT
+KUCOIN:PEPEUSDT,PEPEUSDT,Pepe / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPEPE,crypto/XTVCUSDT
+KUCOIN:NEARUSDT,NEARUSDT,NEAR Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNEAR,crypto/XTVCUSDT
+KUCOIN:DOTUSDT,DOTUSDT,Polkadot / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCDOT,crypto/XTVCUSDT
+KUCOIN:XUSDT,XUSDT,X Empire / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXE,crypto/XTVCUSDT
+KUCOIN:QNTUSDT,QNTUSDT,Quant / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCQNT,crypto/XTVCUSDT
+KUCOIN:CPOOLUSDT,CPOOLUSDT,Clearpool / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCPOOL,crypto/XTVCUSDT
+KUCOIN:PEAQUSDT,PEAQUSDT,peaq / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPEAQ,crypto/XTVCUSDT
+KUCOIN:KCSUSDT,KCSUSDT,KuCoin Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKCS,crypto/XTVCUSDT
+KUCOIN:HBARUSDT,HBARUSDT,Hedera Hashgraph / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHBAR,crypto/XTVCUSDT
+KUCOIN:IMXUSDT,IMXUSDT,Immutable X / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCIMXIMMUTABLEX,crypto/XTVCUSDT
+KUCOIN:ELONUSDT,ELONUSDT,Dogelon / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCELON,crypto/XTVCUSDT
+KUCOIN:ARBUSDT,ARBUSDT,Arbitrum / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCARBI,crypto/XTVCUSDT
+KUCOIN:PUMPUSDT,PUMPUSDT,pump.fun / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPUMPF,crypto/XTVCUSDT
+KUCOIN:WIFUSDT,WIFUSDT,dogwifhat / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWIF,crypto/XTVCUSDT
+KUCOIN:FARTCOINUSDT,FARTCOINUSDT,Fartcoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFARTCOIN,crypto/XTVCUSDT
+KUCOIN:AAVEUSDT,AAVEUSDT,Aave / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCAAVE,crypto/XTVCUSDT
+KUCOIN:NAKAUSDT,NAKAUSDT,Nakamoto.Games / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNAKA,crypto/XTVCUSDT
+KUCOIN:ALGOUSDT,ALGOUSDT,Algorand / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCALGO,crypto/XTVCUSDT
+KUCOIN:FILUSDT,FILUSDT,Filecoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFIL,crypto/XTVCUSDT
+KUCOIN:HNTUSDT,HNTUSDT,Helium / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHNT,crypto/XTVCUSDT
+KUCOIN:DASHUSDT,DASHUSDT,Dash / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDASH,crypto/XTVCUSDT
+KUCOIN:VETUSDT,VETUSDT,Vechain / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCVET,crypto/XTVCUSDT
+KUCOIN:REKTUSDT,REKTUSDT,Rekt / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCREKTC,crypto/XTVCUSDT
+KUCOIN:LYXUSDT,LYXUSDT,LUKSO / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLYX,crypto/XTVCUSDT
+KUCOIN:BNBUSDT,BNBUSDT,Binance Chain Native Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBNB,crypto/XTVCUSDT
+KUCOIN:UNIUSDT,UNIUSDT,Uniswap / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCUNI,crypto/XTVCUSDT
+KUCOIN:NPCUSDT,NPCUSDT,Non Playable Coin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNPCN,crypto/XTVCUSDT
+KUCOIN:APTUSDT,APTUSDT,Aptos / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAPTO,crypto/XTVCUSDT
+KUCOIN:USELESSUSDT,USELESSUSDT,USELESS COIN / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUSELESS,crypto/XTVCUSDT
+KUCOIN:HTRUSDT,HTRUSDT,Hathor / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCHTR,crypto/XTVCUSDT
+KUCOIN:ROSEUSDT,ROSEUSDT,Oasis Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCROSE,crypto/XTVCUSDT
+KUCOIN:BULLAUSDT,BULLAUSDT,Bulla / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBULLA2,crypto/XTVCUSDT
+KUCOIN:INJUSDT,INJUSDT,Injective / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCINJ,crypto/XTVCUSDT
+KUCOIN:ENAUSDT,ENAUSDT,Ethena / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCENA,crypto/XTVCUSDT
+KUCOIN:WILDUSDT,WILDUSDT,Wilder World / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCWILD,crypto/XTVCUSDT
+KUCOIN:DMTRUSDT,DMTRUSDT,Dimitra / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDMTR,crypto/XTVCUSDT
+KUCOIN:ICPUSDT,ICPUSDT,Internet Computer / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCICP,crypto/XTVCUSDT
+KUCOIN:POKTUSDT,POKTUSDT,Pocket Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPOKT,crypto/XTVCUSDT
+KUCOIN:ROOTUSDT,ROOTUSDT,The Root Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCROOT,crypto/XTVCUSDT
+KUCOIN:ORAIUSDT,ORAIUSDT,Oraichain Token / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCORAI,crypto/XTVCUSDT
+KUCOIN:ATOMUSDT,ATOMUSDT,Cosmos / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCATOM,crypto/XTVCUSDT
+KUCOIN:OPULUSDT,OPULUSDT,Opulous / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCOPUL,crypto/XTVCUSDT
+KUCOIN:LTCUSDT,LTCUSDT,Litecoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLTC,crypto/XTVCUSDT
+KUCOIN:BTRUSDT,BTRUSDT,Bitlayer / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:PENGUUSDT,PENGUUSDT,Pudgy Penguins / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPENGUPUD,crypto/XTVCUSDT
+KUCOIN:METISUSDT,METISUSDT,Metis / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMETIS,crypto/XTVCUSDT
+KUCOIN:AVAAIUSDT,AVAAIUSDT,Ava AI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAVA2,crypto/XTVCUSDT
+KUCOIN:SUSHIUSDT,SUSHIUSDT,SushiSwap / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSUSHI,crypto/XTVCUSDT
+KUCOIN:SEIUSDT,SEIUSDT,Sei / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSEI,crypto/XTVCUSDT
+KUCOIN:XPRUSDT,XPRUSDT,XPR Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCXPR,crypto/XTVCUSDT
+KUCOIN:XLMUSDT,XLMUSDT,Stellar / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCXLM,crypto/XTVCUSDT
+KUCOIN:OPUSDT,OPUSDT,Optimism / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCOP,crypto/XTVCUSDT
+KUCOIN:MOODENGUSDT,MOODENGUSDT,Moo Deng / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMOODENG,crypto/XTVCUSDT
+KUCOIN:MOGUSDT,MOGUSDT,Mog Coin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMOG,crypto/XTVCUSDT
+KUCOIN:PAXGUSDT,PAXGUSDT,PAX Gold / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPAXG,crypto/XTVCUSDT
+KUCOIN:TRXUSDT,TRXUSDT,Tron / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTRX,crypto/XTVCUSDT
+KUCOIN:BCHUSDT,BCHUSDT,Bitcoin Cash / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBCH,crypto/XTVCUSDT
+KUCOIN:TIAUSDT,TIAUSDT,Celestia / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTIA2,crypto/XTVCUSDT
+KUCOIN:AXSUSDT,AXSUSDT,Axie Infinity / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAXS,crypto/XTVCUSDT
+KUCOIN:COQUSDT,COQUSDT,Coq Inu / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCOQ,crypto/XTVCUSDT
+KUCOIN:ZBCNUSDT,ZBCNUSDT,Zebec Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCZBCN,crypto/XTVCUSDT
+KUCOIN:XCNUSDT,XCNUSDT,Onyxcoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXCNCHAIN,crypto/XTVCUSDT
+KUCOIN:JASMYUSDT,JASMYUSDT,JasmyCoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCJASMY,crypto/XTVCUSDT
+KUCOIN:ARUSDT,ARUSDT,Arweave / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAR,crypto/XTVCUSDT
+KUCOIN:UAIUSDT,UAIUSDT,UnifAI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUAIU,crypto/XTVCUSDT
+KUCOIN:SYRUPUSDT,SYRUPUSDT,Syrup Token / Tether,KuCoin,spot,USDT,crypto|leveraged|defi,kucoin,KUCOIN,,,crypto/XTVCSYRUP,crypto/XTVCUSDT
+KUCOIN:CYSUSDT,CYSUSDT,Cysic Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCYSI,crypto/XTVCUSDT
+KUCOIN:CHZUSDT,CHZUSDT,Chiliz / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCHZ,crypto/XTVCUSDT
+KUCOIN:ERGUSDT,ERGUSDT,Ergo / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCERG,crypto/XTVCUSDT
+KUCOIN:DEEPUSDT,DEEPUSDT,DeepBook / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDEEPB,crypto/XTVCUSDT
+KUCOIN:FLUXUSDT,FLUXUSDT,flux / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFLUX,crypto/XTVCUSDT
+KUCOIN:ZORAUSDT,ZORAUSDT,Zora / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCZORA2,crypto/XTVCUSDT
+KUCOIN:BONKUSDT,BONKUSDT,BONK / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBONK,crypto/XTVCUSDT
+KUCOIN:FLRUSDT,FLRUSDT,Flare Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFLR,crypto/XTVCUSDT
+KUCOIN:CFGUSDT,CFGUSDT,Centrifuge / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCFG,crypto/XTVCUSDT
+KUCOIN:ZCXUSDT,ZCXUSDT,Unizen / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCZCX,crypto/XTVCUSDT
+KUCOIN:ZKUSDT,ZKUSDT,zkSync / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCZKSY,crypto/XTVCUSDT
+KUCOIN:FETUSDT,FETUSDT,Artificial Superintelligence Alliance / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFET,crypto/XTVCUSDT
+KUCOIN:EWTUSDT,EWTUSDT,Energy Web Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCEWT,crypto/XTVCUSDT
+KUCOIN:XDBUSDT,XDBUSDT,XDB Chain / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXDB,crypto/XTVCUSDT
+KUCOIN:FLOKIUSDT,FLOKIUSDT,FLOKI / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCFLOKI,crypto/XTVCUSDT
+KUCOIN:CRVUSDT,CRVUSDT,Curve / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCRV,crypto/XTVCUSDT
+KUCOIN:TARAUSDT,TARAUSDT,Taraxa Coin / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCTARA,crypto/XTVCUSDT
+KUCOIN:KGENUSDT,KGENUSDT,KGEN / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKGEN,crypto/XTVCUSDT
+KUCOIN:CSPRUSDT,CSPRUSDT,Casper / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCSPR,crypto/XTVCUSDT
+KUCOIN:SANDUSDT,SANDUSDT,The Sandbox / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSAND,crypto/XTVCUSDT
+KUCOIN:VIRTUALUSDT,VIRTUALUSDT,Virtual Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCVIRTUAL,crypto/XTVCUSDT
+KUCOIN:ZAMAUSDT,ZAMAUSDT,Zama / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:TOKENUSDT,TOKENUSDT,TokenFi / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTOKENF,crypto/XTVCUSDT
+KUCOIN:NUMUSDT,NUMUSDT,Numbers Protocol / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCNUM,crypto/XTVCUSDT
+KUCOIN:NOTUSDT,NOTUSDT,Notcoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNOT,crypto/XTVCUSDT
+KUCOIN:SUPRAUSDT,SUPRAUSDT,Supra Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSUPRA,crypto/XTVCUSDT
+KUCOIN:CAKEUSDT,CAKEUSDT,PancakeSwap Token / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCAKE,crypto/XTVCUSDT
+KUCOIN:LIGHTUSDT,LIGHTUSDT,Bitlight Labs / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLIGHTB,crypto/XTVCUSDT
+KUCOIN:RUNEUSDT,RUNEUSDT,THORChain / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCRUNE,crypto/XTVCUSDT
+KUCOIN:AZEROUSDT,AZEROUSDT,Aleph Zero / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAZERO,crypto/XTVCUSDT
+KUCOIN:MYRIAUSDT,MYRIAUSDT,Myria / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMYRIA,crypto/XTVCUSDT
+KUCOIN:BTCUSDC,BTCUSDC,Bitcoin / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCBTC,crypto/XTVCUSDC
+KUCOIN:SIDUSUSDT,SIDUSUSDT,SIDUS / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSIDUS,crypto/XTVCUSDT
+KUCOIN:SPXUSDT,SPXUSDT,SPX6900 / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSPX6,crypto/XTVCUSDT
+KUCOIN:SKYUSDT,SKYUSDT,Sky Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSKY2,crypto/XTVCUSDT
+KUCOIN:XRDUSDT,XRDUSDT,Radix / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXRD,crypto/XTVCUSDT
+KUCOIN:SUSDT,SUSDT,Sonic / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSONI,crypto/XTVCUSDT
+KUCOIN:SNXUSDT,SNXUSDT,Synthetix Network Token / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSNX,crypto/XTVCUSDT
+KUCOIN:THETAUSDT,THETAUSDT,THETA / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTHETA,crypto/XTVCUSDT
+KUCOIN:WLDUSDT,WLDUSDT,Worldcoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWLDW,crypto/XTVCUSDT
+KUCOIN:GRTUSDT,GRTUSDT,The Graph / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGRAPH,crypto/XTVCUSDT
+KUCOIN:XAUTUSDT,XAUTUSDT,Tether Gold / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXAUT,crypto/XTVCUSDT
+KUCOIN:ADIUSDT,ADIUSDT,ADI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCADI2,crypto/XTVCUSDT
+KUCOIN:MNTUSDT,MNTUSDT,Mantle Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMNT,crypto/XTVCUSDT
+KUCOIN:RVVUSDT,RVVUSDT,ASTRA NOVA / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRVV,crypto/XTVCUSDT
+KUCOIN:TRACUSDT,TRACUSDT,OriginTrail / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCTRAC,crypto/XTVCUSDT
+KUCOIN:NXRAUSDT,NXRAUSDT,Nexera Foundation / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNXRA,crypto/XTVCUSDT
+KUCOIN:VAIUSDT,VAIUSDT,VAIOT / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCVAIO,crypto/XTVCUSDT
+KUCOIN:BLUEUSDT,BLUEUSDT,Bluefin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBLUEF,crypto/XTVCUSDT
+KUCOIN:MYROUSDT,MYROUSDT,Myro / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMYRO,crypto/XTVCUSDT
+KUCOIN:WOOUSDT,WOOUSDT,WOO Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCWOO,crypto/XTVCUSDT
+KUCOIN:NATIXUSDT,NATIXUSDT,NATIX Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNATIX,crypto/XTVCUSDT
+KUCOIN:HMNDUSDT,HMNDUSDT,Humanode / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHMND,crypto/XTVCUSDT
+KUCOIN:ATHUSDT,ATHUSDT,Aethir / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCATHAE,crypto/XTVCUSDT
+KUCOIN:PURRUSDT,PURRUSDT,PURR / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPURR2,crypto/XTVCUSDT
+KUCOIN:HYPEUSDC,HYPEUSDC,Hyperliquid / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCHYPEH,crypto/XTVCUSDC
+KUCOIN:HANAUSDT,HANAUSDT,Hana Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHANAN,crypto/XTVCUSDT
+KUCOIN:POLUSDT,POLUSDT,Polygon Ecosystem Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPOLYG,crypto/XTVCUSDT
+KUCOIN:MANYUUSDT,MANYUUSDT,Manyu / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMANYU3,crypto/XTVCUSDT
+KUCOIN:ELIZAOSUSDT,ELIZAOSUSDT,elizaOS / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCELIZAOS,crypto/XTVCUSDT
+KUCOIN:ZROUSDT,ZROUSDT,LayerZero / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCZROL,crypto/XTVCUSDT
+KUCOIN:ETHBTC,ETHBTC,Ethereum / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCETH,crypto/XTVCBTC
+KUCOIN:INSPUSDT,INSPUSDT,Inspect / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCINSP,crypto/XTVCUSDT
+KUCOIN:CCDUSDT,CCDUSDT,Concordium / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCCD,crypto/XTVCUSDT
+KUCOIN:GLQUSDT,GLQUSDT,GraphLinq / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCGLQ,crypto/XTVCUSDT
+KUCOIN:NAVIUSDT,NAVIUSDT,Atlas Navi / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNAVIA,crypto/XTVCUSDT
+KUCOIN:API3USDT,API3USDT,API3 / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCAPI3,crypto/XTVCUSDT
+KUCOIN:DYDXUSDT,DYDXUSDT,dYdX / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDYDX,crypto/XTVCUSDT
+KUCOIN:ASTERUSDT,ASTERUSDT,Aster / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCASTER2,crypto/XTVCUSDT
+KUCOIN:PYTHUSDT,PYTHUSDT,Pyth Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCPYTH,crypto/XTVCUSDT
+KUCOIN:COTIUSDT,COTIUSDT,Coti / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCOTI,crypto/XTVCUSDT
+KUCOIN:DUSKUSDT,DUSKUSDT,Dusk / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDUSK,crypto/XTVCUSDT
+KUCOIN:NIGHTUSDT,NIGHTUSDT,NIGHT / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNIGHTMI,crypto/XTVCUSDT
+KUCOIN:LUNAUSDT,LUNAUSDT,Terra / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLUNA,crypto/XTVCUSDT
+KUCOIN:PTBUSDT,PTBUSDT,Portal To Bitcoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPTB,crypto/XTVCUSDT
+KUCOIN:SUPERUSDT,SUPERUSDT,SuperVerse / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSUPER,crypto/XTVCUSDT
+KUCOIN:ENSUSDT,ENSUSDT,Ethereum Name Service / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCENS,crypto/XTVCUSDT
+KUCOIN:IPUSDT,IPUSDT,Story / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCIP,crypto/XTVCUSDT
+KUCOIN:STRKUSDT,STRKUSDT,Starknet / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSTRKS,crypto/XTVCUSDT
+KUCOIN:CGPTUSDT,CGPTUSDT,ChainGPT / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCGPT,crypto/XTVCUSDT
+KUCOIN:LINGOUSDT,LINGOUSDT,Lingo / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLINGO,crypto/XTVCUSDT
+KUCOIN:GUNUSDT,GUNUSDT,GUNZ / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGUN,crypto/XTVCUSDT
+KUCOIN:AERGOUSDT,AERGOUSDT,Aergo / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCAERGO,crypto/XTVCUSDT
+KUCOIN:CFXUSDT,CFXUSDT,Conflux / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCFX,crypto/XTVCUSDT
+KUCOIN:WAVESUSDT,WAVESUSDT,Waves / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCWAVES,crypto/XTVCUSDT
+KUCOIN:STNKUSDT,STNKUSDT,Stonks / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSTNK,crypto/XTVCUSDT
+KUCOIN:CLOUSDT,CLOUSDT,Yei Finance / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCLOY,crypto/XTVCUSDT
+KUCOIN:IRYSUSDT,IRYSUSDT,Irys / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCIRYS,crypto/XTVCUSDT
+KUCOIN:BOSONUSDT,BOSONUSDT,Boson Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBOSON,crypto/XTVCUSDT
+KUCOIN:HUSDT,HUSDT,Humanity / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCH,crypto/XTVCUSDT
+KUCOIN:MASKUSDT,MASKUSDT,Mask Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMASK,crypto/XTVCUSDT
+KUCOIN:BRETTUSDT,BRETTUSDT,BRETT / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBRETT2,crypto/XTVCUSDT
+KUCOIN:MEWUSDT,MEWUSDT,cat in a dogs world / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMEW,crypto/XTVCUSDT
+KUCOIN:CREDIUSDT,CREDIUSDT,Credefi / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCREDI,crypto/XTVCUSDT
+KUCOIN:WMTXUSDT,WMTXUSDT,WorldMobileToken / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWMTX,crypto/XTVCUSDT
+KUCOIN:WELLUSDT,WELLUSDT,Moonwell / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWELL,crypto/XTVCUSDT
+KUCOIN:MERLUSDT,MERLUSDT,Merlin Chain / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMERL,crypto/XTVCUSDT
+KUCOIN:XECUSDT,XECUSDT,eCash / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXEC,crypto/XTVCUSDT
+KUCOIN:BDXUSDT,BDXUSDT,Beldex / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCBDX,crypto/XTVCUSDT
+KUCOIN:VRUSDT,VRUSDT,Victoria VR / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCVR,crypto/XTVCUSDT
+KUCOIN:WENUSDT,WENUSDT,Wen / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWEN2,crypto/XTVCUSDT
+KUCOIN:SHRAPUSDT,SHRAPUSDT,Shrapnel / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSHRAPN,crypto/XTVCUSDT
+KUCOIN:ZILUSDT,ZILUSDT,Zilliqa / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCZIL,crypto/XTVCUSDT
+KUCOIN:KASBTC,KASBTC,KASPA / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCKAS,crypto/XTVCBTC
+KUCOIN:CATUSDT,CATUSDT,Simons Cat / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCATSI,crypto/XTVCUSDT
+KUCOIN:XMRBTC,XMRBTC,Monero / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCXMR,crypto/XTVCBTC
+KUCOIN:IOTXUSDT,IOTXUSDT,IoTeX / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCIOTX,crypto/XTVCUSDT
+KUCOIN:KINUSDT,KINUSDT,Kindred / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:INUSDT,INUSDT,INFINIT / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCINFINI,crypto/XTVCUSDT
+KUCOIN:MONUSDT,MONUSDT,MONAD / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMONAD,crypto/XTVCUSDT
+KUCOIN:FWOGUSDT,FWOGUSDT,FWOG / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFWOG2,crypto/XTVCUSDT
+KUCOIN:USUALUSDT,USUALUSDT,Usual / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCUSUAL,crypto/XTVCUSDT
+KUCOIN:PAALUSDT,PAALUSDT,PAAL AI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPAAL,crypto/XTVCUSDT
+KUCOIN:KSMUSDT,KSMUSDT,Kusama / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKSM,crypto/XTVCUSDT
+KUCOIN:KMNOUSDT,KMNOUSDT,Kamino / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCKMNO,crypto/XTVCUSDT
+KUCOIN:EMYCUSDT,EMYCUSDT,emyc / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCEMYC,crypto/XTVCUSDT
+KUCOIN:QUSDT,QUSDT,Quack AI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCQUAC,crypto/XTVCUSDT
+KUCOIN:ASIUSDT,ASIUSDT,Sender AI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCASI,crypto/XTVCUSDT
+KUCOIN:HEARTUSDT,HEARTUSDT,Humans / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHEART,crypto/XTVCUSDT
+KUCOIN:LKIUSDT,LKIUSDT,Laika AI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLKIL,crypto/XTVCUSDT
+KUCOIN:ARKMUSDT,ARKMUSDT,Arkham / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCARKM,crypto/XTVCUSDT
+KUCOIN:ONEUSDT,ONEUSDT,Harmony / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCONE,crypto/XTVCUSDT
+KUCOIN:HIFIUSDT,HIFIUSDT,Hifi Finance / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCHIFI,crypto/XTVCUSDT
+KUCOIN:ZEUSUSDT,ZEUSUSDT,Zeus Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCZEUSN,crypto/XTVCUSDT
+KUCOIN:LDOUSDT,LDOUSDT,Lido DAO / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCLDO,crypto/XTVCUSDT
+KUCOIN:FOLKSUSDT,FOLKSUSDT,Folks Finance / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCFOLKS,crypto/XTVCUSDT
+KUCOIN:VOXELUSDT,VOXELUSDT,Voxies / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCVOXEL,crypto/XTVCUSDT
+KUCOIN:STABLEUSDT,STABLEUSDT,Stable / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSTABLE3,crypto/XTVCUSDT
+KUCOIN:FTTUSDT,FTTUSDT,FTX Token / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCFTT,crypto/XTVCUSDT
+KUCOIN:UOSUSDT,UOSUSDT,Ultra / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUOS,crypto/XTVCUSDT
+KUCOIN:ISLMUSDT,ISLMUSDT,Islamic Coin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCISLM,crypto/XTVCUSDT
+KUCOIN:PRCLUSDT,PRCLUSDT,Parcl / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPRCL,crypto/XTVCUSDT
+KUCOIN:PLANCKUSDT,PLANCKUSDT,Planck / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPLANCK,crypto/XTVCUSDT
+KUCOIN:GIZAUSDT,GIZAUSDT,Giza / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGIZA,crypto/XTVCUSDT
+KUCOIN:BOBUSDT,BOBUSDT,bob / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBOBBUIL,crypto/XTVCUSDT
+KUCOIN:EIGENUSDT,EIGENUSDT,Eigen / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCEIGEN,crypto/XTVCUSDT
+KUCOIN:RENDERUSDT,RENDERUSDT,Render Token / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCRNDR,crypto/XTVCUSDT
+KUCOIN:BERAUSDT,BERAUSDT,Berachain / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBERA,crypto/XTVCUSDT
+KUCOIN:GRASSUSDT,GRASSUSDT,Grass / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGRASS2,crypto/XTVCUSDT
+KUCOIN:DEFIUSDT,DEFIUSDT,De.Fi / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDEFI3,crypto/XTVCUSDT
+KUCOIN:SATSUSDT,SATSUSDT,SATS / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSATSO,crypto/XTVCUSDT
+KUCOIN:DPRUSDT,DPRUSDT,Deeper Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDPR,crypto/XTVCUSDT
+KUCOIN:XYOUSDT,XYOUSDT,XYO Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCXYO,crypto/XTVCUSDT
+KUCOIN:BTTUSDT,BTTUSDT,BitTorrent (New) / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCBTT,crypto/XTVCUSDT
+KUCOIN:RACAUSDT,RACAUSDT,Radio Caca / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRACARADIOCACA,crypto/XTVCUSDT
+KUCOIN:TROLLUSDT,TROLLUSDT,TROLL / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTROLLSO,crypto/XTVCUSDT
+KUCOIN:FOXYUSDT,FOXYUSDT,Foxy / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFOXYL,crypto/XTVCUSDT
+KUCOIN:XCHUSDT,XCHUSDT,Chia Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXCH,crypto/XTVCUSDT
+KUCOIN:CWEBUSDT,CWEBUSDT,Coinweb / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCWEB,crypto/XTVCUSDT
+KUCOIN:NYMUSDT,NYMUSDT,NYM / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCNYM,crypto/XTVCUSDT
+KUCOIN:PLUMEUSDT,PLUMEUSDT,Plume / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPLUME,crypto/XTVCUSDT
+KUCOIN:MELANIAUSDT,MELANIAUSDT,Melania Meme / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMELANIAO,crypto/XTVCUSDT
+KUCOIN:EGLDUSDT,EGLDUSDT,MultiversX / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCEGLD,crypto/XTVCUSDT
+KUCOIN:STBLUSDT,STBLUSDT,STBL / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSTBL,crypto/XTVCUSDT
+KUCOIN:XMRETH,XMRETH,Monero / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCXMR,crypto/XTVCETH
+KUCOIN:LINEAUSDT,LINEAUSDT,Linea / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLINEA,crypto/XTVCUSDT
+KUCOIN:PHAUSDT,PHAUSDT,Phala / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPHA,crypto/XTVCUSDT
+KUCOIN:SAROSUSDT,SAROSUSDT,Saros / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSAROS,crypto/XTVCUSDT
+KUCOIN:ZKPUSDT,ZKPUSDT,zkPass / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:TOSHIUSDT,TOSHIUSDT,Toshi / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTOSHI3,crypto/XTVCUSDT
+KUCOIN:SLPUSDT,SLPUSDT,Smooth Love Potion / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSLP,crypto/XTVCUSDT
+KUCOIN:MAVIAUSDT,MAVIAUSDT,Heroes of Mavia / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMAVIA,crypto/XTVCUSDT
+KUCOIN:ALUUSDT,ALUUSDT,Altura / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCALU,crypto/XTVCUSDT
+KUCOIN:APEUSDT,APEUSDT,ApeCoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAPE,crypto/XTVCUSDT
+KUCOIN:SOULUSDT,SOULUSDT,Phantasma / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSOUL,crypto/XTVCUSDT
+KUCOIN:ZENUSDT,ZENUSDT,Horizen / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCZEN,crypto/XTVCUSDT
+KUCOIN:DCUSDT,DCUSDT,Dogechain / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDCD,crypto/XTVCUSDT
+KUCOIN:IOTAUSDT,IOTAUSDT,IOTA / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCIOTA,crypto/XTVCUSDT
+KUCOIN:STXUSDT,STXUSDT,Stacks / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSTXS,crypto/XTVCUSDT
+KUCOIN:LYNUSDT,LYNUSDT,Everlyn AI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLYN,crypto/XTVCUSDT
+KUCOIN:GHXUSDT,GHXUSDT,GamerCoin / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCGHX,crypto/XTVCUSDT
+KUCOIN:RIOUSDT,RIOUSDT,Realio Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRIO,crypto/XTVCUSDT
+KUCOIN:BEPROUSDT,BEPROUSDT,BEPRO Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBEPRO,crypto/XTVCUSDT
+KUCOIN:ETCUSDT,ETCUSDT,Ethereum Classic / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCETC,crypto/XTVCUSDT
+KUCOIN:DEGENUSDT,DEGENUSDT,Degen / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDEGEN4,crypto/XTVCUSDT
+KUCOIN:BABYDOGEUSDT,BABYDOGEUSDT,Baby Doge Coin / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCBABYDOGE,crypto/XTVCUSDT
+KUCOIN:CLOUDUSDT,CLOUDUSDT,Cloud / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCLOUDS,crypto/XTVCUSDT
+KUCOIN:SHRUSDT,SHRUSDT,ShareRing / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSHR,crypto/XTVCUSDT
+KUCOIN:WUSDT,WUSDT,Wormhole / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCW,crypto/XTVCUSDT
+KUCOIN:1INCHUSDT,1INCHUSDT,1INCH Token / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVC1INCH,crypto/XTVCUSDT
+KUCOIN:BMXUSDT,BMXUSDT,BitMart Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBMX,crypto/XTVCUSDT
+KUCOIN:WLFIUSDT,WLFIUSDT,World Liberty Financial / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWLFIO,crypto/XTVCUSDT
+KUCOIN:MOVRUSDT,MOVRUSDT,Moonriver / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMOVR,crypto/XTVCUSDT
+KUCOIN:MANUSDT,MANUSDT,Matrix AI Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCMAN,crypto/XTVCUSDT
+KUCOIN:TELBTC,TELBTC,Telcoin / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCTEL,crypto/XTVCBTC
+KUCOIN:CLANKERUSDT,CLANKERUSDT,tokenbot / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCLANKER,crypto/XTVCUSDT
+KUCOIN:TRUTHUSDT,TRUTHUSDT,Swarm Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTRUTHSW,crypto/XTVCUSDT
+KUCOIN:WALUSDT,WALUSDT,WALRUS / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWALR,crypto/XTVCUSDT
+KUCOIN:FITFIUSDT,FITFIUSDT,Step App / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCFITFI,crypto/XTVCUSDT
+KUCOIN:CELOUSDT,CELOUSDT,Celo / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCELO,crypto/XTVCUSDT
+KUCOIN:GRIFFAINUSDT,GRIFFAINUSDT,test griffain.com / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGRIFFAIN,crypto/XTVCUSDT
+KUCOIN:XMNUSDT,XMNUSDT,xMoney / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXMN,crypto/XTVCUSDT
+KUCOIN:ISPUSDT,ISPUSDT,Ispolink Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCISP,crypto/XTVCUSDT
+KUCOIN:COMMONUSDT,COMMONUSDT,Common / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCOMMON,crypto/XTVCUSDT
+KUCOIN:DGBUSDT,DGBUSDT,Digibyte / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDGB,crypto/XTVCUSDT
+KUCOIN:GLMRUSDT,GLMRUSDT,Glimmer / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGLMR,crypto/XTVCUSDT
+KUCOIN:SFUNDUSDT,SFUNDUSDT,Seedify.fund / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSFUND,crypto/XTVCUSDT
+KUCOIN:TRACBTC,TRACBTC,OriginTrail / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCTRAC,crypto/XTVCBTC
+KUCOIN:REEFUSDT,REEFUSDT,Reef / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCREEF,crypto/XTVCUSDT
+KUCOIN:BELIEVEUSDT,BELIEVEUSDT,Believe / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:UBUSDT,UBUSDT,Unibase / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUBUN,crypto/XTVCUSDT
+KUCOIN:ENSOUSDT,ENSOUSDT,Enso / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCENSO,crypto/XTVCUSDT
+KUCOIN:XPRTUSDT,XPRTUSDT,Persistence / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCXPRT,crypto/XTVCUSDT
+KUCOIN:RAYUSDT,RAYUSDT,Raydium / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCRAY,crypto/XTVCUSDT
+KUCOIN:DCRUSDT,DCRUSDT,Decred / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDCR,crypto/XTVCUSDT
+KUCOIN:MORPHOUSDT,MORPHOUSDT,Morpho / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCMORPHO,crypto/XTVCUSDT
+KUCOIN:PAWSUSDT,PAWSUSDT,PAWS / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPAWS2,crypto/XTVCUSDT
+KUCOIN:HIPPOUSDT,HIPPOUSDT,sudeng / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHIPPOS,crypto/XTVCUSDT
+KUCOIN:KLVUSDT,KLVUSDT,Klever / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKLV,crypto/XTVCUSDT
+KUCOIN:XAVAUSDT,XAVAUSDT,Avalaunch / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXAVA,crypto/XTVCUSDT
+KUCOIN:EGOUSDT,EGOUSDT,Paysenger EGO / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCEGO,crypto/XTVCUSDT
+KUCOIN:IOUSDT,IOUSDT,IO.NET / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCIONE,crypto/XTVCUSDT
+KUCOIN:GWEIUSDT,GWEIUSDT,ETHGas / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCGWEI,crypto/XTVCUSDT
+KUCOIN:MANAUSDT,MANAUSDT,Decentraland / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMANA,crypto/XTVCUSDT
+KUCOIN:SPACEUSDT,SPACEUSDT,Spacecoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:PAXGBTC,PAXGBTC,PAX Gold / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCPAXG,crypto/XTVCBTC
+KUCOIN:ALKIMIUSDT,ALKIMIUSDT,ALKIMI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCALKIMI,crypto/XTVCUSDT
+KUCOIN:GMRXUSDT,GMRXUSDT,Gaimin / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCGMRX,crypto/XTVCUSDT
+KUCOIN:IKAUSDT,IKAUSDT,Ika / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCIKA,crypto/XTVCUSDT
+KUCOIN:LMWRUSDT,LMWRUSDT,LimeWire / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLMWR,crypto/XTVCUSDT
+KUCOIN:MOBILEUSDT,MOBILEUSDT,Helium Mobile / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMOBILE,crypto/XTVCUSDT
+KUCOIN:TOWERUSDT,TOWERUSDT,TOWER / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTOWER,crypto/XTVCUSDT
+KUCOIN:XENUSDT,XENUSDT,XEN Crypto / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXEN,crypto/XTVCUSDT
+KUCOIN:C98USDT,C98USDT,Coin98 / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCC98,crypto/XTVCUSDT
+KUCOIN:EULUSDT,EULUSDT,Euler / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCEUL,crypto/XTVCUSDT
+KUCOIN:ORDIUSDT,ORDIUSDT,Ordinals / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCORDI,crypto/XTVCUSDT
+KUCOIN:JELLYJELLYUSDT,JELLYJELLYUSDT,jelly my jelly / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCJELLYJELLY,crypto/XTVCUSDT
+KUCOIN:AGTUSDT,AGTUSDT,Alaya Governance Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAGTAL,crypto/XTVCUSDT
+KUCOIN:AINUSDT,AINUSDT,Infinity Ground / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAINI,crypto/XTVCUSDT
+KUCOIN:FLOWUSDT,FLOWUSDT,Flow / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFLOW,crypto/XTVCUSDT
+KUCOIN:WETUSDT,WETUSDT,HumidiFi / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWETHU,crypto/XTVCUSDT
+KUCOIN:AIOUSDT,AIOUSDT,OlaXBT / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAIO,crypto/XTVCUSDT
+KUCOIN:ILVUSDT,ILVUSDT,Illuvium / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCILV,crypto/XTVCUSDT
+KUCOIN:XNYUSDT,XNYUSDT,Codatta / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXNY,crypto/XTVCUSDT
+KUCOIN:ETNUSDT,ETNUSDT,Electroneum / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCETN,crypto/XTVCUSDT
+KUCOIN:USTCUSDT,USTCUSDT,Terra Classic USD / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUSTC,crypto/XTVCUSDT
+KUCOIN:XTZUSDT,XTZUSDT,Tezos / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXTZ,crypto/XTVCUSDT
+KUCOIN:AVNTUSDT,AVNTUSDT,Avantis / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCAVNT,crypto/XTVCUSDT
+KUCOIN:KITEUSDT,KITEUSDT,Kite / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKITE,crypto/XTVCUSDT
+KUCOIN:RATSUSDT,RATSUSDT,Rats / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRATS2,crypto/XTVCUSDT
+KUCOIN:TREATUSDT,TREATUSDT,Shiba Inu Treat / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTREAT3,crypto/XTVCUSDT
+KUCOIN:BLZUSDT,BLZUSDT,Bluzelle / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCBLZ,crypto/XTVCUSDT
+KUCOIN:DAOUSDT,DAOUSDT,DAO Maker / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCDAO,crypto/XTVCUSDT
+KUCOIN:FLAMEUSDT,FLAMEUSDT,FireStarter / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFLAME,crypto/XTVCUSDT
+KUCOIN:XCADUSDT,XCADUSDT,XCAD Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXCAD,crypto/XTVCUSDT
+KUCOIN:ACSUSDT,ACSUSDT,Access Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCACSA,crypto/XTVCUSDT
+KUCOIN:GSTUSDT,GSTUSDT,Green Satoshi Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGSTG,crypto/XTVCUSDT
+KUCOIN:POPCATUSDT,POPCATUSDT,POPCAT / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPOPCAT2,crypto/XTVCUSDT
+KUCOIN:RSRUSDT,RSRUSDT,Reserve Rights / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCRSR,crypto/XTVCUSDT
+KUCOIN:SWARMSUSDT,SWARMSUSDT,swarms / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSWARMS,crypto/XTVCUSDT
+KUCOIN:ANIMEUSDT,ANIMEUSDT,Animecoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCANIMEC,crypto/XTVCUSDT
+KUCOIN:SOLUSDC,SOLUSDC,Solana / USD Coin,KuCoin,spot,USDC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSOL,crypto/XTVCUSDC
+KUCOIN:XRPUSDC,XRPUSDC,Ripple / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCXRP,crypto/XTVCUSDC
+KUCOIN:DRIFTUSDT,DRIFTUSDT,Drift Protocol / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCDRIFT,crypto/XTVCUSDT
+KUCOIN:ADABTC,ADABTC,Cardano / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCADA,crypto/XTVCBTC
+KUCOIN:PLAYUSDT,PLAYUSDT,PlaysOut / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPLAYSO,crypto/XTVCUSDT
+KUCOIN:CXTUSDT,CXTUSDT,Covalent X Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCXTCO,crypto/XTVCUSDT
+KUCOIN:ACQUSDT,ACQUSDT,Acquire.Fi / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCACQ,crypto/XTVCUSDT
+KUCOIN:CVXUSDT,CVXUSDT,Convex Finance / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCVXCONVEXFINANCE,crypto/XTVCUSDT
+KUCOIN:STORJUSDT,STORJUSDT,Storj / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSTORJ,crypto/XTVCUSDT
+KUCOIN:BASUSDT,BASUSDT,BNB Attestation Service / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBASBN,crypto/XTVCUSDT
+KUCOIN:JCTUSDT,JCTUSDT,JANCTION / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCJCT,crypto/XTVCUSDT
+KUCOIN:NIMUSDT,NIMUSDT,Nimiq / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNIM,crypto/XTVCUSDT
+KUCOIN:SCRTUSDT,SCRTUSDT,Secret / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSCRT,crypto/XTVCUSDT
+KUCOIN:TRADEUSDT,TRADEUSDT,Polytrade / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTRADEP,crypto/XTVCUSDT
+KUCOIN:AKEUSDT,AKEUSDT,AKEDO / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAKE,crypto/XTVCUSDT
+KUCOIN:LMTSUSDT,LMTSUSDT,Limitless Official Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLMTS,crypto/XTVCUSDT
+KUCOIN:SYNUSDT,SYNUSDT,Synapse / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSYNSYNAPSE,crypto/XTVCUSDT
+KUCOIN:TLOSUSDT,TLOSUSDT,Telos / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTLOS,crypto/XTVCUSDT
+KUCOIN:CETUSUSDT,CETUSUSDT,Cetus Protocol / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCETUS,crypto/XTVCUSDT
+KUCOIN:VVVUSDT,VVVUSDT,Venice Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCVVV,crypto/XTVCUSDT
+KUCOIN:REACTUSDT,REACTUSDT,Reactive Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCREACT,crypto/XTVCUSDT
+KUCOIN:TWTUSDT,TWTUSDT,Trust Wallet Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTWT,crypto/XTVCUSDT
+KUCOIN:MPCUSDT,MPCUSDT,Partisia Blockchain / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMPCP,crypto/XTVCUSDT
+KUCOIN:BLASTUSDT,BLASTUSDT,Blast / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBLAST2,crypto/XTVCUSDT
+KUCOIN:DMCUSDT,DMCUSDT,Delorean Labs / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDMCDE,crypto/XTVCUSDT
+KUCOIN:HBARBTC,HBARBTC,Hedera Hashgraph / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCHBAR,crypto/XTVCBTC
+KUCOIN:PENDLEUSDT,PENDLEUSDT,Pendle / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCPENDLEPENDLE,crypto/XTVCUSDT
+KUCOIN:RAINUSDT,RAINUSDT,RAIN / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRAIN2,crypto/XTVCUSDT
+KUCOIN:SENTUSDT,SENTUSDT,Sentient / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:GMTUSDT,GMTUSDT,STEPN / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGMTSTEPN,crypto/XTVCUSDT
+KUCOIN:LABUSDT,LABUSDT,LAB / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLAB2,crypto/XTVCUSDT
+KUCOIN:SHIBDOGE,SHIBDOGE,SHIBA INU / Dogecoin,KuCoin,spot,DOGE,crypto,kucoin,KUCOIN,,,crypto/XTVCSHIB,crypto/XTVCDOGE
+KUCOIN:NEOUSDT,NEOUSDT,NEO / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCNEO,crypto/XTVCUSDT
+KUCOIN:PINGPONGUSDT,PINGPONGUSDT,PINGPONG / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPINGPONG,crypto/XTVCUSDT
+KUCOIN:ASTRUSDT,ASTRUSDT,Astar Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCASTR,crypto/XTVCUSDT
+KUCOIN:BLUAIUSDT,BLUAIUSDT,BluWhale / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBLUAI,crypto/XTVCUSDT
+KUCOIN:BLURUSDT,BLURUSDT,Blur / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBLUR,crypto/XTVCUSDT
+KUCOIN:DYMUSDT,DYMUSDT,Dymension / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDYM,crypto/XTVCUSDT
+KUCOIN:PLUUSDT,PLUUSDT,Pluton / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPLU,crypto/XTVCUSDT
+KUCOIN:ZBTUSDT,ZBTUSDT,ZEROBASE / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCZBTZ,crypto/XTVCUSDT
+KUCOIN:ZEREBROUSDT,ZEREBROUSDT,zerebro / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCZEREBRO,crypto/XTVCUSDT
+KUCOIN:SDUSDT,SDUSDT,Stader / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSDSTADER,crypto/XTVCUSDT
+KUCOIN:COOKIEUSDT,COOKIEUSDT,Cookie DAO / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCOOKIE2,crypto/XTVCUSDT
+KUCOIN:INITUSDT,INITUSDT,Initia / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCINIT,crypto/XTVCUSDT
+KUCOIN:LRDSUSDT,LRDSUSDT,BLOCKLORDS / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLRDSB,crypto/XTVCUSDT
+KUCOIN:TELETH,TELETH,Telcoin / Ethereum,KuCoin,spot,ETH,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCTEL,crypto/XTVCETH
+KUCOIN:JTOUSDT,JTOUSDT,Jito / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCJTO,crypto/XTVCUSDT
+KUCOIN:RSRBTC,RSRBTC,Reserve Rights / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCRSR,crypto/XTVCBTC
+KUCOIN:OTKUSDT,OTKUSDT,Octo Gaming / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCOTK,crypto/XTVCUSDT
+KUCOIN:DCKUSDT,DCKUSDT,DexCheck / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCDCK,crypto/XTVCUSDT
+KUCOIN:FLIPUSDT,FLIPUSDT,Chainflip / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCFLIP,crypto/XTVCUSDT
+KUCOIN:HMSTRUSDT,HMSTRUSDT,Hamster Kombat / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHMSTR,crypto/XTVCUSDT
+KUCOIN:MTVUSDT,MTVUSDT,MultiVAC / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCMTV,crypto/XTVCUSDT
+KUCOIN:RWAUSDT,RWAUSDT,RWA Inc / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRWAI,crypto/XTVCUSDT
+KUCOIN:SKEYUSDT,SKEYUSDT,SmartKey / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSKEY,crypto/XTVCUSDT
+KUCOIN:BEFIUSDT,BEFIUSDT,Befi Labs / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCBEFI,crypto/XTVCUSDT
+KUCOIN:XMRUSDC,XMRUSDC,Monero / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCXMR,crypto/XTVCUSDC
+KUCOIN:ZPAYUSDT,ZPAYUSDT,ZoidPay / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCZPAY,crypto/XTVCUSDT
+KUCOIN:GASUSDT,GASUSDT,NeoGas / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCGAS,crypto/XTVCUSDT
+KUCOIN:SIRENUSDT,SIRENUSDT,SIREN / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSIREN,crypto/XTVCUSDT
+KUCOIN:B2USDT,B2USDT,BSquared Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCB2,crypto/XTVCUSDT
+KUCOIN:CWSUSDT,CWSUSDT,Crowns / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCWS,crypto/XTVCUSDT
+KUCOIN:TRUMPUSDT,TRUMPUSDT,OFFICIAL TRUMP / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTRUMPOF,crypto/XTVCUSDT
+KUCOIN:KCSBTC,KCSBTC,KuCoin Token / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCKCS,crypto/XTVCBTC
+KUCOIN:NOTAIUSDT,NOTAIUSDT,NOTAI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNOTAI,crypto/XTVCUSDT
+KUCOIN:BERTUSDT,BERTUSDT,Bertram The Pomeranian / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBERTR,crypto/XTVCUSDT
+KUCOIN:ETHUSDC,ETHUSDC,Ethereum / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCETH,crypto/XTVCUSDC
+KUCOIN:SLCUSDT,SLCUSDT,Silencio / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSLCS,crypto/XTVCUSDT
+KUCOIN:COMPUSDT,COMPUSDT,Compound / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCOMP,crypto/XTVCUSDT
+KUCOIN:FUSDT,FUSDT,SynFutures / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCF,crypto/XTVCUSDT
+KUCOIN:TRBUSDT,TRBUSDT,Tellor / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCTRB,crypto/XTVCUSDT
+KUCOIN:BRISEUSDT,BRISEUSDT,Bitgert / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBRISE,crypto/XTVCUSDT
+KUCOIN:DUSDT,DUSDT,DAR Open Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDA,crypto/XTVCUSDT
+KUCOIN:KAVAUSDT,KAVAUSDT,KAVA / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKAVA,crypto/XTVCUSDT
+KUCOIN:MANTAUSDT,MANTAUSDT,Manta Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMANTA,crypto/XTVCUSDT
+KUCOIN:VOOIUSDT,VOOIUSDT,VOOI / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,,
+KUCOIN:DOGSUSDT,DOGSUSDT,DOGS / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDOGS2,crypto/XTVCUSDT
+KUCOIN:NWCUSDT,NWCUSDT,Numerico / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNWC,crypto/XTVCUSDT
+KUCOIN:PEPE2USDT,PEPE2USDT,Pepe 2.0 / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPEPE20,crypto/XTVCUSDT
+KUCOIN:VOLTUSDT,VOLTUSDT,Volt Inu / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCVOLT,crypto/XTVCUSDT
+KUCOIN:NOMUSDT,NOMUSDT,Nomina / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNOMI,crypto/XTVCUSDT
+KUCOIN:ZETAUSDT,ZETAUSDT,ZetaChain / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCZETAC,crypto/XTVCUSDT
+KUCOIN:ACHUSDT,ACHUSDT,Alchemy Pay / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCACH,crypto/XTVCUSDT
+KUCOIN:DOLOUSDT,DOLOUSDT,Dolomite / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCDOLO,crypto/XTVCUSDT
+KUCOIN:GMEEUSDT,GMEEUSDT,GAMEE / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGMEE,crypto/XTVCUSDT
+KUCOIN:LIKEUSDT,LIKEUSDT,Only1 / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLIKEONLYONE,crypto/XTVCUSDT
+KUCOIN:ACUUSDT,ACUUSDT,Acurast / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:AITECHUSDT,AITECHUSDT,Solidus Ai Tech / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAITECH,crypto/XTVCUSDT
+KUCOIN:MAGICUSDT,MAGICUSDT,MAGIC / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMAGICMAGIC,crypto/XTVCUSDT
+KUCOIN:MINAUSDT,MINAUSDT,Mina / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCMINA,crypto/XTVCUSDT
+KUCOIN:VELVETUSDT,VELVETUSDT,Velvet / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCVELVET,crypto/XTVCUSDT
+KUCOIN:AUCTIONUSDT,AUCTIONUSDT,Bounce Finance / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCAUCTION,crypto/XTVCUSDT
+KUCOIN:MORIUSDT,MORIUSDT,Mori Coin (MORI) / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMORIC,crypto/XTVCUSDT
+KUCOIN:SONICUSDT,SONICUSDT,Sonic SVM / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSONICSV,crypto/XTVCUSDT
+KUCOIN:XPLUSDT,XPLUSDT,Plasma / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXPL,crypto/XTVCUSDT
+KUCOIN:AURORAUSDT,AURORAUSDT,AURORA / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAURORA,crypto/XTVCUSDT
+KUCOIN:CHRUSDT,CHRUSDT,Chromia / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCHR,crypto/XTVCUSDT
+KUCOIN:SOPHUSDT,SOPHUSDT,Sophon / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSOPHO,crypto/XTVCUSDT
+KUCOIN:BALUSDT,BALUSDT,Balancer / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCBAL,crypto/XTVCUSDT
+KUCOIN:QORPOUSDT,QORPOUSDT,QORPO World / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCQORPO,crypto/XTVCUSDT
+KUCOIN:TURBOUSDT,TURBOUSDT,Turbo / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTURBO,crypto/XTVCUSDT
+KUCOIN:XEMUSDT,XEMUSDT,NEM / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCXEM,crypto/XTVCUSDT
+KUCOIN:AIXBTUSDT,AIXBTUSDT,aixbt by Virtuals / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAIXBT,crypto/XTVCUSDT
+KUCOIN:CHEEMSUSDT,CHEEMSUSDT,Cheems / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCHEEMSC,crypto/XTVCUSDT
+KUCOIN:GARIUSDT,GARIUSDT,Gari Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGARI,crypto/XTVCUSDT
+KUCOIN:SXTUSDT,SXTUSDT,Space and Time / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSXT,crypto/XTVCUSDT
+KUCOIN:TENUSDT,TENUSDT,Ten Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTENP,crypto/XTVCUSDT
+KUCOIN:UPOUSDT,UPOUSDT,UpOnly / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUPO,crypto/XTVCUSDT
+KUCOIN:XNOUSDT,XNOUSDT,Nano / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXNON,crypto/XTVCUSDT
+KUCOIN:CSIXUSDT,CSIXUSDT,Carbon / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCSIX,crypto/XTVCUSDT
+KUCOIN:KONGUSDT,KONGUSDT,CyberKongz / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:NAMUSDT,NAMUSDT,namada / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:ROUTEUSDT,ROUTEUSDT,Route / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCROUTE,crypto/XTVCUSDT
+KUCOIN:TRUSTUSDT,TRUSTUSDT,Intuition / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTRUSTI,crypto/XTVCUSDT
+KUCOIN:0GUSDT,0GUSDT,0g / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVC0G,crypto/XTVCUSDT
+KUCOIN:BATUSDT,BATUSDT,BAT / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCBAT,crypto/XTVCUSDT
+KUCOIN:IAGUSDT,IAGUSDT,IAGON / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCIAG,crypto/XTVCUSDT
+KUCOIN:RECALLUSDT,RECALLUSDT,Recall / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRECALL,crypto/XTVCUSDT
+KUCOIN:WINUSDT,WINUSDT,WINk / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCWIN,crypto/XTVCUSDT
+KUCOIN:YGGUSDT,YGGUSDT,Yield Guild Games / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCYGG,crypto/XTVCUSDT
+KUCOIN:GAMEAIUSDT,GAMEAIUSDT,GAME by Virtuals / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGAMEBY,crypto/XTVCUSDT
+KUCOIN:MEMEFIUSDT,MEMEFIUSDT,MEMEFI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMEMEFI2,crypto/XTVCUSDT
+KUCOIN:SFIUSDT,SFIUSDT,Singularity Finance / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSFISI,crypto/XTVCUSDT
+KUCOIN:SQDUSDT,SQDUSDT,Subsquid / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSQD,crypto/XTVCUSDT
+KUCOIN:TWTBTC,TWTBTC,Trust Wallet Token / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCTWT,crypto/XTVCBTC
+KUCOIN:WEMIXUSDT,WEMIXUSDT,Wemix / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWEMIX,crypto/XTVCUSDT
+KUCOIN:KIMAUSDT,KIMAUSDT,KIMA / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKIMA,crypto/XTVCUSDT
+KUCOIN:OBIUSDT,OBIUSDT,Orbofi AI / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCOBI,crypto/XTVCUSDT
+KUCOIN:BIRBUSDT,BIRBUSDT,Moonbirds / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:SEEDUSDT,SEEDUSDT,SEED / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSEED2,crypto/XTVCUSDT
+KUCOIN:EPTUSDT,EPTUSDT,Balance / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCEPT,crypto/XTVCUSDT
+KUCOIN:ESUSDT,ESUSDT,Eclipse / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCESEC,crypto/XTVCUSDT
+KUCOIN:TRVLUSDT,TRVLUSDT,Dtravel / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTRVL,crypto/XTVCUSDT
+KUCOIN:ORDERUSDT,ORDERUSDT,Orderly Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCORDER,crypto/XTVCUSDT
+KUCOIN:PINUSDT,PINUSDT,PinLink / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPINL,crypto/XTVCUSDT
+KUCOIN:QIUSDT,QIUSDT,BENQI / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCQIBENQI,crypto/XTVCUSDT
+KUCOIN:TURBOSUSDT,TURBOSUSDT,Turbos Finance / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTURBOS,crypto/XTVCUSDT
+KUCOIN:CYPRUSDT,CYPRUSDT,Cypher / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCYPR,crypto/XTVCUSDT
+KUCOIN:USUSDT,USUSDT,Talus Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUS,crypto/XTVCUSDT
+KUCOIN:ECHOUSDT,ECHOUSDT,Echo / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCECHOP,crypto/XTVCUSDT
+KUCOIN:URANUSUSDT,URANUSUSDT,Uranus / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCURANUS,crypto/XTVCUSDT
+KUCOIN:ZIGUSDT,ZIGUSDT,ZigCoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCZIG,crypto/XTVCUSDT
+KUCOIN:ENJUSDT,ENJUSDT,Enjin Coin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCENJ,crypto/XTVCUSDT
+KUCOIN:VSNUSDT,VSNUSDT,Vision / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCVSN,crypto/XTVCUSDT
+KUCOIN:BABYUSDT,BABYUSDT,Babylon / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBABYL,crypto/XTVCUSDT
+KUCOIN:BANANAUSDT,BANANAUSDT,Banana / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBANANAG,crypto/XTVCUSDT
+KUCOIN:GOATUSDT,GOATUSDT,Goatseus Maximus / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGOATSE,crypto/XTVCUSDT
+KUCOIN:LOFIUSDT,LOFIUSDT,LOFI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLOFI2,crypto/XTVCUSDT
+KUCOIN:SKRUSDT,SKRUSDT,Seeker / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:CKBUSDT,CKBUSDT,Nervos Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCKB,crypto/XTVCUSDT
+KUCOIN:HAIUSDT,HAIUSDT,Hacken Token / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCHAI,crypto/XTVCUSDT
+KUCOIN:ARCSOLUSDT,ARCSOLUSDT,AI Rig Complex / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCARCAIR,crypto/XTVCUSDT
+KUCOIN:CROSSUSDT,CROSSUSDT,Cross / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCROSS,crypto/XTVCUSDT
+KUCOIN:OFNUSDT,OFNUSDT,Openfabric AI / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCOFN,crypto/XTVCUSDT
+KUCOIN:STGUSDT,STGUSDT,Stargate Finance / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSTG,crypto/XTVCUSDT
+KUCOIN:LRCUSDT,LRCUSDT,LoopringCoin V2 / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLRC,crypto/XTVCUSDT
+KUCOIN:MOCAUSDT,MOCAUSDT,Moca Coin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMOCAV,crypto/XTVCUSDT
+KUCOIN:RUNWAGOUSDT,RUNWAGOUSDT,Runwago / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRUNWAGO,crypto/XTVCUSDT
+KUCOIN:SXPUSDT,SXPUSDT,Solar / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSXP,crypto/XTVCUSDT
+KUCOIN:NUMIUSDT,NUMIUSDT,NUMINE Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNUMIN,crypto/XTVCUSDT
+KUCOIN:U2UUSDT,U2UUSDT,U2U Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCU2U,crypto/XTVCUSDT
+KUCOIN:AWEUSDT,AWEUSDT,AWE Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCAWE,crypto/XTVCUSDT
+KUCOIN:ELAUSDT,ELAUSDT,Elastos / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCELA,crypto/XTVCUSDT
+KUCOIN:PIGGYUSDT,PIGGYUSDT,Piggycell / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPIGGYC,crypto/XTVCUSDT
+KUCOIN:SYNTUSDT,SYNTUSDT,Synternet Token / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSYNT,crypto/XTVCUSDT
+KUCOIN:BITUSDT,BITUSDT,Bitdealer / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBITDE,crypto/XTVCUSDT
+KUCOIN:DIAUSDT,DIAUSDT,DIA / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCDIA,crypto/XTVCUSDT
+KUCOIN:GODSUSDT,GODSUSDT,Gods Unchained / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGODS,crypto/XTVCUSDT
+KUCOIN:NFTUSDT,NFTUSDT,AINFT / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNFTAPENFT,crypto/XTVCUSDT
+KUCOIN:YFIUSDT,YFIUSDT,yearn.finance / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCYFI,crypto/XTVCUSDT
+KUCOIN:FIGHTUSDT,FIGHTUSDT,Fight / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:ISLANDUSDT,ISLANDUSDT,ISLAND Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCISLAND,crypto/XTVCUSDT
+KUCOIN:NMRUSDT,NMRUSDT,Numeraire / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCNMR,crypto/XTVCUSDT
+KUCOIN:DSYNCUSDT,DSYNCUSDT,Destra Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDSYNC,crypto/XTVCUSDT
+KUCOIN:OPENUSDT,OPENUSDT,Open / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCOPENL,crypto/XTVCUSDT
+KUCOIN:POLSUSDT,POLSUSDT,Polkastarter / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCPOLS,crypto/XTVCUSDT
+KUCOIN:SWEATUSDT,SWEATUSDT,Sweat Economy / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSWEAT,crypto/XTVCUSDT
+KUCOIN:TAOUSDC,TAOUSDC,Bittensor / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCTAOB,crypto/XTVCUSDC
+KUCOIN:BTGUSDT,BTGUSDT,Bitgold / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBTGO,crypto/XTVCUSDT
+KUCOIN:IDUSDT,IDUSDT,SPACE ID / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCID,crypto/XTVCUSDT
+KUCOIN:LVVAUSDT,LVVAUSDT,Levva Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLVVA,crypto/XTVCUSDT
+KUCOIN:AVAUSDT,AVAUSDT,AVA / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAVA,crypto/XTVCUSDT
+KUCOIN:BAXUSDT,BAXUSDT,BABB / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBAX,crypto/XTVCUSDT
+KUCOIN:CHILLGUYUSDT,CHILLGUYUSDT,Just a chill guy / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCHILLGUY,crypto/XTVCUSDT
+KUCOIN:CHOUSDT,CHOUSDT,choise.com Token / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCHO,crypto/XTVCUSDT
+KUCOIN:SOONUSDT,SOONUSDT,SOON Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSOON2,crypto/XTVCUSDT
+KUCOIN:VANRYUSDT,VANRYUSDT,VANRY / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCVANRY,crypto/XTVCUSDT
+KUCOIN:CAMPUSDT,CAMPUSDT,Camp Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCAMPN,crypto/XTVCUSDT
+KUCOIN:CTAUSDT,CTAUSDT,Cross The Ages / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCTAC,crypto/XTVCUSDT
+KUCOIN:EWTBTC,EWTBTC,Energy Web Token / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCEWT,crypto/XTVCBTC
+KUCOIN:KARRATUSDT,KARRATUSDT,KarratCoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKARRAT,crypto/XTVCUSDT
+KUCOIN:SNEKUSDT,SNEKUSDT,Snek / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSNEK,crypto/XTVCUSDT
+KUCOIN:UUSDT,UUSDT,Union / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUNION,crypto/XTVCUSDT
+KUCOIN:MARS4USDT,MARS4USDT,MARS4 / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMARS4,crypto/XTVCUSDT
+KUCOIN:ICNTUSDT,ICNTUSDT,Impossible Cloud Network Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCICNT,crypto/XTVCUSDT
+KUCOIN:SPAUSDT,SPAUSDT,Sperax / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSPA,crypto/XTVCUSDT
+KUCOIN:TGTUSDT,TGTUSDT,Tokyo Games Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTGTO,crypto/XTVCUSDT
+KUCOIN:BIGTIMEUSDT,BIGTIMEUSDT,Big Time / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBIGTIME,crypto/XTVCUSDT
+KUCOIN:CEREUSDT,CEREUSDT,Cere Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCERE,crypto/XTVCUSDT
+KUCOIN:NAVXUSDT,NAVXUSDT,NAVI Protocol / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCNAVX,crypto/XTVCUSDT
+KUCOIN:PIPEUSDT,PIPEUSDT,Pipe Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPIPEN,crypto/XTVCUSDT
+KUCOIN:SOMIUSDT,SOMIUSDT,Somnia / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSOMI,crypto/XTVCUSDT
+KUCOIN:ARBTC,ARBTC,Arweave / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCAR,crypto/XTVCBTC
+KUCOIN:FORTUSDT,FORTUSDT,Forta / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFORT,crypto/XTVCUSDT
+KUCOIN:HUMAUSDT,HUMAUSDT,Huma Finance / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCHUMA,crypto/XTVCUSDT
+KUCOIN:L3USDT,L3USDT,Layer3 / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCL3L,crypto/XTVCUSDT
+KUCOIN:LOGXUSDT,LOGXUSDT,LogX Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCLOGX,crypto/XTVCUSDT
+KUCOIN:MAIGAUSDT,MAIGAUSDT,MAIGA Token / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCMAIGA,crypto/XTVCUSDT
+KUCOIN:QKCUSDT,QKCUSDT,QuarkChain / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCQKC,crypto/XTVCUSDT
+KUCOIN:SCORUSDT,SCORUSDT,Scor / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:ARPAUSDT,ARPAUSDT,ARPA Token / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCARPA,crypto/XTVCUSDT
+KUCOIN:DATAUSDT,DATAUSDT,Streamr / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDATA,crypto/XTVCUSDT
+KUCOIN:MAJORUSDT,MAJORUSDT,Major / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMAJOR2,crypto/XTVCUSDT
+KUCOIN:SAPIENUSDT,SAPIENUSDT,Sapien / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSAPIEN,crypto/XTVCUSDT
+KUCOIN:TRUFUSDT,TRUFUSDT,TRUF.Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTRUF,crypto/XTVCUSDT
+KUCOIN:AVAILUSDT,AVAILUSDT,AVAIL / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCAVAIL,crypto/XTVCUSDT
+KUCOIN:BRUSDT,BRUSDT,Bedrock / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBRBE,crypto/XTVCUSDT
+KUCOIN:BTCEUR,BTCEUR,Bitcoin / Euro,KuCoin,spot,EUR,crypto,kucoin,KUCOIN,,,crypto/XTVCBTC,country/EU
+KUCOIN:DMAILUSDT,DMAILUSDT,Dmail Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDMAIL,crypto/XTVCUSDT
+KUCOIN:MOVEUSDT,MOVEUSDT,Movement / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMOVEM,crypto/XTVCUSDT
+KUCOIN:PIXELUSDT,PIXELUSDT,Pixels / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPIXELS,crypto/XTVCUSDT
+KUCOIN:ZECBTC,ZECBTC,ZEC / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCZEC,crypto/XTVCBTC
+KUCOIN:AMPUSDT,AMPUSDT,Amp / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAMP2,crypto/XTVCUSDT
+KUCOIN:BOSUSDT,BOSUSDT,BitcoinOS / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBOSB,crypto/XTVCUSDT
+KUCOIN:GIGGLEUSDT,GIGGLEUSDT,Giggle Fund / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGIGGLEF,crypto/XTVCUSDT
+KUCOIN:KLINKUSDT,KLINKUSDT,Klink Finance / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKLINK,crypto/XTVCUSDT
+KUCOIN:LPTUSDT,LPTUSDT,Livepeer / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLPT,crypto/XTVCUSDT
+KUCOIN:BESTUSDT,BESTUSDT,Best Wallet / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBESTW,crypto/XTVCUSDT
+KUCOIN:CARVUSDT,CARVUSDT,CARV / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCARV,crypto/XTVCUSDT
+KUCOIN:HYPERUSDT,HYPERUSDT,Hyperlane / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHYPERL,crypto/XTVCUSDT
+KUCOIN:LITUSDT,LITUSDT,Lighter / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:NSUSDT,NSUSDT,SuiNS / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNSS,crypto/XTVCUSDT
+KUCOIN:SINUSDT,SINUSDT,Sinverse / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSINSINCITYMETAVERSE,crypto/XTVCUSDT
+KUCOIN:TRUUSDT,TRUUSDT,TrueFi / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCTRU,crypto/XTVCUSDT
+KUCOIN:YZYUSDT,YZYUSDT,YZY / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCYZYM,crypto/XTVCUSDT
+KUCOIN:FURYUSDT,FURYUSDT,Engines of Fury / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFURY,crypto/XTVCUSDT
+KUCOIN:RVNUSDT,RVNUSDT,Ravencoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRVN,crypto/XTVCUSDT
+KUCOIN:ALEPHUSDT,ALEPHUSDT,Aleph.im / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCALEPH,crypto/XTVCUSDT
+KUCOIN:FORTHUSDT,FORTHUSDT,Ampleforth Governance Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFORTH,crypto/XTVCUSDT
+KUCOIN:HSKUSDT,HSKUSDT,HashKey Platform Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHSK,crypto/XTVCUSDT
+KUCOIN:SKLUSDT,SKLUSDT,SKALE Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSKL,crypto/XTVCUSDT
+KUCOIN:SWFTCUSDT,SWFTCUSDT,SwftCoin / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSWFTC,crypto/XTVCUSDT
+KUCOIN:TFUELUSDT,TFUELUSDT,Theta Fuel / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCTFUEL,crypto/XTVCUSDT
+KUCOIN:ULTIMAUSDT,ULTIMAUSDT,Ultima / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCULTIMATO,crypto/XTVCUSDT
+KUCOIN:MONIUSDT,MONIUSDT,Monsta Infinite / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCMONI,crypto/XTVCUSDT
+KUCOIN:SCPTUSDT,SCPTUSDT,Script Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSCPT,crypto/XTVCUSDT
+KUCOIN:TTDUSDT,TTDUSDT,Trade Tide Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:CHIRPUSDT,CHIRPUSDT,Chirp / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCHIRP2,crypto/XTVCUSDT
+KUCOIN:CTSIUSDT,CTSIUSDT,Cartesi / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCTSI,crypto/XTVCUSDT
+KUCOIN:ORCAUSDT,ORCAUSDT,Orca / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCORCAORCA,crypto/XTVCUSDT
+KUCOIN:SAFEUSDT,SAFEUSDT,Safe / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSAFE3,crypto/XTVCUSDT
+KUCOIN:APPUSDT,APPUSDT,Moon App / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAPPM,crypto/XTVCUSDT
+KUCOIN:ARIAUSDT,ARIAUSDT,ARIA.AI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCARIAA,crypto/XTVCUSDT
+KUCOIN:ARTYUSDT,ARTYUSDT,Artyfact / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCARTY,crypto/XTVCUSDT
+KUCOIN:AUSDT,AUSDT,Vaulta / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAVU,crypto/XTVCUSDT
+KUCOIN:B3USDT,B3USDT,B3 / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCB3,crypto/XTVCUSDT
+KUCOIN:MEMEUSDT,MEMEUSDT,Memecoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMEMECO,crypto/XTVCUSDT
+KUCOIN:XAIUSDT,XAIUSDT,Xai / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXAI7,crypto/XTVCUSDT
+KUCOIN:2ZUSDT,2ZUSDT,DoubleZero / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVC2Z,crypto/XTVCUSDT
+KUCOIN:FUELUSDT,FUELUSDT,Fuel Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFUELN,crypto/XTVCUSDT
+KUCOIN:LOCUSUSDT,LOCUSUSDT,Locus Chain / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCLOCUS,crypto/XTVCUSDT
+KUCOIN:MPLXUSDT,MPLXUSDT,Metaplex / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMPLX,crypto/XTVCUSDT
+KUCOIN:PRAIUSDT,PRAIUSDT,Privasea AI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPRAI,crypto/XTVCUSDT
+KUCOIN:PUFFERUSDT,PUFFERUSDT,Puffer / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPUFFER,crypto/XTVCUSDT
+KUCOIN:ALICEUSDT,ALICEUSDT,MyNeighborAlice / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCALICE,crypto/XTVCUSDT
+KUCOIN:BOMEUSDT,BOMEUSDT,BOOK OF MEME / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBOME,crypto/XTVCUSDT
+KUCOIN:HOLOUSDT,HOLOUSDT,Holoworld AI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHOLOW,crypto/XTVCUSDT
+KUCOIN:HYDRAUSDT,HYDRAUSDT,hydra / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHYDRA,crypto/XTVCUSDT
+KUCOIN:KAITOUSDT,KAITOUSDT,KAITO / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKAITO,crypto/XTVCUSDT
+KUCOIN:MASAUSDT,MASAUSDT,Masa / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCMASA,crypto/XTVCUSDT
+KUCOIN:P2PUSDT,P2PUSDT,Sentinel / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDVPN,crypto/XTVCUSDT
+KUCOIN:SENSOUSDT,SENSOUSDT,Sensorium / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSENSO,crypto/XTVCUSDT
+KUCOIN:XNLUSDT,XNLUSDT,XNL / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXNLN,crypto/XTVCUSDT
+KUCOIN:BIOUSDT,BIOUSDT,BIO / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBIOPR,crypto/XTVCUSDT
+KUCOIN:ETHWUSDT,ETHWUSDT,ETHPoW / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCETHW,crypto/XTVCUSDT
+KUCOIN:EYWAUSDT,EYWAUSDT,EYWA / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCEYWA,crypto/XTVCUSDT
+KUCOIN:GTAIUSDT,GTAIUSDT,GT Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGTAI,crypto/XTVCUSDT
+KUCOIN:MMTUSDT,MMTUSDT,Momentum / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMMTMO,crypto/XTVCUSDT
+KUCOIN:NCUSDT,NCUSDT,Nodecoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNC,crypto/XTVCUSDT
+KUCOIN:NETVRUSDT,NETVRUSDT,NetVRk / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNETVR,crypto/XTVCUSDT
+KUCOIN:VINEUSDT,VINEUSDT,Vine Coin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCVINE,crypto/XTVCUSDT
+KUCOIN:WODUSDT,WODUSDT,World of Dypians / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWODW,crypto/XTVCUSDT
+KUCOIN:XPINUSDT,XPINUSDT,XPIN Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXPIN,crypto/XTVCUSDT
+KUCOIN:ETHFIUSDT,ETHFIUSDT,ether.fi / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCETHFI,crypto/XTVCUSDT
+KUCOIN:IRUSDT,IRUSDT,Infrared / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,,
+KUCOIN:MUBIUSDT,MUBIUSDT,Multibit / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCMUBI,crypto/XTVCUSDT
+KUCOIN:ROAMUSDT,ROAMUSDT,Roam / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCROAM,crypto/XTVCUSDT
+KUCOIN:EQTYUSDT,EQTYUSDT,EQTY / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCEQTY,crypto/XTVCUSDT
+KUCOIN:HONEYUSDT,HONEYUSDT,HONEY / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHONEY,crypto/XTVCUSDT
+KUCOIN:NEONUSDT,NEONUSDT,Neon EVM / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNEONE,crypto/XTVCUSDT
+KUCOIN:RARIUSDT,RARIUSDT,Rarible / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRARI,crypto/XTVCUSDT
+KUCOIN:SYNDUSDT,SYNDUSDT,Syndicate / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSYND,crypto/XTVCUSDT
+KUCOIN:WAXLUSDT,WAXLUSDT,Axelar / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWAXL,crypto/XTVCUSDT
+KUCOIN:XU3O8USDT,XU3O8USDT,Uranium / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXU3O8,crypto/XTVCUSDT
+KUCOIN:ZNDUSDT,ZNDUSDT,ZND Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCZND,crypto/XTVCUSDT
+KUCOIN:AUDIOUSDT,AUDIOUSDT,Audius / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAUDIO,crypto/XTVCUSDT
+KUCOIN:FETETH,FETETH,Artificial Superintelligence Alliance / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCFET,crypto/XTVCETH
+KUCOIN:GIGAUSDT,GIGAUSDT,GIGACHAD / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGIGACH,crypto/XTVCUSDT
+KUCOIN:KMDUSDT,KMDUSDT,Komodo / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKMD,crypto/XTVCUSDT
+KUCOIN:NIBIUSDT,NIBIUSDT,Nibiru / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCNIBI,crypto/XTVCUSDT
+KUCOIN:PINGUSDT,PINGUSDT,PING / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPING2,crypto/XTVCUSDT
+KUCOIN:TAIKOUSDT,TAIKOUSDT,Taiko / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTAIKO,crypto/XTVCUSDT
+KUCOIN:ANKRUSDT,ANKRUSDT,Ankr Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCANKR,crypto/XTVCUSDT
+KUCOIN:DASHETH,DASHETH,Dash / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCDASH,crypto/XTVCETH
+KUCOIN:LYXETH,LYXETH,LUKSO / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCLYX,crypto/XTVCETH
+KUCOIN:ONTUSDT,ONTUSDT,Ontology / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCONT,crypto/XTVCUSDT
+KUCOIN:PEOPLEUSDT,PEOPLEUSDT,ConstitutionDAO / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPEOPLE,crypto/XTVCUSDT
+KUCOIN:CUSDT,CUSDT,Chainbase Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCH,crypto/XTVCUSDT
+KUCOIN:DFYNUSDT,DFYNUSDT,Dfyn Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCDFYN,crypto/XTVCUSDT
+KUCOIN:FBUSDT,FBUSDT,Fractal Bitcoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFBFR,crypto/XTVCUSDT
+KUCOIN:GAFIUSDT,GAFIUSDT,GameFi / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGAFI,crypto/XTVCUSDT
+KUCOIN:MVUSDT,MVUSDT,GensoKishi Metaverse / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMV,crypto/XTVCUSDT
+KUCOIN:NILUSDT,NILUSDT,Nillion / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNIL,crypto/XTVCUSDT
+KUCOIN:PONKEUSDT,PONKEUSDT,PONKE / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCPONKE,crypto/XTVCUSDT
+KUCOIN:SPKUSDT,SPKUSDT,Spark / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSPKS,crypto/XTVCUSDT
+KUCOIN:VENOMUSDT,VENOMUSDT,Venom Blockchain / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCVENOM2,crypto/XTVCUSDT
+KUCOIN:VINUUSDT,VINUUSDT,Vita Inu / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCVINU,crypto/XTVCUSDT
+KUCOIN:ZRXUSDT,ZRXUSDT,0X / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCZRX,crypto/XTVCUSDT
+KUCOIN:BARDUSDT,BARDUSDT,Lombard / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBARDL,crypto/XTVCUSDT
+KUCOIN:CTCUSDT,CTCUSDT,Creditcoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCTC,crypto/XTVCUSDT
+KUCOIN:E4CUSDT,E4CUSDT,E4C / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCE4C,crypto/XTVCUSDT
+KUCOIN:KAIAUSDT,KAIAUSDT,Kaia / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKAIA,crypto/XTVCUSDT
+KUCOIN:NKNUSDT,NKNUSDT,NKN / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNKN,crypto/XTVCUSDT
+KUCOIN:PARTIUSDT,PARTIUSDT,Particle Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPARTI,crypto/XTVCUSDT
+KUCOIN:READYUSDT,READYUSDT,READY! / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCREADY,crypto/XTVCUSDT
+KUCOIN:XANUSDT,XANUSDT,Anoma / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXANA,crypto/XTVCUSDT
+KUCOIN:XTMUSDT,XTMUSDT,Torum / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCXTM,crypto/XTVCUSDT
+KUCOIN:ELPUSDT,ELPUSDT,Elympics / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCELPEL,crypto/XTVCUSDT
+KUCOIN:HOUSEUSDT,HOUSEUSDT,Housecoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHOUSEC,crypto/XTVCUSDT
+KUCOIN:LTCETH,LTCETH,Litecoin / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCLTC,crypto/XTVCETH
+KUCOIN:METUSDT,METUSDT,Meteora / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMETE,crypto/XTVCUSDT
+KUCOIN:MGOUSDT,MGOUSDT,Mango Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMGOM,crypto/XTVCUSDT
+KUCOIN:NXPCUSDT,NXPCUSDT,NEXPACE / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCNXPC,crypto/XTVCUSDT
+KUCOIN:PONDUSDT,PONDUSDT,Marlin / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCPOND,crypto/XTVCUSDT
+KUCOIN:PORTALSUSDT,PORTALSUSDT,Portals / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPORTALS,crypto/XTVCUSDT
+KUCOIN:PUNDIXUSDT,PUNDIXUSDT,Pundi X / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPUNDIX,crypto/XTVCUSDT
+KUCOIN:SKATEUSDT,SKATEUSDT,Skate / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSKATE,crypto/XTVCUSDT
+KUCOIN:TADAUSDT,TADAUSDT,Ta-da / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTADA,crypto/XTVCUSDT
+KUCOIN:WLTHUSDT,WLTHUSDT,Common Wealth / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWLTH,crypto/XTVCUSDT
+KUCOIN:ANOMEUSDT,ANOMEUSDT,Anome / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCANOME,crypto/XTVCUSDT
+KUCOIN:DAGETH,DAGETH,Constellation / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCDAG,crypto/XTVCETH
+KUCOIN:JSTUSDT,JSTUSDT,JUST / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCJST,crypto/XTVCUSDT
+KUCOIN:MEUSDT,MEUSDT,Magic Eden / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCME2,crypto/XTVCUSDT
+KUCOIN:NODEUSDT,NODEUSDT,NodeOps / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNODEO,crypto/XTVCUSDT
+KUCOIN:NTRNUSDT,NTRNUSDT,Neutron / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNTRNN,crypto/XTVCUSDT
+KUCOIN:RDNTUSDT,RDNTUSDT,Radiant / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCRDNT,crypto/XTVCUSDT
+KUCOIN:XRPBTC,XRPBTC,Ripple / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCXRP,crypto/XTVCBTC
+KUCOIN:ZKCUSDT,ZKCUSDT,Boundless / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCZKCB,crypto/XTVCUSDT
+KUCOIN:BMBUSDT,BMBUSDT,Beamable Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:KIPUSDT,KIPUSDT,KIP Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKIP,crypto/XTVCUSDT
+KUCOIN:PUSDT,PUSDT,PoP Planet / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPPO,crypto/XTVCUSDT
+KUCOIN:SLERFUSDT,SLERFUSDT,SLERF / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSLERF,crypto/XTVCUSDT
+KUCOIN:XRPETH,XRPETH,Ripple / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCXRP,crypto/XTVCETH
+KUCOIN:EGL1USDT,EGL1USDT,EGL1 / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCEGL1,crypto/XTVCUSDT
+KUCOIN:OORTUSDT,OORTUSDT,Oortech / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCOORT2,crypto/XTVCUSDT
+KUCOIN:PROUSDT,PROUSDT,Propy / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCPRO,crypto/XTVCUSDT
+KUCOIN:BANUSDT,BANUSDT,Comedian / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBANC,crypto/XTVCUSDT
+KUCOIN:BSWUSDT,BSWUSDT,Biswap / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCBSW,crypto/XTVCUSDT
+KUCOIN:GLMUSDT,GLMUSDT,Golem / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGLM,crypto/XTVCUSDT
+KUCOIN:GORKUSDT,GORKUSDT,New XAI gork / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGORK,crypto/XTVCUSDT
+KUCOIN:GPSUSDT,GPSUSDT,GoPlus Security / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGPS,crypto/XTVCUSDT
+KUCOIN:MIGGLESUSDT,MIGGLESUSDT,Mr. Miggles / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMIGGLES,crypto/XTVCUSDT
+KUCOIN:OGNUSDT,OGNUSDT,Origin Protocol / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCOGN,crypto/XTVCUSDT
+KUCOIN:TLMUSDT,TLMUSDT,Alien Worlds / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTLM,crypto/XTVCUSDT
+KUCOIN:DODOUSDT,DODOUSDT,DODO / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCDODO,crypto/XTVCUSDT
+KUCOIN:REVUUSDT,REVUUSDT,Revuto / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCREVUREVUTO,crypto/XTVCUSDT
+KUCOIN:VETBTC,VETBTC,Vechain / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCVET,crypto/XTVCBTC
+KUCOIN:BNBBTC,BNBBTC,Binance Chain Native Token / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCBNB,crypto/XTVCBTC
+KUCOIN:PROMPTUSDT,PROMPTUSDT,Prompt / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPROMPT,crypto/XTVCUSDT
+KUCOIN:RESOLVUSDT,RESOLVUSDT,Resolv / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCRESOLV,crypto/XTVCUSDT
+KUCOIN:REZUSDT,REZUSDT,Renzo / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCREZ,crypto/XTVCUSDT
+KUCOIN:TUSDT,TUSDT,Threshold / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCT,crypto/XTVCUSDT
+KUCOIN:XIONUSDT,XIONUSDT,XION / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXION,crypto/XTVCUSDT
+KUCOIN:BCHBTC,BCHBTC,Bitcoin Cash / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCBCH,crypto/XTVCBTC
+KUCOIN:CYBERUSDT,CYBERUSDT,CyberConnect / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCYBERC,crypto/XTVCUSDT
+KUCOIN:HOMEUSDT,HOMEUSDT,Defi.App / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHOMED,crypto/XTVCUSDT
+KUCOIN:KRLUSDT,KRLUSDT,Kryll / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKRL,crypto/XTVCUSDT
+KUCOIN:LQTYUSDT,LQTYUSDT,Liquity / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCLQTY,crypto/XTVCUSDT
+KUCOIN:MAVUSDT,MAVUSDT,Maverick Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMAVE,crypto/XTVCUSDT
+KUCOIN:NEIROCTOUSDT,NEIROCTOUSDT,First Neiro on Ethereum / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNEIROF,crypto/XTVCUSDT
+KUCOIN:NOBODYUSDT,NOBODYUSDT,Nobody Sausage / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNOBODY,crypto/XTVCUSDT
+KUCOIN:PNUTUSDT,PNUTUSDT,Peanut the Squirrel / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPNUTP,crypto/XTVCUSDT
+KUCOIN:PROVEUSDT,PROVEUSDT,Succinct / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPROVE,crypto/XTVCUSDT
+KUCOIN:RCADEUSDT,RCADEUSDT,RCADE / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRCADE,crypto/XTVCUSDT
+KUCOIN:SUNUSDT,SUNUSDT,SunToken / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSUN,crypto/XTVCUSDT
+KUCOIN:TRXBTC,TRXBTC,Tron / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCTRX,crypto/XTVCBTC
+KUCOIN:ADAUSDC,ADAUSDC,Cardano / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCADA,crypto/XTVCUSDC
+KUCOIN:AEVOUSDT,AEVOUSDT,Aevo / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAEVO,crypto/XTVCUSDT
+KUCOIN:ASPUSDT,ASPUSDT,ASPECTA / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCASPE,crypto/XTVCUSDT
+KUCOIN:BANDUSDT,BANDUSDT,Band Protocol / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCBAND,crypto/XTVCUSDT
+KUCOIN:BCUTUSDT,BCUTUSDT,bitsCrunch / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBCUT,crypto/XTVCUSDT
+KUCOIN:DBRUSDT,DBRUSDT,deBridge / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDBRD,crypto/XTVCUSDT
+KUCOIN:EPICUSDT,EPICUSDT,Epic Chain / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCEPICC,crypto/XTVCUSDT
+KUCOIN:ERAUSDT,ERAUSDT,Caldera / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCERAC,crypto/XTVCUSDT
+KUCOIN:IOSTUSDT,IOSTUSDT,Internet of Services / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCIOST,crypto/XTVCUSDT
+KUCOIN:LADYSUSDT,LADYSUSDT,Milady Meme Coin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLADYS,crypto/XTVCUSDT
+KUCOIN:LAYERUSDT,LAYERUSDT,Solayer / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLAYERS,crypto/XTVCUSDT
+KUCOIN:PENUSDT,PENUSDT,Pentagon / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPENT,crypto/XTVCUSDT
+KUCOIN:SCRUSDT,SCRUSDT,Scroll / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSCRO,crypto/XTVCUSDT
+KUCOIN:THQUSDT,THQUSDT,Theoriq / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,,
+KUCOIN:TREEUSDT,TREEUSDT,Treehouse / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTREEH,crypto/XTVCUSDT
+KUCOIN:VFYUSDT,VFYUSDT,zkVerify / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCVFYZ,crypto/XTVCUSDT
+KUCOIN:XTAGUSDT,XTAGUSDT,xHashtag / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXTAG,crypto/XTVCUSDT
+KUCOIN:ARTFIUSDT,ARTFIUSDT,Artfi / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCARTFI,crypto/XTVCUSDT
+KUCOIN:CAIUSDT,CAIUSDT,CharacterX / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:CHEQUSDT,CHEQUSDT,CHEQ / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCHEQ,crypto/XTVCUSDT
+KUCOIN:ETHEUR,ETHEUR,Ethereum / Euro,KuCoin,spot,EUR,crypto,kucoin,KUCOIN,,,crypto/XTVCETH,country/EU
+KUCOIN:FLOCKUSDT,FLOCKUSDT,Flock / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFLOCK,crypto/XTVCUSDT
+KUCOIN:FSTUSDT,FSTUSDT,FreeStyle Classic / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFSTF,crypto/XTVCUSDT
+KUCOIN:MANEKIUSDT,MANEKIUSDT,MANEKI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMANEKI,crypto/XTVCUSDT
+KUCOIN:MNDEUSDT,MNDEUSDT,Marinade / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMNDE,crypto/XTVCUSDT
+KUCOIN:MTRGUSDT,MTRGUSDT,Meter / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCMTRG,crypto/XTVCUSDT
+KUCOIN:PIXUSDT,PIXUSDT,PIXIE / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPIXI,crypto/XTVCUSDT
+KUCOIN:SNXETH,SNXETH,Synthetix Network Token / Ethereum,KuCoin,spot,ETH,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSNX,crypto/XTVCETH
+KUCOIN:UNAUSDT,UNAUSDT,Unagi / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUNA,crypto/XTVCUSDT
+KUCOIN:VLRUSDT,VLRUSDT,Velora / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCVLR,crypto/XTVCUSDT
+KUCOIN:WAVESBTC,WAVESBTC,Waves / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCWAVES,crypto/XTVCBTC
+KUCOIN:YBUSDT,YBUSDT,Yield Basis / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCYB,crypto/XTVCUSDT
+KUCOIN:AGIUSDT,AGIUSDT,Delysium / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCAGI,crypto/XTVCUSDT
+KUCOIN:BBTUSDT,BBTUSDT,Burger Blast Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBBTBU,crypto/XTVCUSDT
+KUCOIN:DARKUSDT,DARKUSDT,Dark Eclipse / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDARKE,crypto/XTVCUSDT
+KUCOIN:DEGOUSDT,DEGOUSDT,Dego Finance / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCDEGO,crypto/XTVCUSDT
+KUCOIN:DOGEGOVUSDT,DOGEGOVUSDT,Department Of Government Efficiency / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDOGEDE,crypto/XTVCUSDT
+KUCOIN:EDENUSDT,EDENUSDT,OpenEden / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCEDENO,crypto/XTVCUSDT
+KUCOIN:FETBTC,FETBTC,Artificial Superintelligence Alliance / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCFET,crypto/XTVCBTC
+KUCOIN:MIRAUSDT,MIRAUSDT,Mira / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMIRAN,crypto/XTVCUSDT
+KUCOIN:NFPUSDT,NFPUSDT,NFPrompt / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNFPR,crypto/XTVCUSDT
+KUCOIN:PUSHUSDT,PUSHUSDT,Push Protocol / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCPUSH,crypto/XTVCUSDT
+KUCOIN:PZPUSDT,PZPUSDT,PlayZap / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPZP,crypto/XTVCUSDT
+KUCOIN:REDSTONEUSDT,REDSTONEUSDT,Redstone / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCREDS,crypto/XTVCUSDT
+KUCOIN:SUPUSDT,SUPUSDT,Superp / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSUPERP,crypto/XTVCUSDT
+KUCOIN:SWTCHUSDT,SWTCHUSDT,Switchboard / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSWTCH,crypto/XTVCUSDT
+KUCOIN:TNSRUSDT,TNSRUSDT,Tensor / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTNSR,crypto/XTVCUSDT
+KUCOIN:TRACETH,TRACETH,OriginTrail / Ethereum,KuCoin,spot,ETH,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCTRAC,crypto/XTVCETH
+KUCOIN:TRNUSDT,TRNUSDT,t3rn / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTRN,crypto/XTVCUSDT
+KUCOIN:BBUSDT,BBUSDT,BounceBit / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBBBOU,crypto/XTVCUSDT
+KUCOIN:BDXBTC,BDXBTC,Beldex / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCBDX,crypto/XTVCBTC
+KUCOIN:FIDAUSDT,FIDAUSDT,Bonfida / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCFIDA,crypto/XTVCUSDT
+KUCOIN:GMXUSDT,GMXUSDT,GMX / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCGMX,crypto/XTVCUSDT
+KUCOIN:KBEATUSDT,KBEATUSDT,Audiera / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBEATA,crypto/XTVCUSDT
+KUCOIN:KERNELUSDT,KERNELUSDT,KernelDao / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCKERNEL,crypto/XTVCUSDT
+KUCOIN:OVRUSDT,OVRUSDT,OVR / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCOVR,crypto/XTVCUSDT
+KUCOIN:PORTALUSDT,PORTALUSDT,Portal / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPORTAL3,crypto/XTVCUSDT
+KUCOIN:RFCUSDT,RFCUSDT,Retard Finder Coin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRFCR,crypto/XTVCUSDT
+KUCOIN:RLCUSDT,RLCUSDT,iExec RLC / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCRLC,crypto/XTVCUSDT
+KUCOIN:SHELLUSDT,SHELLUSDT,MyShell Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSHELLM,crypto/XTVCUSDT
+KUCOIN:TURTLEUSDT,TURTLEUSDT,Turtle / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTURTLE2,crypto/XTVCUSDT
+KUCOIN:UNITEUSDT,UNITEUSDT,Unite / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUNITE2,crypto/XTVCUSDT
+KUCOIN:WCTUSDT,WCTUSDT,WalletConnect / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWCTW,crypto/XTVCUSDT
+KUCOIN:XRUSDT,XRUSDT,XRADERS / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXRAD,crypto/XTVCUSDT
+KUCOIN:ZILETH,ZILETH,Zilliqa / Ethereum,KuCoin,spot,ETH,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCZIL,crypto/XTVCETH
+KUCOIN:BREVUSDT,BREVUSDT,Brevis / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:BSUUSDT,BSUUSDT,Baby Shark Universe / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBSU,crypto/XTVCUSDT
+KUCOIN:BTCBRL,BTCBRL,Bitcoin / Brazilian Real,KuCoin,spot,BRL,crypto,kucoin,KUCOIN,,,crypto/XTVCBTC,country/BR
+KUCOIN:CYCUSDT,CYCUSDT,Cycle Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCYCLEN,crypto/XTVCUSDT
+KUCOIN:MOREUSDT,MOREUSDT,Moonveil / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMOREM,crypto/XTVCUSDT
+KUCOIN:SEAMUSDT,SEAMUSDT,Seamless / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSEAM,crypto/XTVCUSDT
+KUCOIN:SWELLUSDT,SWELLUSDT,Swell Governance Token / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSWELL,crypto/XTVCUSDT
+KUCOIN:USDCUSDT,USDCUSDT,USD Coin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUSDC,crypto/XTVCUSDT
+KUCOIN:USDTEUR,USDTEUR,Tether / Euro,KuCoin,spot,EUR,crypto,kucoin,KUCOIN,,,crypto/XTVCUSDT,country/EU
+KUCOIN:VETETH,VETETH,Vechain / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCVET,crypto/XTVCETH
+KUCOIN:FOMOUSDT,FOMOUSDT,Fomo / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFOMO3,crypto/XTVCUSDT
+KUCOIN:POPUSDT,POPUSDT,Zypher Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPOPZ,crypto/XTVCUSDT
+KUCOIN:PUBLICUSDT,PUBLICUSDT,PublicAI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPUBLICA,crypto/XTVCUSDT
+KUCOIN:SCAUSDT,SCAUSDT,Scallop / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSCAL,crypto/XTVCUSDT
+KUCOIN:SQRUSDT,SQRUSDT,Magic Square / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSQR,crypto/XTVCUSDT
+KUCOIN:XTZBTC,XTZBTC,Tezos / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCXTZ,crypto/XTVCBTC
+KUCOIN:APRUSDT,APRUSDT,aPriori / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCAPR,crypto/XTVCUSDT
+KUCOIN:BFCUSDT,BFCUSDT,Bifrost / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCBFCBIFROST,crypto/XTVCUSDT
+KUCOIN:CESSUSDT,CESSUSDT,CESS Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCESS,crypto/XTVCUSDT
+KUCOIN:CKBBTC,CKBBTC,Nervos Network / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCCKB,crypto/XTVCBTC
+KUCOIN:DNUSDT,DNUSDT,DeepNode / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:FFUSDT,FFUSDT,Falcon Finance / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFF,crypto/XTVCUSDT
+KUCOIN:GOMININGUSDT,GOMININGUSDT,GoMining Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGMTGOMININGTOKEN,crypto/XTVCUSDT
+KUCOIN:GTCUSDT,GTCUSDT,Gitcoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGTCG,crypto/XTVCUSDT
+KUCOIN:KNCUSDT,KNCUSDT,Kyber Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCKNC,crypto/XTVCUSDT
+KUCOIN:KPOLUSDT,KPOLUSDT,Proof Of Liquidity / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPOL,crypto/XTVCUSDT
+KUCOIN:LLUSDT,LLUSDT,LightLink / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLLL,crypto/XTVCUSDT
+KUCOIN:NEIROUSDT,NEIROUSDT,Neiro / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNEIRO3,crypto/XTVCUSDT
+KUCOIN:OPADUSDT,OPADUSDT,OPENPAD TOKEN / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCOPAD,crypto/XTVCUSDT
+KUCOIN:PLAIUSDT,PLAIUSDT,PLAY AI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:PROMUSDT,PROMUSDT,Prom / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPROM,crypto/XTVCUSDT
+KUCOIN:REQUSDT,REQUSDT,Request / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCREQ,crypto/XTVCUSDT
+KUCOIN:SEEKUSDT,SEEKUSDT,Talisman / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSEEKT,crypto/XTVCUSDT
+KUCOIN:SUKUUSDT,SUKUUSDT,suku / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSUKU,crypto/XTVCUSDT
+KUCOIN:SUNDOGUSDT,SUNDOGUSDT,Sundog / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSUNDOG,crypto/XTVCUSDT
+KUCOIN:TTUSDT,TTUSDT,ThunderCore / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTT,crypto/XTVCUSDT
+KUCOIN:ZTCUSDT,ZTCUSDT,ZenChain / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:ANIUSDT,ANIUSDT,Ani Grok Companion / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCANIG,crypto/XTVCUSDT
+KUCOIN:CATIUSDT,CATIUSDT,Catizen / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCATIZ,crypto/XTVCUSDT
+KUCOIN:EGPUSDT,EGPUSDT,Eigenpie / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCEGP,crypto/XTVCUSDT
+KUCOIN:ETHDAI,ETHDAI,Ethereum / Dai,KuCoin,spot,DAI,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCETH,crypto/XTVCDAI
+KUCOIN:EVERUSDT,EVERUSDT,Everscale / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCEVER,crypto/XTVCUSDT
+KUCOIN:HLSUSDT,HLSUSDT,Helios / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:IMUUSDT,IMUUSDT,Immunefi / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:KOMAUSDT,KOMAUSDT,Koma Inu / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKOMA,crypto/XTVCUSDT
+KUCOIN:KUSDT,KUSDT,Sidekick / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKSI,crypto/XTVCUSDT
+KUCOIN:LINKBTC,LINKBTC,Chainlink / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCLINK,crypto/XTVCBTC
+KUCOIN:MUBARAKUSDT,MUBARAKUSDT,Mubarak / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMUBARAK,crypto/XTVCUSDT
+KUCOIN:NRNUSDT,NRNUSDT,Neuron / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNRN,crypto/XTVCUSDT
+KUCOIN:RIZUSDT,RIZUSDT,Rivalz Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRIZ,crypto/XTVCUSDT
+KUCOIN:TIMEUSDT,TIMEUSDT,Chrono.tech / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCTIME,crypto/XTVCUSDT
+KUCOIN:UMAUSDT,UMAUSDT,UMA / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCUMA,crypto/XTVCUSDT
+KUCOIN:VSYSUSDT,VSYSUSDT,V Systems / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCVSYS,crypto/XTVCUSDT
+KUCOIN:XDCBTC,XDCBTC,XDC Mainnet / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCXDC,crypto/XTVCBTC
+KUCOIN:XYOBTC,XYOBTC,XYO Network / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCXYO,crypto/XTVCBTC
+KUCOIN:ALLOUSDT,ALLOUSDT,Allo / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCALLO,crypto/XTVCUSDT
+KUCOIN:ATAUSDT,ATAUSDT,Automata Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCATA,crypto/XTVCUSDT
+KUCOIN:BNBUSDC,BNBUSDC,Binance Chain Native Token / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCBNB,crypto/XTVCUSDC
+KUCOIN:BNCUSDT,BNCUSDT,Bifrost / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBNCBIFROSTBNC,crypto/XTVCUSDT
+KUCOIN:DENTUSDT,DENTUSDT,Dent / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDENT,crypto/XTVCUSDT
+KUCOIN:FLKUSDT,FLKUSDT,Fleek / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCFLK,crypto/XTVCUSDT
+KUCOIN:G3USDT,G3USDT,GAM3S.GG / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCG3,crypto/XTVCUSDT
+KUCOIN:HFTUSDT,HFTUSDT,Hashflow / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCHFT,crypto/XTVCUSDT
+KUCOIN:NEWTUSDT,NEWTUSDT,Newton Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCNEWT,crypto/XTVCUSDT
+KUCOIN:OXTUSDT,OXTUSDT,Orchid / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCOXT,crypto/XTVCUSDT
+KUCOIN:POLYXUSDT,POLYXUSDT,Polymesh / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPOLYX,crypto/XTVCUSDT
+KUCOIN:SUSDC,SUSDC,Sonic / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCSONI,crypto/XTVCUSDC
+KUCOIN:TUTUSDT,TUTUSDT,Tutorial / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTUTO,crypto/XTVCUSDT
+KUCOIN:XYROUSDT,XYROUSDT,XYRO / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXYRO,crypto/XTVCUSDT
+KUCOIN:ALGOETH,ALGOETH,Algorand / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCALGO,crypto/XTVCETH
+KUCOIN:BLUMUSDT,BLUMUSDT,Blum / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBLUM,crypto/XTVCUSDT
+KUCOIN:BUBBUSDT,BUBBUSDT,Bubb / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBUBB,crypto/XTVCUSDT
+KUCOIN:CVCUSDT,CVCUSDT,Civic / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCVC,crypto/XTVCUSDT
+KUCOIN:GALAXUSDT,GALAXUSDT,Gala Games / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGALA,crypto/XTVCUSDT
+KUCOIN:KNCETH,KNCETH,Kyber Network / Ethereum,KuCoin,spot,ETH,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCKNC,crypto/XTVCETH
+KUCOIN:MATUSDT,MATUSDT,Matchain / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMATC,crypto/XTVCUSDT
+KUCOIN:ONEBTC,ONEBTC,Harmony / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCONE,crypto/XTVCBTC
+KUCOIN:ROOBEEUSDT,ROOBEEUSDT,ROOBEE / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCROOBEE,crypto/XTVCUSDT
+KUCOIN:SSVUSDT,SSVUSDT,ssv.network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSSV,crypto/XTVCUSDT
+KUCOIN:STOUSDT,STOUSDT,StakeStone / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSTOST,crypto/XTVCUSDT
+KUCOIN:TELUSDC,TELUSDC,Telcoin / USD Coin,KuCoin,spot,USDC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCTEL,crypto/XTVCUSDC
+KUCOIN:VRAUSDC,VRAUSDC,Verasity / USD Coin,KuCoin,spot,USDC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCVRA,crypto/XTVCUSDC
+KUCOIN:ALEXUSDT,ALEXUSDT,ALEX Lab / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCALEX,crypto/XTVCUSDT
+KUCOIN:CELRUSDT,CELRUSDT,Celer Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCELR,crypto/XTVCUSDT
+KUCOIN:DEXEUSDT,DEXEUSDT,DeXe / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCDEXE,crypto/XTVCUSDT
+KUCOIN:JUPUSDC,JUPUSDC,Jupiter / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCJUPI,crypto/XTVCUSDC
+KUCOIN:LTCBTC,LTCBTC,Litecoin / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCLTC,crypto/XTVCBTC
+KUCOIN:MICHIUSDT,MICHIUSDT,michi / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMICHI2,crypto/XTVCUSDT
+KUCOIN:OSMOUSDT,OSMOUSDT,OSMO / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCOSMO,crypto/XTVCUSDT
+KUCOIN:RPLUSDT,RPLUSDT,Rocket Pool / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCRPL,crypto/XTVCUSDT
+KUCOIN:SAHARAUSDT,SAHARAUSDT,Sahara AI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSAHARA,crypto/XTVCUSDT
+KUCOIN:SFPUSDT,SFPUSDT,SafePal / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSFP,crypto/XTVCUSDT
+KUCOIN:TEVAUSDT,TEVAUSDT,Tevaera / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTEVA,crypto/XTVCUSDT
+KUCOIN:WAIUSDT,WAIUSDT,WORLD3 / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWAIWO,crypto/XTVCUSDT
+KUCOIN:ARTUSDT,ARTUSDT,LiveArt / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCARTLI,crypto/XTVCUSDT
+KUCOIN:BTCDAI,BTCDAI,Bitcoin / Dai,KuCoin,spot,DAI,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCBTC,crypto/XTVCDAI
+KUCOIN:DASHBTC,DASHBTC,Dash / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCDASH,crypto/XTVCBTC
+KUCOIN:DIGIUSDT,DIGIUSDT,MineD / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDIGIM,crypto/XTVCUSDT
+KUCOIN:ESEUSDT,ESEUSDT,eesee / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCESE,crypto/XTVCUSDT
+KUCOIN:FOGOUSDT,FOGOUSDT,FOGO / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:HIGHUSDT,HIGHUSDT,Highstreet / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCHIGH,crypto/XTVCUSDT
+KUCOIN:HOLDUSDT,HOLDUSDT,Holdstation / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHOLDS,crypto/XTVCUSDT
+KUCOIN:KORIUSDT,KORIUSDT,Kori The Pom / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCKORI,crypto/XTVCUSDT
+KUCOIN:RMVUSDT,RMVUSDT,RealityMetaverse / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRLTM,crypto/XTVCUSDT
+KUCOIN:SIGNUSDT,SIGNUSDT,Sign / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSIGN2,crypto/XTVCUSDT
+KUCOIN:STXBTC,STXBTC,Stacks / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCSTXS,crypto/XTVCBTC
+KUCOIN:UDSUSDT,UDSUSDT,Undeads Games / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUDS,crypto/XTVCUSDT
+KUCOIN:USDDUSDT,USDDUSDT,Decentralized USD / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUSDD,crypto/XTVCUSDT
+KUCOIN:USDTUSDC,USDTUSDC,Tether / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCUSDT,crypto/XTVCUSDC
+KUCOIN:WSDMUSDT,WSDMUSDT,Wisdomise AI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWSDM,crypto/XTVCUSDT
+KUCOIN:ZKJUSDT,ZKJUSDT,Polyhedra / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCZKJ,crypto/XTVCUSDT
+KUCOIN:ALPINEUSDT,ALPINEUSDT,Alpine F1 Team Fan Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCALPINEFT,crypto/XTVCUSDT
+KUCOIN:ATOMETH,ATOMETH,Cosmos / Ethereum,KuCoin,spot,ETH,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCATOM,crypto/XTVCETH
+KUCOIN:AVAETH,AVAETH,AVA / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCAVA,crypto/XTVCETH
+KUCOIN:BCHSVUSDT,BCHSVUSDT,BCHSV / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBSV,crypto/XTVCUSDT
+KUCOIN:FLRUSDC,FLRUSDC,Flare Network / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCFLR,crypto/XTVCUSDC
+KUCOIN:GAIAUSDT,GAIAUSDT,Gaia / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGAIA2,crypto/XTVCUSDT
+KUCOIN:GAINUSDT,GAINUSDT,GriffinAI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGAING,crypto/XTVCUSDT
+KUCOIN:LISTAUSDT,LISTAUSDT,Lista DAO / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCLISTA,crypto/XTVCUSDT
+KUCOIN:MFUSDT,MFUSDT,Moonwalk Fitness / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMFMO,crypto/XTVCUSDT
+KUCOIN:MINUSDT,MINUSDT,Minswap / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMINS,crypto/XTVCUSDT
+KUCOIN:MISSIONUSDT,MISSIONUSDT,MissionPawsible / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMISSION,crypto/XTVCUSDT
+KUCOIN:OBTUSDT,OBTUSDT,Orbiter Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCOBTOR,crypto/XTVCUSDT
+KUCOIN:THINKUSDT,THINKUSDT,Think AI / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTHINKA,crypto/XTVCUSDT
+KUCOIN:TSTBSCUSDT,TSTBSCUSDT,Test / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTSTTE,crypto/XTVCUSDT
+KUCOIN:AGLDUSDT,AGLDUSDT,Adventure Gold / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAGLD,crypto/XTVCUSDT
+KUCOIN:AVABTC,AVABTC,AVA / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCAVA,crypto/XTVCBTC
+KUCOIN:BMTUSDT,BMTUSDT,Bubblemaps / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBMTB,crypto/XTVCUSDT
+KUCOIN:BYTEUSDT,BYTEUSDT,ByteNova / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:CSPRETH,CSPRETH,Casper / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCCSPR,crypto/XTVCETH
+KUCOIN:DINUSDT,DINUSDT,DIN / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDIN2,crypto/XTVCUSDT
+KUCOIN:DUCKUSDT,DUCKUSDT,DuckChain / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCDUCKCH,crypto/XTVCUSDT
+KUCOIN:HTXUSDT,HTXUSDT,HTX DAO / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHTX,crypto/XTVCUSDT
+KUCOIN:INCUSDT,INCUSDT,WAT protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCINCW,crypto/XTVCUSDT
+KUCOIN:LUMIAUSDT,LUMIAUSDT,Lumia / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLUMIA,crypto/XTVCUSDT
+KUCOIN:ORBSUSDT,ORBSUSDT,Orbs / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCORBS,crypto/XTVCUSDT
+KUCOIN:SLAYUSDT,SLAYUSDT,SatLayer / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSLAYS,crypto/XTVCUSDT
+KUCOIN:TRXETH,TRXETH,Tron / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCTRX,crypto/XTVCETH
+KUCOIN:TRXUSDC,TRXUSDC,Tron / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCTRX,crypto/XTVCUSDC
+KUCOIN:USDTDAI,USDTDAI,Tether / Dai,KuCoin,spot,DAI,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCUSDT,crypto/XTVCDAI
+KUCOIN:XOXOUSDT,XOXOUSDT,XO Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXOXOP,crypto/XTVCUSDT
+KUCOIN:ACTSOLUSDT,ACTSOLUSDT,Act I The AI Prophecy / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCACTI,crypto/XTVCUSDT
+KUCOIN:ATOMBTC,ATOMBTC,Cosmos / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCATOM,crypto/XTVCBTC
+KUCOIN:BOBAUSDT,BOBAUSDT,Boba Network / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBOBA,crypto/XTVCUSDT
+KUCOIN:BOMBUSDT,BOMBUSDT,Bombie / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBOMB2,crypto/XTVCUSDT
+KUCOIN:EDGENUSDT,EDGENUSDT,LayerEdge / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCEDGEN,crypto/XTVCUSDT
+KUCOIN:ICXUSDT,ICXUSDT,icon / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCICX,crypto/XTVCUSDT
+KUCOIN:LAUSDT,LAUSDT,Lagrange / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLAGR,crypto/XTVCUSDT
+KUCOIN:LSDUSDT,LSDUSDT,Liquidswap / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLSDP,crypto/XTVCUSDT
+KUCOIN:MLKUSDT,MLKUSDT,MiL.k / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMLK,crypto/XTVCUSDT
+KUCOIN:ONTETH,ONTETH,Ontology / Ethereum,KuCoin,spot,ETH,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCONT,crypto/XTVCETH
+KUCOIN:SHIBUSDC,SHIBUSDC,SHIBA INU / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCSHIB,crypto/XTVCUSDC
+KUCOIN:ADXUSDT,ADXUSDT,AdEx / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCADX,crypto/XTVCUSDT
+KUCOIN:COTIBTC,COTIBTC,Coti / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCOTI,crypto/XTVCBTC
+KUCOIN:DOTBTC,DOTBTC,Polkadot / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCDOT,crypto/XTVCBTC
+KUCOIN:ERGBTC,ERGBTC,Ergo / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCERG,crypto/XTVCBTC
+KUCOIN:ETHBRL,ETHBRL,Ethereum / Brazilian Real,KuCoin,spot,BRL,crypto,kucoin,KUCOIN,,,crypto/XTVCETH,country/BR
+KUCOIN:FUNUSDT,FUNUSDT,Sport.fun / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:GNSUSDT,GNSUSDT,Gains Network / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCGNS,crypto/XTVCUSDT
+KUCOIN:HAEDALUSDT,HAEDALUSDT,Haedal Protocol / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCHAEDAL,crypto/XTVCUSDT
+KUCOIN:HEIUSDT,HEIUSDT,Heima / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCHEI,crypto/XTVCUSDT
+KUCOIN:ICPBTC,ICPBTC,Internet Computer / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCICP,crypto/XTVCBTC
+KUCOIN:KCSUSDC,KCSUSDC,KuCoin Token / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCKCS,crypto/XTVCUSDC
+KUCOIN:KYOUSDT,KYOUSDT,Kyo / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:LINKUSDC,LINKUSDC,Chainlink / USD Coin,KuCoin,spot,USDC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCLINK,crypto/XTVCUSDC
+KUCOIN:LSKUSDT,LSKUSDT,Lisk / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLSK,crypto/XTVCUSDT
+KUCOIN:MAPOUSDT,MAPOUSDT,MAPO / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCMAPO,crypto/XTVCUSDT
+KUCOIN:MILADYCULTUSDT,MILADYCULTUSDT,Milady Cult Coin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCULTM,crypto/XTVCUSDT
+KUCOIN:PYBOBOUSDT,PYBOBOUSDT,Capybobo / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:QTUMUSDT,QTUMUSDT,Qtum / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCQTUM,crypto/XTVCUSDT
+KUCOIN:RDOUSDT,RDOUSDT,Reddio / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRDOR,crypto/XTVCUSDT
+KUCOIN:USDCEUR,USDCEUR,USD Coin / Euro,KuCoin,spot,EUR,crypto,kucoin,KUCOIN,,,crypto/XTVCUSDC,country/EU
+KUCOIN:WAXUSDT,WAXUSDT,WAX / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWAXP,crypto/XTVCUSDT
+KUCOIN:WINBTC,WINBTC,WINk / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCWIN,crypto/XTVCBTC
+KUCOIN:XLMBTC,XLMBTC,Stellar / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCXLM,crypto/XTVCBTC
+KUCOIN:A47USDT,A47USDT,AGENDA 47 / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCA47,crypto/XTVCUSDT
+KUCOIN:ANLOGUSDT,ANLOGUSDT,ANLOG / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCANLOG,crypto/XTVCUSDT
+KUCOIN:BLOCKSTUSD1,BLOCKSTUSD1,Blockstreet / World Liberty Financial USD,KuCoin,spot,USD1,crypto,kucoin,KUCOIN,,,crypto/XTVCBLOCK4,crypto/XTVCUSD1W
+KUCOIN:CHZBTC,CHZBTC,Chiliz / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCCHZ,crypto/XTVCBTC
+KUCOIN:COWUSDT,COWUSDT,CoW Protocol / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCCOW,crypto/XTVCUSDT
+KUCOIN:DOGEUSDC,DOGEUSDC,Dogecoin / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCDOGE,crypto/XTVCUSDC
+KUCOIN:ESIMUSDT,ESIMUSDT,Depinsim / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:INXUSDT,INXUSDT,Infinex / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:KCSETH,KCSETH,KuCoin Token / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCKCS,crypto/XTVCETH
+KUCOIN:TOWNSUSDT,TOWNSUSDT,Towns Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTOWNS,crypto/XTVCUSDT
+KUCOIN:VTHOUSDT,VTHOUSDT,VeThor Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCVTHO,crypto/XTVCUSDT
+KUCOIN:XTERUSDT,XTERUSDT,Xterio / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXTERI,crypto/XTVCUSDT
+KUCOIN:APEUSDC,APEUSDC,ApeCoin / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCAPE,crypto/XTVCUSDC
+KUCOIN:DOGEBTC,DOGEBTC,Dogecoin / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCDOGE,crypto/XTVCBTC
+KUCOIN:EATUSDT,EATUSDT,375ai / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCEAT3,crypto/XTVCUSDT
+KUCOIN:ETCETH,ETCETH,Ethereum Classic / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCETC,crypto/XTVCETH
+KUCOIN:INJBTC,INJBTC,Injective / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCINJ,crypto/XTVCBTC
+KUCOIN:ITHACAUSDT,ITHACAUSDT,Ithaca Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCITHACA,crypto/XTVCUSDT
+KUCOIN:IZIUSDT,IZIUSDT,iZUMi Finance / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCIZIIZUMIFINANCE,crypto/XTVCUSDT
+KUCOIN:MTLUSDT,MTLUSDT,Metal DAO / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMTL,crypto/XTVCUSDT
+KUCOIN:PLAYSOLANAUSDT,PLAYSOLANAUSDT,Play Solana / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPLAYSOL,crypto/XTVCUSDT
+KUCOIN:RONINUSDT,RONINUSDT,Ronin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCRON,crypto/XTVCUSDT
+KUCOIN:SUTUSDT,SUTUSDT,SUPER TRUST / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSUTS,crypto/XTVCUSDT
+KUCOIN:USDEUSDT,USDEUSDT,Ethena USDe / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUSDEE,crypto/XTVCUSDT
+KUCOIN:VANAUSDT,VANAUSDT,Vana / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCVANA2,crypto/XTVCUSDT
+KUCOIN:VRADOWNUSDT,VRADOWNUSDT,VRA 2-4 Short / Tether,KuCoin,spot,USDT,crypto|leveraged|defi,kucoin,KUCOIN,,,crypto/XTVCVRA,crypto/XTVCUSDT
+KUCOIN:XDCETH,XDCETH,XDC Mainnet / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCXDC,crypto/XTVCETH
+KUCOIN:XLMETH,XLMETH,Stellar / Ethereum,KuCoin,spot,ETH,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCXLM,crypto/XTVCETH
+KUCOIN:ABTC,ABTC,Vaulta / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCAVU,crypto/XTVCBTC
+KUCOIN:ARCAUSDT,ARCAUSDT,Legend of Arcadia / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCARCAL,crypto/XTVCUSDT
+KUCOIN:AVAXBTC,AVAXBTC,Avalanche / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCAVAX,crypto/XTVCBTC
+KUCOIN:ETCBTC,ETCBTC,Ethereum Classic / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCETC,crypto/XTVCBTC
+KUCOIN:IOTABTC,IOTABTC,IOTA / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCIOTA,crypto/XTVCBTC
+KUCOIN:KALTUSDT,KALTUSDT,Altlayer / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCALTL,crypto/XTVCUSDT
+KUCOIN:LATUSDT,LATUSDT,PlatON / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCLAT,crypto/XTVCUSDT
+KUCOIN:MBLUSDT,MBLUSDT,MovieBloc / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMBL,crypto/XTVCUSDT
+KUCOIN:NEARUSDC,NEARUSDC,NEAR Protocol / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCNEAR,crypto/XTVCUSDC
+KUCOIN:ONDOUSDC,ONDOUSDC,Ondo / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCONDO,crypto/XTVCUSDC
+KUCOIN:PROPSUSDT,PROPSUSDT,Propbase / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPROPSP,crypto/XTVCUSDT
+KUCOIN:SHMUSDT,SHMUSDT,Shardeum / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSHMS,crypto/XTVCUSDT
+KUCOIN:SIGHTUSDT,SIGHTUSDT,Empire of Sight / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,,
+KUCOIN:SYSUSDT,SYSUSDT,Syscoin / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSYS,crypto/XTVCUSDT
+KUCOIN:TUSDUSDT,TUSDUSDT,TrueUSD / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTUSD,crypto/XTVCUSDT
+KUCOIN:USTCUSDC,USTCUSDC,Terra Classic USD / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCUSTC,crypto/XTVCUSDC
+KUCOIN:XYOETH,XYOETH,XYO Network / Ethereum,KuCoin,spot,ETH,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCXYO,crypto/XTVCETH
+KUCOIN:A2ZUSDT,A2ZUSDT,Arena Z / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCA2Z,crypto/XTVCUSDT
+KUCOIN:ACXUSDT,ACXUSDT,Across Protocol / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCACX,crypto/XTVCUSDT
+KUCOIN:AI3USDT,AI3USDT,Autonomys / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCAI3,crypto/XTVCUSDT
+KUCOIN:AVAXUSDC,AVAXUSDC,Avalanche / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCAVAX,crypto/XTVCUSDC
+KUCOIN:BAXBTC,BAXBTC,BABB / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCBAX,crypto/XTVCBTC
+KUCOIN:BCHSVBTC,BCHSVBTC,BCHSV / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCBSV,crypto/XTVCBTC
+KUCOIN:BNRENSHENGUSDT,BNRENSHENGUSDT,币安人生 / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBIANRENSHENG,crypto/XTVCUSDT
+KUCOIN:COLSUSDT,COLSUSDT,Cointel / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCCOLS,crypto/XTVCUSDT
+KUCOIN:FETUSDC,FETUSDC,Artificial Superintelligence Alliance / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCFET,crypto/XTVCUSDC
+KUCOIN:GUSDT,GUSDT,Gravity / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCGGRA,crypto/XTVCUSDT
+KUCOIN:HAPPYUSDT,HAPPYUSDT,Happy Cat / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHAPPYCA,crypto/XTVCUSDT
+KUCOIN:JUSDT,JUSDT,Jambo / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCJ,crypto/XTVCUSDT
+KUCOIN:KASUSDC,KASUSDC,KASPA / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCKAS,crypto/XTVCUSDC
+KUCOIN:KILOUSDT,KILOUSDT,KiloEx / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCKILO,crypto/XTVCUSDT
+KUCOIN:KNCBTC,KNCBTC,Kyber Network / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCKNC,crypto/XTVCBTC
+KUCOIN:OMBTC,OMBTC,MANTRA DAO / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCOM,crypto/XTVCBTC
+KUCOIN:PHILUSDT,PHILUSDT,Phil / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPHIL,crypto/XTVCUSDT
+KUCOIN:PONDBTC,PONDBTC,Marlin / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCPOND,crypto/XTVCBTC
+KUCOIN:PYUSDUSDT,PYUSDUSDT,PayPal USD / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPYUSD,crypto/XTVCUSDT
+KUCOIN:RIONUSDT,RIONUSDT,Hyperion / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCRION,crypto/XTVCUSDT
+KUCOIN:RUNEUSDC,RUNEUSDC,THORChain / USD Coin,KuCoin,spot,USDC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCRUNE,crypto/XTVCUSDC
+KUCOIN:TONUSDC,TONUSDC,Ton / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCTON,crypto/XTVCUSDC
+KUCOIN:UQCUSDT,UQCUSDT,Uquid Coin / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCUQC,crypto/XTVCUSDT
+KUCOIN:UXLINKUSDT,UXLINKUSDT,UXLINK / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUXLINK,crypto/XTVCUSDT
+KUCOIN:WBAIUSDT,WBAIUSDT,WhiteBridge / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWBAI,crypto/XTVCUSDT
+KUCOIN:WBTCUSDT,WBTCUSDT,Wrapped Bitcoin / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCWBTC,crypto/XTVCUSDT
+KUCOIN:WIFUSDC,WIFUSDC,dogwifhat / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCWIF,crypto/XTVCUSDC
+KUCOIN:XLMUSDC,XLMUSDC,Stellar / USD Coin,KuCoin,spot,USDC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCXLM,crypto/XTVCUSDC
+KUCOIN:XRPKCS,XRPKCS,Ripple / KuCoin Token,KuCoin,spot,KCS,crypto,kucoin,KUCOIN,,,crypto/XTVCXRP,crypto/XTVCKCS
+KUCOIN:ALGOUSDC,ALGOUSDC,Algorand / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCALGO,crypto/XTVCUSDC
+KUCOIN:BCHSVETH,BCHSVETH,BCHSV / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCBSV,crypto/XTVCETH
+KUCOIN:BCHSVUSDC,BCHSVUSDC,BCHSV / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCBSV,crypto/XTVCUSDC
+KUCOIN:BICOUSDT,BICOUSDT,Biconomy / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCBICO,crypto/XTVCUSDT
+KUCOIN:DOTUSDC,DOTUSDC,Polkadot / USD Coin,KuCoin,spot,USDC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCDOT,crypto/XTVCUSDC
+KUCOIN:ENJETH,ENJETH,Enjin Coin / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCENJ,crypto/XTVCETH
+KUCOIN:FLOKIUSDC,FLOKIUSDC,FLOKI / USD Coin,KuCoin,spot,USDC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCFLOKI,crypto/XTVCUSDC
+KUCOIN:GMTUSDC,GMTUSDC,STEPN / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCGMTSTEPN,crypto/XTVCUSDC
+KUCOIN:HPOS10IUSDT,HPOS10IUSDT,HarryPotterObamaSonic10Inu / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCBITCOIN,crypto/XTVCUSDT
+KUCOIN:LUNAUSDC,LUNAUSDC,Terra / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCLUNA,crypto/XTVCUSDC
+KUCOIN:MOOLAHUSDT,MOOLAHUSDT,Moolah / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMOOLAH,crypto/XTVCUSDT
+KUCOIN:NEOBTC,NEOBTC,NEO / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCNEO,crypto/XTVCBTC
+KUCOIN:OGNBTC,OGNBTC,Origin Protocol / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCOGN,crypto/XTVCBTC
+KUCOIN:SCRTBTC,SCRTBTC,Secret / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCSCRT,crypto/XTVCBTC
+KUCOIN:SOLVUSDT,SOLVUSDT,Solv Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSOLV,crypto/XTVCUSDT
+KUCOIN:USD1USDT,USD1USDT,World Liberty Financial USD / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUSD1W,crypto/XTVCUSDT
+KUCOIN:USDPUSDT,USDPUSDT,Pax Dollar / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCUSDPPAXDOLLAR,crypto/XTVCUSDT
+KUCOIN:WANUSDT,WANUSDT,Wanchain / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCWAN,crypto/XTVCUSDT
+KUCOIN:XL1USDT,XL1USDT,XL1 / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXL1,crypto/XTVCUSDT
+KUCOIN:XLABUSDT,XLABUSDT,Dexlab / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCXLABD,crypto/XTVCUSDT
+KUCOIN:ZILUSDC,ZILUSDC,Zilliqa / USD Coin,KuCoin,spot,USDC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCZIL,crypto/XTVCUSDC
+KUCOIN:ZKWASMUSDT,ZKWASMUSDT,ZKWASM / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCZKWASM,crypto/XTVCUSDT
+KUCOIN:ALGOBTC,ALGOBTC,Algorand / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCALGO,crypto/XTVCBTC
+KUCOIN:ANKRBTC,ANKRBTC,Ankr Network / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCANKR,crypto/XTVCBTC
+KUCOIN:BAXETH,BAXETH,BABB / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCBAX,crypto/XTVCETH
+KUCOIN:BUSD1,BUSD1,BUILDon / World Liberty Financial USD,KuCoin,spot,USD1,crypto,kucoin,KUCOIN,,,crypto/XTVCB,crypto/XTVCUSD1W
+KUCOIN:FARTCOINUSDC,FARTCOINUSDC,Fartcoin / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCFARTCOIN,crypto/XTVCUSDC
+KUCOIN:HBARUSDC,HBARUSDC,Hedera Hashgraph / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCHBAR,crypto/XTVCUSDC
+KUCOIN:IOTXBTC,IOTXBTC,IoTeX / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCIOTX,crypto/XTVCBTC
+KUCOIN:KACEUSDT,KACEUSDT,Fusionist / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCACEF,crypto/XTVCUSDT
+KUCOIN:LDOUSDC,LDOUSDC,Lido DAO / USD Coin,KuCoin,spot,USDC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCLDO,crypto/XTVCUSDC
+KUCOIN:MONPROUSDT,MONPROUSDT,MON Protocol / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCMONP,crypto/XTVCUSDT
+KUCOIN:NEARBTC,NEARBTC,NEAR Protocol / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCNEAR,crypto/XTVCBTC
+KUCOIN:PEPEUSDC,PEPEUSDC,Pepe / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCPEPE,crypto/XTVCUSDC
+KUCOIN:PUNDIAIUSDT,PUNDIAIUSDT,Pundi AIFX Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPUNDIAI,crypto/XTVCUSDT
+KUCOIN:SNXBTC,SNXBTC,Synthetix Network Token / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSNX,crypto/XTVCBTC
+KUCOIN:SUIUSDC,SUIUSDC,SUI / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCSUI,crypto/XTVCUSDC
+KUCOIN:AETH,AETH,Vaulta / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCAVU,crypto/XTVCETH
+KUCOIN:ATOMUSDC,ATOMUSDC,Cosmos / USD Coin,KuCoin,spot,USDC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCATOM,crypto/XTVCUSDC
+KUCOIN:AUSDC,AUSDC,Vaulta / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCAVU,crypto/XTVCUSDC
+KUCOIN:BCHUSDC,BCHUSDC,Bitcoin Cash / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCBCH,crypto/XTVCUSDC
+KUCOIN:DOGEKCS,DOGEKCS,Dogecoin / KuCoin Token,KuCoin,spot,KCS,crypto,kucoin,KUCOIN,,,crypto/XTVCDOGE,crypto/XTVCKCS
+KUCOIN:HAIOUSDT,HAIOUSDT,HAiO / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCHAIO,crypto/XTVCUSDT
+KUCOIN:INJUSDC,INJUSDC,Injective / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCINJ,crypto/XTVCUSDC
+KUCOIN:KLVBTC,KLVBTC,Klever / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCKLV,crypto/XTVCBTC
+KUCOIN:LTCKCS,LTCKCS,Litecoin / KuCoin Token,KuCoin,spot,KCS,crypto,kucoin,KUCOIN,,,crypto/XTVCLTC,crypto/XTVCKCS
+KUCOIN:LTCUSDC,LTCUSDC,Litecoin / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCLTC,crypto/XTVCUSDC
+KUCOIN:MANAETH,MANAETH,Decentraland / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCMANA,crypto/XTVCETH
+KUCOIN:NAKAUSDC,NAKAUSDC,Nakamoto.Games / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCNAKA,crypto/XTVCUSDC
+KUCOIN:ONTBTC,ONTBTC,Ontology / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCONT,crypto/XTVCBTC
+KUCOIN:OPUSDC,OPUSDC,Optimism / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCOP,crypto/XTVCUSDC
+KUCOIN:RUNEBTC,RUNEBTC,THORChain / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCRUNE,crypto/XTVCBTC
+KUCOIN:STORJETH,STORJETH,Storj / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCSTORJ,crypto/XTVCETH
+KUCOIN:TRUMPUSDC,TRUMPUSDC,OFFICIAL TRUMP / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCTRUMPOF,crypto/XTVCUSDC
+KUCOIN:USDDUSDC,USDDUSDC,Decentralized USD / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCUSDD,crypto/XTVCUSDC
+KUCOIN:USDGUSDT,USDGUSDT,Global Dollar / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCUSDGG,crypto/XTVCUSDT
+KUCOIN:USDTBRL,USDTBRL,Tether / Brazilian Real,KuCoin,spot,BRL,crypto,kucoin,KUCOIN,,,crypto/XTVCUSDT,country/BR
+KUCOIN:VRUSDC,VRUSDC,Victoria VR / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCVR,crypto/XTVCUSDC
+KUCOIN:VSYSBTC,VSYSBTC,V Systems / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCVSYS,crypto/XTVCBTC
+KUCOIN:WANBTC,WANBTC,Wanchain / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCWAN,crypto/XTVCBTC
+KUCOIN:WBTCBTC,WBTCBTC,Wrapped Bitcoin / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCWBTC,crypto/XTVCBTC
+KUCOIN:ADAKCS,ADAKCS,Cardano / KuCoin Token,KuCoin,spot,KCS,crypto,kucoin,KUCOIN,,,crypto/XTVCADA,crypto/XTVCKCS
+KUCOIN:ADXUSDC,ADXUSDC,AdEx / USD Coin,KuCoin,spot,USDC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCADX,crypto/XTVCUSDC
+KUCOIN:BNBKCS,BNBKCS,Binance Chain Native Token / KuCoin Token,KuCoin,spot,KCS,crypto,kucoin,KUCOIN,,,crypto/XTVCBNB,crypto/XTVCKCS
+KUCOIN:DOTKCS,DOTKCS,Polkadot / KuCoin Token,KuCoin,spot,KCS,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCDOT,crypto/XTVCKCS
+KUCOIN:EGLDBTC,EGLDBTC,MultiversX / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCEGLD,crypto/XTVCBTC
+KUCOIN:ENAUSDC,ENAUSDC,Ethena / USD Coin,KuCoin,spot,USDC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCENA,crypto/XTVCUSDC
+KUCOIN:ETCUSDC,ETCUSDC,Ethereum Classic / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCETC,crypto/XTVCUSDC
+KUCOIN:FLUXUSDC,FLUXUSDC,flux / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCFLUX,crypto/XTVCUSDC
+KUCOIN:ICXETH,ICXETH,icon / Ethereum,KuCoin,spot,ETH,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCICX,crypto/XTVCETH
+KUCOIN:IOSTETH,IOSTETH,Internet of Services / Ethereum,KuCoin,spot,ETH,crypto,kucoin,KUCOIN,,,crypto/XTVCIOST,crypto/XTVCETH
+KUCOIN:IOTXETH,IOTXETH,IoTeX / Ethereum,KuCoin,spot,ETH,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCIOTX,crypto/XTVCETH
+KUCOIN:JASMYUSDC,JASMYUSDC,JasmyCoin / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCJASMY,crypto/XTVCUSDC
+KUCOIN:KRLBTC,KRLBTC,Kryll / Bitcoin,KuCoin,spot,BTC,crypto,kucoin,KUCOIN,,,crypto/XTVCKRL,crypto/XTVCBTC
+KUCOIN:LOTUSDT,LOTUSDT,League of Traders / Tether,KuCoin,spot,USDT,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCLOT,crypto/XTVCUSDT
+KUCOIN:MOODENGUSDC,MOODENGUSDC,Moo Deng / USD Coin,KuCoin,spot,USDC,crypto,kucoin,KUCOIN,,,crypto/XTVCMOODENG,crypto/XTVCUSDC
+KUCOIN:RLCBTC,RLCBTC,iExec RLC / Bitcoin,KuCoin,spot,BTC,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCRLC,crypto/XTVCBTC
+KUCOIN:STREAMUSDT,STREAMUSDT,Streamflow / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCSTREAMF,crypto/XTVCUSDT
+KUCOIN:PVTUSDT,PVTUSDT,Punkvism Token / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCPVTPU,crypto/XTVCUSDT
+KUCOIN:SOLKCS,SOLKCS,Solana / KuCoin Token,KuCoin,spot,KCS,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSOL,crypto/XTVCKCS
+KUCOIN:SPACEUSD1,SPACEUSD1,Spacecoin / World Liberty Financial USD,KuCoin,spot,USD1,crypto,kucoin,KUCOIN,,,,
+KUCOIN:BTCUSD1,BTCUSD1,Bitcoin / World Liberty Financial USD,KuCoin,spot,USD1,crypto,kucoin,KUCOIN,,,crypto/XTVCBTC,crypto/XTVCUSD1W
+KUCOIN:HYPEKCS,HYPEKCS,Hyperliquid / KuCoin Token,KuCoin,spot,KCS,crypto,kucoin,KUCOIN,,,crypto/XTVCHYPEH,crypto/XTVCKCS
+KUCOIN:XRPUSD1,XRPUSD1,Ripple / World Liberty Financial USD,KuCoin,spot,USD1,crypto,kucoin,KUCOIN,,,crypto/XTVCXRP,crypto/XTVCUSD1W
+KUCOIN:BTCUSDG,BTCUSDG,Bitcoin / Global Dollar,KuCoin,spot,USDG,crypto,kucoin,KUCOIN,,,crypto/XTVCBTC,crypto/XTVCUSDGG
+KUCOIN:EGL1USD1,EGL1USD1,EGL1 / World Liberty Financial USD,KuCoin,spot,USD1,crypto,kucoin,KUCOIN,,,crypto/XTVCEGL1,crypto/XTVCUSD1W
+KUCOIN:ETHUSD1,ETHUSD1,Ethereum / World Liberty Financial USD,KuCoin,spot,USD1,crypto,kucoin,KUCOIN,,,crypto/XTVCETH,crypto/XTVCUSD1W
+KUCOIN:PEPEKCS,PEPEKCS,Pepe / KuCoin Token,KuCoin,spot,KCS,crypto,kucoin,KUCOIN,,,crypto/XTVCPEPE,crypto/XTVCKCS
+KUCOIN:SOLUSD1,SOLUSD1,Solana / World Liberty Financial USD,KuCoin,spot,USD1,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCSOL,crypto/XTVCUSD1W
+KUCOIN:USDDTRX,USDDTRX,Decentralized USD / Tron,KuCoin,spot,TRX,crypto,kucoin,KUCOIN,,,crypto/XTVCUSDD,crypto/XTVCTRX
+KUCOIN:WLFIUSD1,WLFIUSD1,World Liberty Financial / World Liberty Financial USD,KuCoin,spot,USD1,crypto,kucoin,KUCOIN,,,crypto/XTVCWLFIO,crypto/XTVCUSD1W
+KUCOIN:DOGEUSD1,DOGEUSD1,Dogecoin / World Liberty Financial USD,KuCoin,spot,USD1,crypto,kucoin,KUCOIN,,,crypto/XTVCDOGE,crypto/XTVCUSD1W
+KUCOIN:KLVTRX,KLVTRX,Klever / Tron,KuCoin,spot,TRX,crypto,kucoin,KUCOIN,,,crypto/XTVCKLV,crypto/XTVCTRX
+KUCOIN:NFTTRX,NFTTRX,AINFT / Tron,KuCoin,spot,TRX,crypto,kucoin,KUCOIN,,,crypto/XTVCNFTAPENFT,crypto/XTVCTRX
+KUCOIN:SUIKCS,SUIKCS,SUI / KuCoin Token,KuCoin,spot,KCS,crypto,kucoin,KUCOIN,,,crypto/XTVCSUI,crypto/XTVCKCS
+KUCOIN:TRUMPUSD1,TRUMPUSD1,OFFICIAL TRUMP / World Liberty Financial USD,KuCoin,spot,USD1,crypto,kucoin,KUCOIN,,,crypto/XTVCTRUMPOF,crypto/XTVCUSD1W
+KUCOIN:ADAUSD1,ADAUSD1,Cardano / World Liberty Financial USD,KuCoin,spot,USD1,crypto,kucoin,KUCOIN,,,crypto/XTVCADA,crypto/XTVCUSD1W
+KUCOIN:TEAFIUSDT,TEAFIUSDT,Tea-Fi / Tether,KuCoin,spot,USDT,crypto,kucoin,KUCOIN,,,crypto/XTVCTEAF,crypto/XTVCUSDT
+KUCOIN:WINTRX,WINTRX,WINk / Tron,KuCoin,spot,TRX,crypto|defi,kucoin,KUCOIN,,,crypto/XTVCWIN,crypto/XTVCTRX

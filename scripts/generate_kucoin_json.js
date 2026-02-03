@@ -1,0 +1,12 @@
+const fs = require('fs');
+const path = require('path');
+const p = path.join(__dirname, '..', 'kucoin_spot.csv');
+const out = path.join(__dirname, '..', 'kucoin_symbols.json');
+const raw = fs.readFileSync(p, 'utf8');
+const lines = raw.split(/\r?\n/).filter(Boolean);
+const hdr = lines.shift().split(',').map(h => h.trim().toLowerCase());
+const idx = hdr.findIndex(h => h === 'tv_id');
+if (idx < 0) throw new Error('tv_id header not found');
+const arr = lines.map(l => (l.split(',')[idx] || '').trim()).filter(Boolean).slice(0, 200);
+fs.writeFileSync(out, JSON.stringify(arr, null, 2));
+console.log('WROTE', out, arr.length, 'symbols');

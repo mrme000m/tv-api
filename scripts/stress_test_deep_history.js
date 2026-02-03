@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
-const TradingView = require('./main');
+const TradingView = require('../main');
 
 function loadSymbols() {
   const argPath = process.argv.find((arg) => arg.startsWith('--symbols='));
