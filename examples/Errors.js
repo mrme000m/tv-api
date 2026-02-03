@@ -1,4 +1,5 @@
 const TradingView = require('../main');
+require('dotenv').config();
 
 /**
  * This example tests many types of errors

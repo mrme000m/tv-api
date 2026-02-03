@@ -1,4 +1,5 @@
 const TradingView = require('../main');
+require('dotenv').config();
 
 /**
  * This example tests custom timeframes like 1 second

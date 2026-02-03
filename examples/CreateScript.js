@@ -1,9 +1,11 @@
 /*
  * Example: Create, rename, list versions, fetch, and delete a Pine script
  *
- * Requires environment variables: SESSION, SIGNATURE, TV_USER
+ * Requires: SESSION, SIGNATURE, TV_USER in .env file or environment variables
  * Usage: node examples/CreateScript.js
  */
+
+require('dotenv').config();
 
 const TradingView = require('../main');
 
@@ -30,7 +32,7 @@ async function main() {
   const saveRes = await TradingView.saveScriptNew({ name, source, userName: user, allowOverwrite: true, credentials: creds });
   console.log('saveScriptNew result:', saveRes);
 
-  const pineId = (typeof saveRes === 'string') ? saveRes.match(/(USER|PUB|STD);[^\s"'<>]+/)?.[0] : (saveRes?.scriptIdPart || saveRes?.scriptId || null);
+  const pineId = (typeof saveRes === 'string') ? saveRes.match(/(USER|PUB|STD);[^\s"'<>]+/)?.[0] : (saveRes?.result?.metaInfo?.scriptIdPart || saveRes?.scriptIdPart || saveRes?.scriptId || null);
   console.log('Discovered pineId:', pineId);
   if (!pineId) {
     console.error('Could not determine pineId from save result. Try looking into private indicators list.');

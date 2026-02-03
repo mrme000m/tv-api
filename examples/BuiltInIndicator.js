@@ -1,4 +1,5 @@
 const TradingView = require('../main');
+require('dotenv').config();
 
 /**
  * This example tests built-in indicators like volume-based indicators

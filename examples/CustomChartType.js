@@ -1,4 +1,5 @@
 const TradingView = require('../main');
+require('dotenv').config();
 
 /**
  * This example creates charts of custom types such as 'HeikinAshi', 'Renko',

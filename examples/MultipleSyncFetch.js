@@ -1,4 +1,5 @@
 const TradingView = require('../main');
+require('dotenv').config();
 
 /**
  * This examples synchronously fetches data from 3 indicators

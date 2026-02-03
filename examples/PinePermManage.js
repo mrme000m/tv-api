@@ -1,4 +1,5 @@
 const { PinePermManager } = require('../main');
+require('dotenv').config();
 
 /**
  * This example creates a pine permission manager
