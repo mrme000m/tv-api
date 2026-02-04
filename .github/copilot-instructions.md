@@ -133,16 +133,29 @@ Reports may arrive as:
 
 ## Testing & Development
 
-### Run Tests
+### Package manager
+We use **pnpm** for package management. For consistent developer environments we recommend invoking pnpm via the project's `mise` wrapper (ensures pinned Node/pnpm versions and reproducible installs).
+
+Using mise (recommended):
 ```bash
-npm test  # Runs vitest (see vitest config in vite.config.js)
+# Install deps
+mise pnpm install
+
+# Run test suite
+mise pnpm test  # Runs vitest (see vitest config in vite.config.js)
+
+# Run examples
+mise pnpm run example -- examples/SimpleChart.js
+# Or with hot-reload:
+mise pnpm run example:dev -- examples/SimpleChart.js
 ```
 
-### Run Examples  
+Direct pnpm usage (if you manage pnpm yourself):
 ```bash
-npm run example examples/SimpleChart.js
-# Or with hot-reload:
-npm run example:dev examples/SimpleChart.js
+pnpm install
+pnpm test
+pnpm run example examples/SimpleChart.js
+pnpm run example:dev examples/SimpleChart.js
 ```
 
 ### Environment Variables

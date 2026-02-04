@@ -6,14 +6,20 @@
   "scripts": {
     "test": "vitest",
     "example": "node --env-file=.env",
-    "example:dev": "nodemon --env-file=.env"
+    "example:dev": "nodemon --env-file=.env",
+    "postinstall": "pnpm run prepare",
+    "prepare": "husky install",
+    "clean": "rm -rf node_modules",
+    "install:pnpm": "pnpm install",
+    "update:deps": "pnpm update",
+    "reinstall": "pnpm run clean && pnpm install"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mathieu2301/TradingView-API.git"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18.0.0"
   },
   "keywords": [
     "tradingwiew",
@@ -40,5 +46,12 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
     "vitest": "^0.31.4"
+  },
+  "pnpm": {
+    "overrides": {},
+    "packageExtensions": {}
+  },
+  "volta": {
+    "node": "24.11.1"
   }
 }

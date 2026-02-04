@@ -47,8 +47,9 @@ There are several ways you can contribute to this project:
 ## Development Setup
 
 ### Prerequisites
-- Node.js >= 14.0.0
-- npm or yarn package manager
+- Node.js >= 18.0.0
+- [mise](https://mise.jdx.dev/) (for managing Node.js and pnpm versions)
+- Or alternatively, manual installation of Node.js and pnpm
 
 ### Setup Instructions
 1. Fork the repository on GitHub
@@ -57,11 +58,13 @@ There are several ways you can contribute to this project:
    git clone https://github.com/YOUR_USERNAME/tradingview-api.git
    cd tradingview-api
    ```
-3. Install dependencies:
+3. Install dependencies using mise and pnpm:
    ```bash
-   npm install
-   # or
-   yarn install
+   # Install mise if you haven't already (https://mise.jdx.dev/)
+   # Install the correct Node.js and pnpm versions using mise
+   mise install
+   # Install project dependencies with pnpm
+   pnpm install
    ```
 4. Create a new branch for your feature or bug fix:
    ```bash
@@ -128,9 +131,15 @@ TV_PASSWORD=your_password
 ### Test Framework
 The project uses Vitest for testing. Run tests with:
 ```bash
+# Using npm
 npm test
 # or for continuous testing
 npm run test:watch
+
+# Using pnpm (recommended)
+pnpm test
+# or for continuous testing
+pnpm run test:watch
 ```
 
 ### Test Structure

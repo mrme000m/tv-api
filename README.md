@@ -12,6 +12,7 @@ A comprehensive Node.js client for interacting with TradingView's public and pri
 - [Examples](#examples)
 - [Configuration](#configuration)
 - [Dependencies](#dependencies)
+- [Package Manager Setup](#package-manager-setup)
 - [Troubleshooting](#troubleshooting)
 - [Contribution Guidelines](#contribution-guidelines)
 
@@ -50,6 +51,11 @@ npm install @mathieuc/tradingview
 ### Install via yarn
 ```bash
 yarn add @mathieuc/tradingview
+```
+
+### Install via pnpm
+```bash
+pnpm add @mathieuc/tradingview
 ```
 
 ## Quick Start
@@ -322,6 +328,28 @@ const client = new TradingView.Client({
 - `dotenv`: Environment variable loading
 - `@babel/eslint-parser`: Babel ESLint parser
 
+## Package Manager Setup
+
+This project uses [pnpm](https://pnpm.io/) as the package manager, managed by [mise](https://mise.jdx.dev/) for consistent development environments.
+
+### Quick Setup
+
+For new contributors, we recommend using [mise](https://mise.jdx.dev/) to manage your Node.js and pnpm versions:
+
+```bash
+# Install mise if you don't have it (https://mise.jdx.dev/)
+# Then install the correct versions and dependencies:
+mise install
+pnpm install
+```
+
+Or use the provided setup script:
+```bash
+./scripts/setup-pnpm.sh
+```
+
+For more details, see the [full package manager setup guide](./docs/PACKAGE_MANAGER_SETUP.md).
+
 ## Troubleshooting
 
 ### Common Issues
@@ -378,7 +406,16 @@ client.onDisconnected(() => {
 ### Development Setup
 1. Fork the repository
 2. Clone your fork: `git clone https://github.com/your-username/tradingview-api.git`
-3. Install dependencies: `npm install`
+3. Install dependencies:
+   - Using npm: `npm install`
+   - Using yarn: `yarn install`
+   - Using pnpm (recommended): `pnpm install`
+   
+   For consistent development environment, consider using [mise](https://mise.jdx.dev/) to manage your Node.js and pnpm versions:
+   ```bash
+   mise install  # Installs the correct Node.js and pnpm versions
+   pnpm install  # Installs project dependencies
+   ```
 4. Create a feature branch: `git checkout -b feature-name`
 
 ### Code Standards
@@ -390,7 +427,14 @@ client.onDisconnected(() => {
 ### Testing
 Run the test suite:
 ```bash
+# Using npm
 npm test
+
+# Using yarn
+yarn test
+
+# Using pnpm
+pnpm test
 ```
 
 ### Pull Requests

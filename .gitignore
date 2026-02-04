@@ -1,2 +1,10 @@
 node_modules/
 .env
+# pnpm specific files
+.pnp.*
+pnpm-debug.log*
+pnpm-lock.yaml
+dist/
+
+# Remove npm lock file since we're using pnpm
+package-lock.json

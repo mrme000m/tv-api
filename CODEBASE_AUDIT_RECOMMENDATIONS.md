@@ -158,10 +158,10 @@ Patterns observed:
 
 **Recommendation**
 - Add GitHub Actions workflows:
-  - `tests.yml`: run `npm ci` + `npm test` on Node 18/20/22
+  - `tests.yml`: run `pnpm install` + `pnpm test` on Node 18/20/22
   - optional `integration-tests.yml`: gated by secrets/env var
   - `lint.yml`: eslint
-  - `audit.yml`: `npm audit --omit=dev --audit-level=high` (or use `npm audit signatures` depending on policy)
+  - `audit.yml`: `pnpm audit --omit=dev --audit-level=high` (or use `pnpm audit signatures` depending on policy)
 
 #### 4.3 Integration-test flakiness risk
 - Many tests appear to be network/websocket integration tests.

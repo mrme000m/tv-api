@@ -1136,9 +1136,9 @@ async function cmdRun(store, client, args) {
 	try {
 		TradingView = require('@mathieuc/tradingview');
 	} catch {
-		throw new Error('Run requires @mathieuc/tradingview package. Install with: npm install @mathieuc/tradingview');
+		throw new Error('Run requires @mathieuc/tradingview package. Install with: pnpm install @mathieuc/tradingview');
 	}
-	
+
 	const target = args.positional[0];
 	if (!target) throw new Error('Usage: run <id|file> [--symbol X] [--tf 5m] [--inputs file.yaml] [--in_0 50]');
 	
