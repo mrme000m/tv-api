@@ -148,8 +148,8 @@ npm run example:dev examples/SimpleChart.js
 ### Environment Variables
 Create `.env` for credentials (not committed):
 ```
-TV_SESSION_ID=your_sessionid_cookie
-TV_SIGNATURE=your_sessionid_sign_cookie
+SESSION=your_sessionid_cookie
+SIGNATURE=your_sessionid_sign_cookie
 TV_USERNAME=username
 TV_PASSWORD=password
 ```
@@ -222,8 +222,8 @@ console.log('sessionSig:', user.signature);   // Store as SIGNATURE
 3. Find `sessionid` (SESSION) and `sessionid_sign` (SIGNATURE)
 4. Store in `.env`:
 ```
-TV_SESSION_ID=your_sessionid_value
-TV_SIGNATURE=your_sessionid_sign_value
+SESSION=your_sessionid_value
+SIGNATURE=your_sessionid_sign_value
 ```
 
 #### Loading Private Indicators/Strategies
@@ -231,8 +231,8 @@ TV_SIGNATURE=your_sessionid_sign_value
 Private scripts use the `USER;` prefix. They REQUIRE credentials:
 
 ```javascript
-const session = process.env.TV_SESSION_ID;
-const signature = process.env.TV_SIGNATURE;
+const session = process.env.SESSION;
+const signature = process.env.SIGNATURE;
 
 // Without credentials → study_not_auth error
 const indicator = await TradingView.getIndicator(
@@ -287,8 +287,8 @@ chart.setMarket('BINANCE:BTCEUR', { timeframe: 'D' });
 
 **Authenticated Requests (Requires SESSION/SIGNATURE)**
 ```javascript
-const session = process.env.TV_SESSION_ID;
-const sig = process.env.TV_SIGNATURE;
+const session = process.env.SESSION;
+const sig = process.env.SIGNATURE;
 
 // Get user's private indicators
 const privateInds = await TradingView.getPrivateIndicators(session, sig);
@@ -316,11 +316,11 @@ const user = await TradingView.getUser(session, sig);
 
 ```javascript
 // ✅ GOOD: Check credentials before making authenticated calls
-const session = process.env.TV_SESSION_ID;
-const signature = process.env.TV_SIGNATURE;
+const session = process.env.SESSION;
+const signature = process.env.SIGNATURE;
 
 if (!session || !signature) {
-  console.error('Authenticated feature requires TV_SESSION_ID and TV_SIGNATURE');
+  console.error('Authenticated feature requires SESSION and SIGNATURE');
   process.exit(1);
 }
 
@@ -336,13 +336,13 @@ const private = await TradingView.getPrivateIndicators(session, signature);
 // ✅ GOOD: Handle credential refresh on 401
 async function withCredentialRefresh(fn) {
   try {
-    return await fn(process.env.TV_SESSION_ID, process.env.TV_SIGNATURE);
+    return await fn(process.env.SESSION, process.env.SIGNATURE);
   } catch (err) {
     if (err.response?.status === 401) {
       console.log('Session expired, re-logging in...');
       const user = await TradingView.loginUser(process.env.TV_USERNAME, process.env.TV_PASSWORD);
-      process.env.TV_SESSION_ID = user.session;
-      process.env.TV_SIGNATURE = user.signature;
+      process.env.SESSION = user.session;
+      process.env.SIGNATURE = user.signature;
       return await fn(user.session, user.signature);
     }
     throw err;
@@ -370,8 +370,8 @@ try {
 Private scripts support versioning. Common operations:
 
 ```javascript
-const session = process.env.TV_SESSION_ID;
-const sig = process.env.TV_SIGNATURE;
+const session = process.env.SESSION;
+const sig = process.env.SIGNATURE;
 const credentials = { session, signature: sig };
 
 // List all versions of a script
