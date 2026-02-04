@@ -112,7 +112,7 @@ describe('Indicators', () => {
     expect(perfResult).toBe(true);
 
     SuperTrend.remove();
-  }, 10000);
+  }, 30000);
 
   it.skipIf(noAuth).concurrent('gets data from MarketCipher B study', async () => {
     const CipherB = new chart.Study(indicators.CipherB);

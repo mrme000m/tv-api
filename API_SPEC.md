@@ -349,6 +349,88 @@ Get user's private indicators from session cookie.
 ### `TradingView.getIndicator(id, version, session, signature)`
 Get a Pine script indicator.
 
+---
+
+## Indicators API (new)
+
+This library exposes an additional indicator/script wrapper at `TradingView.indicators` and also re-exports its functions at the top level.
+
+### `TradingView.indicators.normalizePineId(id)`
+Normalize Pine IDs users may paste in URL-encoded form.
+
+**Parameters:**
+- `id` (string) - e.g. `PUB%3Babc...` or `PUB;abc...`
+
+**Returns:** `string` - normalized `PREFIX;ID`
+
+### `TradingView.searchPublicScripts(query, options)`
+Search public community scripts (suggestions endpoint).
+
+**Parameters:**
+- `query` (string)
+- `options` (object, optional)
+  - `limit` (number, optional)
+  - `language` (string, optional, default: `en`)
+  - `session` (string, optional)
+  - `signature` (string, optional)
+
+**Returns:** `Promise<SearchIndicatorResult[]>`
+
+### `TradingView.browsePublicLibrary(options)`
+Browse public scripts library.
+
+**Parameters:**
+- `options` (object, optional)
+  - `offset` (number, optional, default: 0)
+  - `count` (number, optional, default: 20)
+  - `type` (number, optional, default: 0)
+  - `sort` (`top` | `trending`, optional)
+  - `isPaid` (boolean, optional)
+
+**Returns:** `Promise<any>` - raw TradingView response
+
+### `TradingView.getScriptInfo(pineId, options)`
+Fetch script metadata using pine-facade.
+
+**Parameters:**
+- `pineId` (string) - e.g. `PUB;...`
+- `options` (object, optional) - `session`, `signature`, `language`
+
+**Returns:** `Promise<any>`
+
+### `TradingView.isAuthorizedToGet(pineId, version, options)`
+Check whether current credentials can fetch the script.
+
+**Parameters:**
+- `pineId` (string)
+- `version` (number|string, optional, default: 1)
+- `options` (object, optional)
+
+**Returns:** `Promise<boolean>` (or TradingView boolean-like payload)
+
+### `TradingView.getScriptSource(pineId, version, options)`
+Fetch raw Pine payload (usually `{ source: string }`) via pine-facade `/get`.
+
+**Parameters:**
+- `pineId` (string)
+- `version` (number|string, optional, default: 1)
+- `options` (object, optional)
+
+**Returns:** `Promise<any>`
+
+### `TradingView.indicators.createIndicatorsClient(defaults)`
+Create a small helper client that carries defaults.
+
+**Parameters:**
+- `defaults` (object, optional)
+  - `session` (string, optional)
+  - `signature` (string, optional)
+  - `language` (string, optional)
+
+**Returns:**
+- object with methods: `search`, `browseLibrary`, `getInfo`, `canGet`, `getSource`, `getIndicator`
+
+
 **Parameters:**
 - `id` (string) - Indicator ID (e.g., 'PUB;XXXXXXXXXXXXXXXXXXXXX')
 - `version` (string, optional) - Indicator version (default: 'last')

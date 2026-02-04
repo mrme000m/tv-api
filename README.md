@@ -9,7 +9,7 @@ A comprehensive Node.js client for interacting with TradingView's public and pri
 - [Quick Start](#quick-start)
 - [Architecture](#architecture)
 - [API Documentation](#api-documentation)
-- [Examples](#examples)
+- [Examples](#running-examples)
 - [Configuration](#configuration)
 - [Dependencies](#dependencies)
 - [Package Manager Setup](#package-manager-setup)
@@ -59,6 +59,23 @@ pnpm add @mathieuc/tradingview
 ```
 
 ## Quick Start
+
+### Running Examples
+
+This repository contains runnable scripts in the [`examples/`](./examples) folder.
+
+Common ones:
+- `examples/Search.js` (markets + `searchIndicator`)
+- `examples/IndicatorSearchApi.js` (new `TradingView.indicators` wrapper)
+- `examples/FetchPublicScriptSource.js` (search → info → auth check → raw source fetch)
+
+Run an example:
+```bash
+pnpm run example examples/Search.js
+pnpm run example examples/IndicatorSearchApi.js
+pnpm run example examples/FetchPublicScriptSource.js
+```
+
 
 ### Basic Chart Example
 ```javascript
@@ -272,6 +289,16 @@ Search for markets with advanced filtering.
 
 #### `TradingView.searchIndicator(search)`
 Search for Pine script indicators.
+
+#### `TradingView.indicators` (new)
+A higher-level indicators/scripts wrapper that exposes:
+- public script search (`searchPublicScripts`)
+- library browsing (`browsePublicLibrary`)
+- metadata (`getScriptInfo`)
+- authorization checks (`isAuthorizedToGet`)
+- raw source payload fetch (`getScriptSource`)
+
+See `examples/IndicatorSearchApi.js` and `examples/FetchPublicScriptSource.js`.
 
 #### `TradingView.loginUser(username, password, remember, userAgent)`
 Login with TradingView credentials.
