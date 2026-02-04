@@ -27,6 +27,7 @@ This document provides practical examples of how to use the TradingView API wrap
 21. [Get Chart Drawings](#get-chart-drawings)
 22. [Comprehensive Error Handling](#comprehensive-error-handling)
 23. [Timeout Wrapper](#timeout-wrapper)
+24. [Reconnect Handling](#reconnect-handling)
 
 ## Simple Chart Connection
 
@@ -767,3 +768,53 @@ async function timeoutExample() {
 }
 
 timeoutExample();
+```
+
+## Reconnect Handling
+
+If you run long-lived bots or stream market data continuously, you’ll eventually hit transient network hiccups.
+This library provides:
+
+- Connection lifecycle events: `onReconnecting`, `onReconnected`, `onConnectTimeout`
+- Reconnect/backoff tuning options via `Client` constructor
+- **Auto session rehydration**: chart/quote sessions automatically re-create and re-subscribe after reconnect
+
+### Minimal example
+
+```javascript
+const TradingView = require('./main');
+
+const client = new TradingView.Client({
+  token: process.env.SESSION,
+  signature: process.env.SIGNATURE,
+
+  // Connect + retry tuning
+  connectTimeoutMs: 10_000,
+  reconnectMaxRetries: 20,
+  reconnectFastFirstDelayMs: 250,
+  reconnectBaseDelayMs: 500,
+  reconnectMaxDelayMs: 30_000,
+  reconnectMultiplier: 2,
+  reconnectJitter: true,
+});
+
+client.onReconnecting(({ attempt, maxRetries }) => {
+  console.log(`Reconnecting… ${attempt + 1}/${maxRetries}`);
+});
+
+client.onReconnected(() => {
+  console.log('Reconnected (rehydration completed)');
+});
+
+client.onConnectTimeout(({ timeoutMs }) => {
+  console.warn(`Connect timed out after ${timeoutMs}ms`);
+});
+
+// Create sessions/subscriptions once; they will be restored after reconnect.
+const chart = new client.Session.Chart();
+chart.setMarket('BINANCE:BTCEUR', { timeframe: '1', range: 100 });
+```
+
+### Full example
+
+See `examples/ReconnectHandling.js`.

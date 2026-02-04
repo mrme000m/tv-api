@@ -6,13 +6,14 @@ const protocol = require('./protocol');
 const quoteSessionGenerator = require('./quote/session');
 const chartSessionGenerator = require('./chart/session');
 
-// Reconnection configuration
-const RECONNECTION_CONFIG = {
+// Reconnection configuration defaults (override via ClientOptions.reconnect*)
+const DEFAULT_RECONNECTION_CONFIG = {
   maxRetries: 10,
-  baseDelay: 1000, // 1 second
+  baseDelay: 500, // 0.5 second (helps mitigate transient hiccups where 2nd attempt succeeds)
+  fastFirstDelay: 250, // first retry delay
   maxDelay: 30000, // 30 seconds
   jitter: true,
-  multiplier: 2
+  multiplier: 2,
 };
 
 /**
@@ -34,10 +35,13 @@ const RECONNECTION_CONFIG = {
  * @typedef {Object} ClientBridge
  * @prop {SessionList} sessions
  * @prop {SendPacket} send
+ * @prop {(key: string, fn: () => void|Promise<void>) => void} registerRehydrateHook
+ * @prop {(key: string) => void} unregisterRehydrateHook
  */
 
 /**
  * @typedef { 'connected' | 'disconnected'
+ *  | 'reconnecting' | 'reconnected' | 'connect_timeout'
  *  | 'logged' | 'ping' | 'data'
  *  | 'error' | 'event'
  * } ClientEvent
@@ -56,8 +60,20 @@ module.exports = class Client {
   #isReconnecting = false;
   #connectionClosedManually = false;
   #reconnectionTimeoutId = null;
+
+  #reconnectionConfig = { ...DEFAULT_RECONNECTION_CONFIG };
   #heartbeatIntervalId = null;
+  #connectTimeoutId = null;
   #lastHeartbeatReceived = Date.now();
+
+  #connectTimeoutMs = 15000;
+
+  #authRetryDelayMs = 500;
+  #authMaxAttempts = 2;
+
+  #authTokenPromise = null;
+
+  #autoRehydrate = true;
 
   /** If the client is logged in */
   get isLogged() {
@@ -75,6 +91,10 @@ module.exports = class Client {
   #callbacks = {
     connected: [],
     disconnected: [],
+    reconnecting: [],
+    reconnected: [],
+    connect_timeout: [],
+
     logged: [],
     ping: [],
     data: [],
@@ -82,6 +102,9 @@ module.exports = class Client {
     error: [],
     event: [],
   };
+
+  /** @type {Map<string, () => void|Promise<void>>} */
+  #rehydrateHooks = new Map();
 
   /**
    * @param {ClientEvent} ev Client event
@@ -98,18 +121,53 @@ module.exports = class Client {
   }
 
   /**
+   * Register a callback to re-send session/subscription setup on reconnect.
+   * @param {string} key Unique key for the hook
+   * @param {() => (void|Promise<void>)} fn Hook function
+   */
+  registerRehydrateHook(key, fn) {
+    if (!key || typeof fn !== 'function') return;
+    this.#rehydrateHooks.set(key, fn);
+  }
+
+  /**
+   * Remove a previously registered rehydrate hook.
+   * @param {string} key
+   */
+  unregisterRehydrateHook(key) {
+    this.#rehydrateHooks.delete(key);
+  }
+
+  async #runRehydrateHooks() {
+    // Run sequentially to preserve ordering and avoid flooding.
+    for (const [key, fn] of this.#rehydrateHooks.entries()) {
+      try {
+        // eslint-disable-next-line no-await-in-loop
+        await fn();
+      } catch (e) {
+        this.#handleError(`Rehydrate hook failed (${key}):`, e?.message || e);
+      }
+    }
+  }
+
+  /**
    * Calculate delay with exponential backoff and jitter
    * @param {number} attempt - Current attempt number
    * @returns {number} Delay in milliseconds
    */
   #calculateReconnectionDelay(attempt) {
-    let delay = RECONNECTION_CONFIG.baseDelay * Math.pow(RECONNECTION_CONFIG.multiplier, attempt);
-    
+    // If the first attempt fails, a quick retry often succeeds (transient network hiccup).
+    if (attempt === 0 && Number.isFinite(this.#reconnectionConfig.fastFirstDelay)) {
+      return this.#reconnectionConfig.fastFirstDelay;
+    }
+
+    let delay = this.#reconnectionConfig.baseDelay * Math.pow(this.#reconnectionConfig.multiplier, attempt);
+
     // Apply maximum delay cap
-    delay = Math.min(delay, RECONNECTION_CONFIG.maxDelay);
-    
+    delay = Math.min(delay, this.#reconnectionConfig.maxDelay);
+
     // Add jitter to prevent thundering herd
-    if (RECONNECTION_CONFIG.jitter) {
+    if (this.#reconnectionConfig.jitter) {
       const jitter = Math.random() * 0.3; // 30% jitter
       delay = delay * (1 + jitter);
     }
@@ -121,15 +179,23 @@ module.exports = class Client {
    * Handle reconnection attempts
    */
   #scheduleReconnection() {
-    if (this.#connectionClosedManually || this.#reconnectionAttempts >= RECONNECTION_CONFIG.maxRetries) {
+    if (this.#connectionClosedManually || this.#reconnectionAttempts >= this.#reconnectionConfig.maxRetries) {
       return;
     }
 
-    this.#isReconnecting = true;
+    // Emit only on transition into reconnecting.
+    if (!this.#isReconnecting) {
+      this.#isReconnecting = true;
+      this.#handleEvent('reconnecting', {
+        attempt: this.#reconnectionAttempts,
+        maxRetries: this.#reconnectionConfig.maxRetries,
+      });
+    }
+
     this.#reconnectionAttempts++;
 
     const delay = this.#calculateReconnectionDelay(this.#reconnectionAttempts - 1);
-    console.log(`Attempting to reconnect in ${delay}ms (attempt ${this.#reconnectionAttempts}/${RECONNECTION_CONFIG.maxRetries})`);
+    console.log(`Attempting to reconnect in ${delay}ms (attempt ${this.#reconnectionAttempts}/${this.#reconnectionConfig.maxRetries})`);
 
     this.#reconnectionTimeoutId = setTimeout(() => {
       this.#attemptReconnection();
@@ -148,6 +214,10 @@ module.exports = class Client {
 
       // Reinitialize the WebSocket connection
       const server = this.clientOptions?.server || 'data';
+
+      // Refresh auth token fetch attempt for this connection cycle.
+      this.#prepareAuthTokenFetch();
+
       this.#ws = new WebSocket(`wss://${server}.tradingview.com/socket.io/websocket?type=chart`, {
         origin: 'https://www.tradingview.com',
       });
@@ -155,28 +225,8 @@ module.exports = class Client {
       // Setup event listeners for the new connection
       this.#setupWebSocketEventHandlers();
 
-      // If we were authenticated before, re-authenticate
-      if (this.clientOptions?.token) {
-        // Wait for connection to be established before sending auth
-        this.#ws.once('open', () => {
-          misc.getUser(
-            this.clientOptions.token,
-            this.clientOptions.signature ? this.clientOptions.signature : '',
-            this.clientOptions.location ? this.clientOptions.location : 'https://tradingview.com',
-          ).then((user) => {
-            this.#sendQueue.unshift(protocol.formatWSPacket({
-              m: 'set_auth_token',
-              p: [user.authToken],
-            }));
-            this.#logged = true;
-            this.sendQueue();
-          }).catch((err) => {
-            this.#handleError('Credentials error during reconnection:', err.message);
-            // If auth fails, schedule another reconnection
-            this.#scheduleReconnection();
-          });
-        });
-      }
+      // Auth is handled by the shared 'open' handler (#setupWebSocketEventHandlers)
+      // so reconnection behavior stays consistent with initial connect.
     } catch (error) {
       console.error('Reconnection attempt failed:', error);
       this.#scheduleReconnection(); // Try again
@@ -186,24 +236,124 @@ module.exports = class Client {
   /**
    * Setup WebSocket event handlers
    */
+  #prepareAuthTokenFetch() {
+    if (this.clientOptions?.token) {
+      this.#authTokenPromise = this.#fetchAuthToken();
+    } else {
+      this.#authTokenPromise = Promise.resolve(null);
+    }
+  }
+
+  async #fetchAuthToken() {
+    const { token, signature, location } = this.clientOptions || {};
+    if (!token) return null;
+
+    let lastErr;
+    for (let attempt = 1; attempt <= this.#authMaxAttempts; attempt += 1) {
+      try {
+        const user = await misc.getUser(
+          token,
+          signature ? signature : '',
+          location ? location : 'https://tradingview.com',
+        );
+        return user?.authToken || null;
+      } catch (e) {
+        lastErr = e;
+        if (attempt < this.#authMaxAttempts) {
+          await new Promise((r) => setTimeout(r, this.#authRetryDelayMs));
+        }
+      }
+    }
+
+    this.#handleError('Credentials error:', lastErr?.message || lastErr);
+    return null;
+  }
+
+  #startConnectTimeout() {
+    this.#stopConnectTimeout();
+
+    // If the socket never reaches 'open', force a reconnect. This addresses the common
+    // "first attempt stuck / second attempt works" symptom.
+    this.#connectTimeoutId = setTimeout(() => {
+      if (!this.#ws) return;
+      if (this.#ws.readyState === WebSocket.CONNECTING) {
+        const info = { timeoutMs: this.#connectTimeoutMs };
+        this.#handleEvent('connect_timeout', info);
+        this.#handleError(`WebSocket connect timeout after ${this.#connectTimeoutMs}ms; retrying...`);
+        try { this.#ws.terminate?.(); } catch { /* ignore */ }
+        try { this.#ws.close(); } catch { /* ignore */ }
+        this.#scheduleReconnection();
+      }
+    }, this.#connectTimeoutMs).unref?.();
+  }
+
+  #stopConnectTimeout() {
+    if (this.#connectTimeoutId) {
+      clearTimeout(this.#connectTimeoutId);
+      this.#connectTimeoutId = null;
+    }
+  }
+
   #setupWebSocketEventHandlers() {
-    this.#ws.on('open', () => {
+    this.#startConnectTimeout();
+
+    this.#ws.on('open', async () => {
+      this.#stopConnectTimeout();
+      const wasReconnecting = this.#isReconnecting;
       this.#reconnectionAttempts = 0; // Reset on successful connection
       this.#isReconnecting = false;
+
+      // (Re-)authenticate on open.
+      if (this.clientOptions?.token) {
+        // Use the early-started promise when possible.
+        if (!this.#authTokenPromise) this.#prepareAuthTokenFetch();
+
+        const authToken = await this.#authTokenPromise;
+        if (authToken) {
+          this.#sendQueue.unshift(protocol.formatWSPacket({
+            m: 'set_auth_token',
+            p: [authToken],
+          }));
+        } else {
+          // Fallback: proceed unauthenticated if token retrieval failed.
+          this.#sendQueue.unshift(protocol.formatWSPacket({
+            m: 'set_auth_token',
+            p: ['unauthorized_user_token'],
+          }));
+        }
+      }
+
+      this.#logged = true;
+
+      if (wasReconnecting) {
+        // Re-create sessions/subscriptions after reconnect.
+        if (this.#autoRehydrate) {
+          await this.#runRehydrateHooks();
+        }
+        this.#handleEvent('reconnected');
+      }
+
       this.#handleEvent('connected');
       this.sendQueue();
-      
+
       // Start heartbeat mechanism
       this.#startHeartbeat();
     });
 
     this.#ws.on('close', (code, reason) => {
+      this.#stopConnectTimeout();
       this.#stopHeartbeat();
-      
+
       if (this.#connectionClosedManually) {
         this.#logged = false;
         this.#handleEvent('disconnected');
         return;
+      }
+
+      // If we closed before becoming OPEN, this is usually a transient hiccup.
+      // Force a fast first retry.
+      if (this.#ws && this.#ws.readyState !== WebSocket.OPEN) {
+        this.#reconnectionAttempts = Math.max(this.#reconnectionAttempts, 0);
       }
 
       console.log(`Connection closed (code: ${code}, reason: ${reason || 'unknown'}). Attempting to reconnect...`);
@@ -211,6 +361,7 @@ module.exports = class Client {
     });
 
     this.#ws.on('error', (err) => {
+      // Do not rely solely on 'close' being emitted quickly.
       this.#handleError('WebSocket error:', err.message);
     });
 
@@ -274,6 +425,33 @@ module.exports = class Client {
    */
   onDisconnected(cb) {
     this.#callbacks.disconnected.push(cb);
+  }
+
+  /**
+   * When client starts reconnecting (first reconnection scheduling)
+   * @param {(info: { attempt: number, maxRetries: number }) => void} cb Callback
+   * @event onReconnecting
+   */
+  onReconnecting(cb) {
+    this.#callbacks.reconnecting.push(cb);
+  }
+
+  /**
+   * When client reconnects successfully after a disconnect
+   * @param {() => void} cb Callback
+   * @event onReconnected
+   */
+  onReconnected(cb) {
+    this.#callbacks.reconnected.push(cb);
+  }
+
+  /**
+   * When websocket connect timeout happens
+   * @param {(info: { timeoutMs: number }) => void} cb Callback
+   * @event onConnectTimeout
+   */
+  onConnectTimeout(cb) {
+    this.#callbacks.connect_timeout.push(cb);
   }
 
   /**
@@ -400,6 +578,16 @@ module.exports = class Client {
    * @prop {string} [signature] User auth token signature (in 'sessionid_sign' cookie)
    * @prop {boolean} [DEBUG] Enable debug mode
    * @prop {boolean} [strictProtocol] Throw on websocket protocol parse errors (default: false)
+   * @prop {boolean} [autoRehydrate] Automatically re-create sessions/subscriptions on reconnect (default: true)
+   * @prop {number} [connectTimeoutMs] WebSocket connect timeout before retry (default: 15000)
+   * @prop {number} [authRetryDelayMs] Delay between auth fetch retries (default: 500)
+   * @prop {number} [authMaxAttempts] Max attempts to fetch auth token (default: 2)
+   * @prop {number} [reconnectMaxRetries] Max reconnect retries (default: 10)
+   * @prop {number} [reconnectBaseDelayMs] Base reconnect delay in ms (default: 500)
+   * @prop {number} [reconnectFastFirstDelayMs] First retry delay in ms (default: 250)
+   * @prop {number} [reconnectMaxDelayMs] Max reconnect delay in ms (default: 30000)
+   * @prop {number} [reconnectMultiplier] Exponential backoff multiplier (default: 2)
+   * @prop {boolean} [reconnectJitter] Add jitter (default: true)
    * @prop {'data' | 'prodata' | 'widgetdata'} [server] Server type
    * @prop {string} [location] Auth page location (For france: https://fr.tradingview.com/)
    */
@@ -413,47 +601,66 @@ module.exports = class Client {
 
     // Strict mode flags (used for protocol parsing and other runtime hardening)
     this.#strictProtocol = !!clientOptions.strictProtocol;
-    
+
+    // Rehydration behavior
+    if (typeof clientOptions.autoRehydrate === 'boolean') {
+      this.#autoRehydrate = clientOptions.autoRehydrate;
+    }
+
+    // Connection tuning
+    if (Number.isFinite(Number(clientOptions.connectTimeoutMs))) {
+      this.#connectTimeoutMs = Math.max(1000, Number(clientOptions.connectTimeoutMs));
+    }
+    if (Number.isFinite(Number(clientOptions.authRetryDelayMs))) {
+      this.#authRetryDelayMs = Math.max(0, Number(clientOptions.authRetryDelayMs));
+    }
+    if (Number.isFinite(Number(clientOptions.authMaxAttempts))) {
+      this.#authMaxAttempts = Math.max(1, Math.floor(Number(clientOptions.authMaxAttempts)));
+    }
+
     // Store client options for reconnection purposes
     this.clientOptions = clientOptions;
+
+    // Reconnection/backoff configuration overrides
+    const cfg = { ...DEFAULT_RECONNECTION_CONFIG };
+    if (Number.isFinite(Number(clientOptions.reconnectMaxRetries))) cfg.maxRetries = Math.max(0, Math.floor(Number(clientOptions.reconnectMaxRetries)));
+    if (Number.isFinite(Number(clientOptions.reconnectBaseDelayMs))) cfg.baseDelay = Math.max(0, Math.floor(Number(clientOptions.reconnectBaseDelayMs)));
+    if (Number.isFinite(Number(clientOptions.reconnectFastFirstDelayMs))) cfg.fastFirstDelay = Math.max(0, Math.floor(Number(clientOptions.reconnectFastFirstDelayMs)));
+    if (Number.isFinite(Number(clientOptions.reconnectMaxDelayMs))) cfg.maxDelay = Math.max(0, Math.floor(Number(clientOptions.reconnectMaxDelayMs)));
+    if (Number.isFinite(Number(clientOptions.reconnectMultiplier))) cfg.multiplier = Math.max(1, Number(clientOptions.reconnectMultiplier));
+    if (typeof clientOptions.reconnectJitter === 'boolean') cfg.jitter = clientOptions.reconnectJitter;
+    this.#reconnectionConfig = cfg;
+
+    // Start fetching auth token early so it's ready when the socket opens.
+    this.#prepareAuthTokenFetch();
 
     const server = clientOptions.server || 'data';
     this.#ws = new WebSocket(`wss://${server}.tradingview.com/socket.io/websocket?type=chart`, {
       origin: 'https://www.tradingview.com',
     });
 
-    if (clientOptions.token) {
-      misc.getUser(
-        clientOptions.token,
-        clientOptions.signature ? clientOptions.signature : '',
-        clientOptions.location ? clientOptions.location : 'https://tradingview.com',
-      ).then((user) => {
-        this.#sendQueue.unshift(protocol.formatWSPacket({
-          m: 'set_auth_token',
-          p: [user.authToken],
-        }));
-        this.#logged = true;
-        this.sendQueue();
-      }).catch((err) => {
-        this.#handleError('Credentials error:', err.message);
-      });
-    } else {
+    // For authenticated clients, we delay flushing queued packets until after auth is sent.
+    // For unauthenticated clients, we can mark logged immediately.
+    this.#logged = !clientOptions.token;
+
+    if (!clientOptions.token) {
       this.#sendQueue.unshift(protocol.formatWSPacket({
         m: 'set_auth_token',
         p: ['unauthorized_user_token'],
       }));
-      this.#logged = true;
-      this.sendQueue();
     }
 
     // Use the new event handler setup
     this.#setupWebSocketEventHandlers();
+    this.sendQueue();
   }
 
   /** @type {ClientBridge} */
   #clientBridge = {
     sessions: this.#sessions,
     send: (t, p) => this.send(t, p),
+    registerRehydrateHook: (key, fn) => this.registerRehydrateHook(key, fn),
+    unregisterRehydrateHook: (key) => this.unregisterRehydrateHook(key),
   };
 
   /** @namespace Session */
@@ -476,7 +683,8 @@ module.exports = class Client {
       this.#reconnectionTimeoutId = null;
     }
     
-    // Stop heartbeat
+    // Stop connect timeout + heartbeat
+    this.#stopConnectTimeout();
     this.#stopHeartbeat();
 
     return new Promise((resolve) => {

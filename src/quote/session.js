@@ -73,6 +73,24 @@ module.exports = (client) => class QuoteSession {
    * @param {quoteSessionOptions} options Quote settings options
    */
   constructor(options = {}) {
+    // Re-create quote session and fields after reconnect
+    this.#client.registerRehydrateHook?.(`quote:${this.#sessionID}`, () => {
+      this.#client.send('quote_create_session', [this.#sessionID]);
+      // Re-send fields
+      const fields = (options.customFields && options.customFields.length > 0
+        ? options.customFields
+        : getQuoteFields(options.fields)
+      );
+      this.#client.send('quote_set_fields', [this.#sessionID, ...fields]);
+
+      // Re-subscribe current symbols
+      Object.keys(this.#symbolListeners).forEach((symbolKey) => {
+        if (this.#symbolListeners[symbolKey] && this.#symbolListeners[symbolKey].filter(Boolean).length > 0) {
+          this.#client.send('quote_add_symbols', [this.#sessionID, symbolKey]);
+        }
+      });
+    });
+
     this.#client.sessions[this.#sessionID] = {
       type: 'quote',
       onData: (packet) => {
@@ -119,6 +137,8 @@ module.exports = (client) => class QuoteSession {
 
   /** Delete the quote session */
   delete() {
+    try { this.#client.unregisterRehydrateHook?.(`quote:${this.#sessionID}`); } catch {}
+
     this.#client.send('quote_delete_session', [this.#sessionID]);
     delete this.#client.sessions[this.#sessionID];
   }

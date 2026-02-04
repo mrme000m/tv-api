@@ -140,6 +140,12 @@ The core WebSocket client that manages connections to TradingView's servers. Han
 - Session management
 - Event handling system
 
+**Reconnect handling:**
+- Lifecycle callbacks: `onReconnecting`, `onReconnected`, `onConnectTimeout`
+- Auto session rehydration on reconnect (re-create chart/quote sessions + resubscribe)
+- Disable auto rehydration with `new Client({ autoRehydrate: false })`
+- Example: `examples/ReconnectHandling.js`
+
 #### 2. HTTP Module ([`src/http.js`](src/http.js:1))
 Centralized HTTP client using Axios with consistent defaults and headers.
 

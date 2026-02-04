@@ -8,6 +8,8 @@ const http = axios.create({
   headers: {
     origin: 'https://www.tradingview.com',
   },
+  // By default, axios throws for status >= 300. We want to handle 4xx manually in many cases.
+  validateStatus: (status) => status < 500,
 });
 
 module.exports = http;

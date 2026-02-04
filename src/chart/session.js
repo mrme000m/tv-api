@@ -127,6 +127,10 @@ module.exports = (client) => class ChartSession {
   /** Parent client */
   #client = client;
 
+  // Store last subscription intents so they can be replayed on reconnect.
+  #lastMarketSymbol = null;
+  #lastMarketOptions = null;
+
   /** @type {StudyListeners} */
   #studyListeners = {};
 
@@ -203,6 +207,28 @@ module.exports = (client) => class ChartSession {
   }
 
   constructor() {
+    // Re-create the chart session after reconnect
+    this.#client.registerRehydrateHook?.(`chart:${this.#chartSessionID}`, () => {
+      // Re-register session handlers + re-create session server-side.
+      // (Packet routing relies on client.sessions table.)
+      this.#client.sessions[this.#chartSessionID] = this.#client.sessions[this.#chartSessionID] || {
+        type: 'chart',
+        onData: () => {},
+      };
+
+      this.#client.sessions[this.#replaySessionID] = this.#client.sessions[this.#replaySessionID] || {
+        type: 'replay',
+        onData: () => {},
+      };
+
+      this.#client.send('chart_create_session', [this.#chartSessionID]);
+
+      // If user previously set a market, restore it.
+      if (this.#lastMarketSymbol) {
+        this.setMarket(this.#lastMarketSymbol, this.#lastMarketOptions || {});
+      }
+    });
+
     this.#client.sessions[this.#chartSessionID] = {
       type: 'chart',
       onData: (packet) => {
@@ -388,6 +414,8 @@ module.exports = (client) => class ChartSession {
    * @param {number} [options.replay] Replay mode starting point (Timestamp)
    */
   setMarket(symbol, options = {}) {
+    this.#lastMarketSymbol = symbol;
+    this.#lastMarketOptions = { ...options };
     this.#periods = {};
     this.#periodsDirty = true;
     this.#periodsCache = [];
@@ -707,6 +735,9 @@ module.exports = (client) => class ChartSession {
 
   /** Delete the chart session */
   delete() {
+    try { this.#client.unregisterRehydrateHook?.(`chart:${this.#chartSessionID}`); } catch {}
+    try { this.#client.unregisterRehydrateHook?.(`replay:${this.#replaySessionID}`); } catch {}
+
     if (this.#replayMode) this.#client.send('replay_delete_session', [this.#replaySessionID]);
     this.#client.send('chart_delete_session', [this.#chartSessionID]);
     delete this.#client.sessions[this.#chartSessionID];

@@ -17,6 +17,8 @@ module.exports = (quoteSession) => class QuoteMarket {
 
   #symbolListenerID = 0;
 
+  #rehydrateHookKey = null;
+
   #lastData = {};
 
   #callbacks = {
@@ -59,6 +61,12 @@ module.exports = (quoteSession) => class QuoteMarket {
     }
 
     this.#symbolListenerID = this.#symbolListeners[this.#symbolKey].length;
+
+    // Ensure this symbol is re-subscribed after reconnect. Use a per-instance hook key.
+    this.#rehydrateHookKey = `quote_symbol:${quoteSession.sessionID}:${this.#symbolKey}:${this.#symbolListenerID}`;
+    quoteSession.registerRehydrateHook?.(this.#rehydrateHookKey, () => {
+      quoteSession.send('quote_add_symbols', [quoteSession.sessionID, this.#symbolKey]);
+    });
 
     this.#symbolListeners[this.#symbolKey][this.#symbolListenerID] = (packet) => {
       if (global.TW_DEBUG) console.log('§90§30§105 MARKET §0 DATA', packet);
@@ -121,6 +129,10 @@ module.exports = (quoteSession) => class QuoteMarket {
 
   /** Close this listener */
   close() {
+    try {
+      if (this.#rehydrateHookKey) quoteSession.unregisterRehydrateHook?.(this.#rehydrateHookKey);
+    } catch {}
+
     if (this.#symbolListeners[this.#symbolKey].length <= 1) {
       quoteSession.send('quote_remove_symbols', [
         quoteSession.sessionID,
