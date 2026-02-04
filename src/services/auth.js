@@ -117,4 +117,33 @@ async function getUser(session, signature = '', location = 'https://www.tradingv
   throw new Error('Wrong or expired sessionid/signature');
 }
 
-module.exports = { loginUser, getUser };
+function isAuthError(err) {
+  const status = err?.response?.status || err?.status;
+  if (status === 401) return true;
+  if (typeof err?.message === 'string' && err.message.includes('401')) return true;
+  return false;
+}
+
+/**
+ * Execute a function with credentials and retry once after refreshing on 401.
+ * @template T
+ * @param {(session: string, signature?: string) => Promise<T>} fn
+ * @param {{ session?: string, signature?: string, username?: string, password?: string, remember?: boolean, userAgent?: string, onRefresh?: (user: User) => void }} [credentials]
+ * @param {{ refresh?: (username: string, password: string, remember?: boolean, userAgent?: string) => Promise<User> }} [options]
+ * @returns {Promise<T>}
+ */
+async function withCredentialRefresh(fn, credentials = {}, options = {}) {
+  const { session = '', signature = '', username, password, remember = true, userAgent, onRefresh } = credentials || {};
+  try {
+    return await fn(session, signature);
+  } catch (err) {
+    if (!isAuthError(err)) throw err;
+    if (!username || !password) throw err;
+    const refresh = options.refresh || loginUser;
+    const user = await refresh(username, password, remember, userAgent);
+    if (typeof onRefresh === 'function') onRefresh(user);
+    return fn(user.session, user.signature);
+  }
+}
+
+module.exports = { loginUser, getUser, withCredentialRefresh };

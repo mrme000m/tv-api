@@ -144,9 +144,6 @@ mise pnpm install
 # Run test suite
 mise pnpm test  # Runs vitest (see vitest config in vite.config.js)
 
-# Run non-interactive once (CI-friendly)
-mise pnpm run test:ci  # Runs vitest in run mode (exits when done)
-
 # Run examples
 mise pnpm run example -- examples/SimpleChart.js
 # Or with hot-reload:

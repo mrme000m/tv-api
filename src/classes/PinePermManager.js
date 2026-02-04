@@ -44,7 +44,7 @@ class PinePermManager {
    */
   async getUsers(limit = 10, order = '-created') {
     try {
-      const { data } = await axios.post(
+      const { data } = await http.post(
         `https://www.tradingview.com/pine_perm/list_users/?limit=${limit}&order_by=${order}`,
         `pine_id=${this.pineId.replace(/;/g, '%3B')}`,
         {
@@ -70,7 +70,7 @@ class PinePermManager {
    */
   async addUser(username, expiration = null) {
     try {
-      const { data } = await axios.post(
+      const { data } = await http.post(
         'https://www.tradingview.com/pine_perm/add/',
         `pine_id=${
           this.pineId.replace(/;/g, '%3B')
@@ -104,7 +104,7 @@ class PinePermManager {
    */
   async modifyExpiration(username, expiration = null) {
     try {
-      const { data } = await axios.post(
+      const { data } = await http.post(
         'https://www.tradingview.com/pine_perm/modify_user_expiration/',
         `pine_id=${
           this.pineId.replace(/;/g, '%3B')
@@ -137,7 +137,7 @@ class PinePermManager {
    */
   async removeUser(username) {
     try {
-      const { data } = await axios.post(
+      const { data } = await http.post(
         'https://www.tradingview.com/pine_perm/remove/',
         `pine_id=${this.pineId.replace(/;/g, '%3B')}&username_recip=${username}`,
         {

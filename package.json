@@ -3,8 +3,20 @@
   "version": "3.5.2",
   "description": "Tradingview instant stocks API, indicator alerts, trading bot, and more !",
   "main": "main.js",
+  "types": "src/types.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/types.d.ts",
+      "require": "./main.js"
+    },
+    "./taExtension": {
+      "types": "./src/taExtension.d.ts",
+      "require": "./src/taExtension.js"
+    }
+  },
   "scripts": {
     "test": "vitest",
+    "test:ci": "vitest run",
     "example": "node --env-file=.env",
     "example:dev": "nodemon --env-file=.env",
     "postinstall": "pnpm run prepare",

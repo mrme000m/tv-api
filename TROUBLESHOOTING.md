@@ -132,8 +132,8 @@ const isValidSignature = (signature) => /^[a-fA-F0-9]+$/.test(signature);
 ```javascript
 // Properly format cookies
 const user = await TradingView.getUser(
-  process.env.TV_SESSION_ID,
-  process.env.TV_SIGNATURE || ''
+  process.env.SESSION,
+  process.env.SIGNATURE || ''
 );
 ```
 
@@ -250,8 +250,8 @@ if (indicators.length > 0) {
 ```javascript
 // Some indicators require login
 const client = new TradingView.Client({
-  token: process.env.TV_SESSION_ID,
-  signature: process.env.TV_SIGNATURE
+  token: process.env.SESSION,
+  signature: process.env.SIGNATURE
 });
 ```
 

@@ -1,4 +1,5 @@
-const WebSocket = require('ws');
+const WebSocketModule = require('ws');
+const WebSocket = WebSocketModule.default || WebSocketModule;
 
 const misc = require('./miscRequests');
 const protocol = require('./protocol');
@@ -37,6 +38,9 @@ const DEFAULT_RECONNECTION_CONFIG = {
  * @prop {SendPacket} send
  * @prop {(key: string, fn: () => void|Promise<void>) => void} registerRehydrateHook
  * @prop {(key: string) => void} unregisterRehydrateHook
+ * @prop {(...msgs: any[]) => void} [logDebug]
+ * @prop {(...msgs: any[]) => void} [logInfo]
+ * @prop {() => any} [logger]
  */
 
 /**
@@ -54,6 +58,12 @@ module.exports = class Client {
   #logged = false;
 
   #strictProtocol = false;
+
+  #debug = false;
+
+  #logger = console;
+
+  #clientBridge;
   
   // Connection management properties
   #reconnectionAttempts = 0;
@@ -116,8 +126,23 @@ module.exports = class Client {
   }
 
   #handleError(...msgs) {
-    if (this.#callbacks.error.length === 0) console.error(...msgs);
-    else this.#handleEvent('error', ...msgs);
+    const logger = this.#logger || console;
+    if (this.#callbacks.error.length === 0) {
+      (logger.error || logger.log || console.error).call(logger, ...msgs);
+    } else {
+      this.#handleEvent('error', ...msgs);
+    }
+  }
+
+  #logDebug(...msgs) {
+    if (!this.#debug) return;
+    const logger = this.#logger || console;
+    (logger.debug || logger.log || console.log).call(logger, ...msgs);
+  }
+
+  #logInfo(...msgs) {
+    const logger = this.#logger || console;
+    (logger.info || logger.log || console.log).call(logger, ...msgs);
   }
 
   /**
@@ -195,7 +220,7 @@ module.exports = class Client {
     this.#reconnectionAttempts++;
 
     const delay = this.#calculateReconnectionDelay(this.#reconnectionAttempts - 1);
-    console.log(`Attempting to reconnect in ${delay}ms (attempt ${this.#reconnectionAttempts}/${this.#reconnectionConfig.maxRetries})`);
+    this.#logInfo(`Attempting to reconnect in ${delay}ms (attempt ${this.#reconnectionAttempts}/${this.#reconnectionConfig.maxRetries})`);
 
     this.#reconnectionTimeoutId = setTimeout(() => {
       this.#attemptReconnection();
@@ -228,7 +253,7 @@ module.exports = class Client {
       // Auth is handled by the shared 'open' handler (#setupWebSocketEventHandlers)
       // so reconnection behavior stays consistent with initial connect.
     } catch (error) {
-      console.error('Reconnection attempt failed:', error);
+      this.#handleError('Reconnection attempt failed:', error);
       this.#scheduleReconnection(); // Try again
     }
   }
@@ -356,7 +381,7 @@ module.exports = class Client {
         this.#reconnectionAttempts = Math.max(this.#reconnectionAttempts, 0);
       }
 
-      console.log(`Connection closed (code: ${code}, reason: ${reason || 'unknown'}). Attempting to reconnect...`);
+      this.#logInfo(`Connection closed (code: ${code}, reason: ${reason || 'unknown'}). Attempting to reconnect...`);
       this.#scheduleReconnection();
     });
 
@@ -393,7 +418,7 @@ module.exports = class Client {
 
       // If no activity for too long, consider connection dead
       if (timeSinceLastHeartbeat > 35000) { // 35 seconds without response
-        console.log('Heartbeat timeout detected, closing connection for reconnection...');
+        this.#logInfo('Heartbeat timeout detected, closing connection for reconnection...');
         this.#ws.close(4000, 'Heartbeat timeout');
       }
     }, 10000); // Check every 10 seconds
@@ -519,7 +544,7 @@ module.exports = class Client {
       strict: this.#strictProtocol,
       onError: (err) => this.#handleError(err),
     }).forEach((packet) => {
-      if (global.TW_DEBUG) console.log('§90§30§107 CLIENT §0 PACKET', packet);
+      this.#logDebug('§90§30§107 CLIENT §0 PACKET', packet);
       if (typeof packet === 'number') { // Ping
         this.#ws.send(protocol.formatWSPacket(`~h~${packet}`));
         this.#handleEvent('ping', packet);
@@ -568,7 +593,7 @@ module.exports = class Client {
     while (this.isOpen && this.#logged && this.#sendQueue.length > 0) {
       const packet = this.#sendQueue.shift();
       this.#ws.send(packet);
-      if (global.TW_DEBUG) console.log('§90§30§107 > §0', packet);
+      this.#logDebug('§90§30§107 > §0', packet);
     }
   }
 
@@ -576,7 +601,9 @@ module.exports = class Client {
    * @typedef {Object} ClientOptions
    * @prop {string} [token] User auth token (in 'sessionid' cookie)
    * @prop {string} [signature] User auth token signature (in 'sessionid_sign' cookie)
-   * @prop {boolean} [DEBUG] Enable debug mode
+   * @prop {boolean} [debug] Enable debug mode (preferred)
+   * @prop {boolean} [DEBUG] Enable debug mode (legacy)
+   * @prop {{ debug?: Function, info?: Function, warn?: Function, error?: Function, log?: Function }} [logger] Custom logger (defaults to console)
    * @prop {boolean} [strictProtocol] Throw on websocket protocol parse errors (default: false)
    * @prop {boolean} [autoRehydrate] Automatically re-create sessions/subscriptions on reconnect (default: true)
    * @prop {number} [connectTimeoutMs] WebSocket connect timeout before retry (default: 15000)
@@ -597,7 +624,8 @@ module.exports = class Client {
    * @param {ClientOptions} clientOptions TradingView client options
    */
   constructor(clientOptions = {}) {
-    if (clientOptions.DEBUG) global.TW_DEBUG = clientOptions.DEBUG;
+    this.#logger = clientOptions.logger || console;
+    this.#debug = !!(clientOptions.debug ?? clientOptions.DEBUG);
 
     // Strict mode flags (used for protocol parsing and other runtime hardening)
     this.#strictProtocol = !!clientOptions.strictProtocol;
@@ -620,6 +648,16 @@ module.exports = class Client {
 
     // Store client options for reconnection purposes
     this.clientOptions = clientOptions;
+
+    this.#clientBridge = {
+      sessions: this.#sessions,
+      send: (t, p) => this.send(t, p),
+      registerRehydrateHook: (key, fn) => this.registerRehydrateHook(key, fn),
+      unregisterRehydrateHook: (key) => this.unregisterRehydrateHook(key),
+      logDebug: (...msgs) => this.#logDebug(...msgs),
+      logInfo: (...msgs) => this.#logInfo(...msgs),
+      logger: () => this.#logger,
+    };
 
     // Reconnection/backoff configuration overrides
     const cfg = { ...DEFAULT_RECONNECTION_CONFIG };
@@ -653,21 +691,15 @@ module.exports = class Client {
     // Use the new event handler setup
     this.#setupWebSocketEventHandlers();
     this.sendQueue();
+
+    this.Session = {
+      Quote: quoteSessionGenerator(this.#clientBridge),
+      Chart: chartSessionGenerator(this.#clientBridge),
+    };
   }
 
-  /** @type {ClientBridge} */
-  #clientBridge = {
-    sessions: this.#sessions,
-    send: (t, p) => this.send(t, p),
-    registerRehydrateHook: (key, fn) => this.registerRehydrateHook(key, fn),
-    unregisterRehydrateHook: (key) => this.unregisterRehydrateHook(key),
-  };
-
   /** @namespace Session */
-  Session = {
-    Quote: quoteSessionGenerator(this.#clientBridge),
-    Chart: chartSessionGenerator(this.#clientBridge),
-  };
+  Session;
 
   /**
    * Close the websocket connection

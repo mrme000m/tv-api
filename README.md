@@ -298,8 +298,11 @@ Class for managing Pine script permissions.
 ### Environment Variables
 Create a `.env` file to store sensitive information:
 ```
-TV_SESSION_ID=your_session_id
-TV_SIGNATURE=your_signature
+# From your TradingView cookies:
+# sessionid -> SESSION
+# sessionid_sign -> SIGNATURE
+SESSION=your_session_id
+SIGNATURE=your_signature
 TV_USERNAME=your_username
 TV_PASSWORD=your_password
 ```
@@ -307,8 +310,8 @@ TV_PASSWORD=your_password
 ### Client Options
 ```javascript
 const client = new TradingView.Client({
-  token: process.env.TV_SESSION_ID,
-  signature: process.env.TV_SIGNATURE,
+  token: process.env.SESSION,
+  signature: process.env.SIGNATURE,
   DEBUG: true, // Enable debug mode
   server: 'data', // or 'prodata' for premium data
   location: 'https://www.tradingview.com/'
@@ -340,7 +343,11 @@ For new contributors, we recommend using [mise](https://mise.jdx.dev/) to manage
 # Install mise if you don't have it (https://mise.jdx.dev/)
 # Then install the correct versions and dependencies:
 mise install
-pnpm install
+
+# Use mise to run pnpm with the pinned versions
+mise pnpm install
+mise pnpm test
+mise pnpm run example examples/SimpleChart.js
 ```
 
 Or use the provided setup script:
@@ -435,6 +442,12 @@ yarn test
 
 # Using pnpm
 pnpm test
+
+# Non-interactive / CI-friendly (runs once and exits)
+# Using mise (recommended):
+mise pnpm run test:ci
+# Or direct pnpm:
+pnpm run test:ci
 ```
 
 ### Pull Requests

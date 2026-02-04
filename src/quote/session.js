@@ -94,7 +94,7 @@ module.exports = (client) => class QuoteSession {
     this.#client.sessions[this.#sessionID] = {
       type: 'quote',
       onData: (packet) => {
-        if (global.TW_DEBUG) console.log('§90§30§102 QUOTE SESSION §0 DATA', packet);
+        this.#client.logDebug?.('§90§30§102 QUOTE SESSION §0 DATA', packet);
 
         if (packet.type === 'quote_completed') {
           const symbolKey = packet.data[1];
@@ -130,6 +130,8 @@ module.exports = (client) => class QuoteSession {
     sessionID: this.#sessionID,
     symbolListeners: this.#symbolListeners,
     send: (t, p) => this.#client.send(t, p),
+    logDebug: (...msgs) => this.#client.logDebug?.(...msgs),
+    logger: () => this.#client.logger?.(),
   };
 
   /** @constructor */

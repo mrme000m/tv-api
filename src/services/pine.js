@@ -1,4 +1,5 @@
 const http = require('../http');
+const auth = require('./auth');
 const PineIndicator = require('../classes/PineIndicator');
 const { genAuthCookies } = require('../utils');
 
@@ -449,10 +450,19 @@ async function deleteScriptVersion(pineId, version = '', credentials = {}) {
   return null;
 }
 
+async function getPrivateIndicatorsWithRefresh(credentials = {}, options = {}) {
+  return auth.withCredentialRefresh(
+    (session, signature) => getPrivateIndicators(session, signature),
+    credentials,
+    options,
+  );
+}
+
 module.exports = {
   searchIndicator,
   getIndicator,
   getPrivateIndicators,
+  getPrivateIndicatorsWithRefresh,
   translateScriptLight,
   parseScriptTitle,
   saveScriptNew,
