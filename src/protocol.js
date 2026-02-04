@@ -16,15 +16,24 @@ module.exports = {
    * @param {string} str Websocket raw data
    * @returns {TWPacket[]} TradingView packets
    */
-  parseWSPacket(str) {
+  parseWSPacket(str, options = {}) {
+    const { onError, strict = false } = options || {};
     const s = (typeof str === 'string') ? str : (str && typeof str.toString === 'function' ? str.toString('utf8') : String(str));
+
     return s.replace(cleanerRgx, '').split(splitterRgx)
       .map((p) => {
         if (!p) return false;
         try {
           return JSON.parse(p);
         } catch (error) {
-          console.warn('Cant parse', p);
+          const err = new Error(`TradingView packet JSON parse failed: ${error?.message || error}`);
+          err.cause = error;
+          err.packet = p;
+
+          if (typeof onError === 'function') onError(err);
+          else console.warn('Cant parse', p);
+
+          if (strict) throw err;
           return false;
         }
       })
@@ -40,8 +49,12 @@ module.exports = {
   formatWSPacket(packet) {
     const msg = typeof packet === 'object'
       ? JSON.stringify(packet)
-      : packet;
-    return `~m~${msg.length}~m~${msg}`;
+      : String(packet);
+
+    // TradingView framing uses a byte length. JS `string.length` counts UTF-16 code units,
+    // which breaks framing when non-ASCII chars appear.
+    const byteLen = Buffer.byteLength(msg, 'utf8');
+    return `~m~${byteLen}~m~${msg}`;
   },
 
   /**

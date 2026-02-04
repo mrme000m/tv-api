@@ -1,11 +1,31 @@
 const os = require('os');
 
 const http = require('./http');
+const taExtension = require('./taExtension'); // Import the TA extension module
 
 const PineIndicator = require('./classes/PineIndicator');
 const { genAuthCookies } = require('./utils');
 
 const validateStatus = (status) => status < 500;
+
+/**
+ * Fetch data from the scanner endpoint
+ * @param {string[]} tickers - Array of ticker symbols
+ * @param {string[]} columns - Array of column names to fetch
+ * @returns {Promise<any>} - Scanner data response
+ */
+async function fetchScanData(tickers = [], columns = []) {
+  const { data } = await http.post(
+    'https://scanner.tradingview.com/global/scan',
+    {
+      symbols: { tickers },
+      columns,
+    },
+    { validateStatus },
+  );
+
+  return data;
+}
 
 const PINE_FACADE_BASE = 'https://pine-facade.tradingview.com/pine-facade';
 
@@ -27,6 +47,12 @@ function buildAuthHeaders(credentials = {}) {
 const indicators = ['Recommend.Other', 'Recommend.All', 'Recommend.MA'];
 const builtInIndicList = [];
 
+/**
+ * Fetch data from the scanner endpoint
+ * @param {string[]} tickers - Array of ticker symbols
+ * @param {string[]} columns - Array of column names to fetch
+ * @returns {Promise<any>} - Scanner data response
+ */
 async function fetchScanData(tickers = [], columns = []) {
   const { data } = await http.post(
     'https://scanner.tradingview.com/global/scan',
@@ -39,6 +65,9 @@ async function fetchScanData(tickers = [], columns = []) {
 
   return data;
 }
+
+// Expose the TA extension functions
+const { getExtendedTA, getBatchTA, getAdvancedTA, formatTechnicalRating } = taExtension;
 
 /** @typedef {number} advice */
 
@@ -100,6 +129,12 @@ module.exports = {
    * @prop {string} type Market type
    * @prop {() => Promise<Periods>} getTA Get market technical analysis
    */
+
+  // Enhanced TA functions from the TA extension module
+  getExtendedTA,
+  getBatchTA,
+  getAdvancedTA,
+  formatTechnicalRating,
 
   /**
    * Find a symbol (deprecated)

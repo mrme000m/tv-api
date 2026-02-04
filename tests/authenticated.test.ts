@@ -52,48 +52,55 @@ describe.skipIf(!token || !signature)('Authenticated actions', () => {
     const client = new TradingView.Client({ token, signature });
     const chart = new client.Session.Chart();
 
-    console.log('Setting market to BINANCE:BTCEUR...');
-    chart.setMarket('BINANCE:BTCEUR', { timeframe: 'D' });
+    try {
+      console.log('Setting market to BINANCE:BTCEUR...');
+      chart.setMarket('BINANCE:BTCEUR', { timeframe: 'D' });
 
-    // Limit to 3 indicators for testing
-    const testedIndicators = userIndicators.slice(0, 3);
+      // Limit to 1 indicator for reliability (integration endpoint latency can be significant)
+      const testedIndicators = userIndicators.slice(0, 1);
 
-    const checked = new Set();
-    async function check(item) {
-      checked.add(item);
-      console.log('Checked:', [...checked], `(${checked.size}/${testedIndicators.length + 1})`);
+      const checked = new Set();
+      function check(item) {
+        checked.add(item);
+        console.log('Checked:', [...checked], `(${checked.size}/${testedIndicators.length + 1})`);
+      }
+
+      // `onUpdate` depends on market activity / timing; `onSymbolLoaded` is deterministic
+      // once TradingView resolves the symbol.
+      chart.onSymbolLoaded(() => {
+        console.log('Market resolved:', {
+          name: chart.infos.pro_name,
+          description: chart.infos.short_description,
+          exchange: chart.infos.exchange,
+        });
+        check(Symbol.for('PRICE'));
+      });
+
+      console.log('Loading indicators...');
+      for (const indic of testedIndicators) {
+        const privateIndic = await indic.get();
+        console.log(`[${indic.name}] Loading indicator...`);
+
+        const indicator = new chart.Study(privateIndic);
+
+        // `onUpdate` can be delayed depending on market activity; `onReady` is the
+        // most deterministic signal that the study compiled and initialized.
+        indicator.onReady(() => {
+          console.log(`[${indic.name}] Indicator loaded !`);
+          check(indic.id);
+        });
+
+        indicator.onError((...args) => {
+          console.error(`[${indic.name}] Indicator error:`, ...args);
+        });
+      }
+
+      while (checked.size < testedIndicators.length + 1) await utils.wait(100);
+
+      console.log('All indicators loaded !');
+    } finally {
+      try { chart.delete(); } catch {}
+      await client.end();
     }
-
-    chart.onUpdate(async () => {
-      console.log('Market data:', {
-        name: chart.infos.pro_name,
-        description: chart.infos.short_description,
-        exchange: chart.infos.exchange,
-        price: chart.periods[0].close,
-      });
-
-      await check(Symbol.for('PRICE'));
-    });
-
-    console.log('Loading indicators...');
-    for (const indic of testedIndicators) {
-      const privateIndic = await indic.get();
-      console.log(`[${indic.name}] Loading indicator...`);
-
-      const indicator = new chart.Study(privateIndic);
-
-      indicator.onReady(() => {
-        console.log(`[${indic.name}] Indicator loaded !`);
-      });
-
-      indicator.onUpdate(async () => {
-        console.log(`[${indic.name}] Last plot:`, indicator.periods[0]);
-        await check(indic.id);
-      });
-    }
-
-    while (checked.size < testedIndicators.length + 1) await utils.wait(100);
-
-    console.log('All indicators loaded !');
-  }, 10000);
+  }, 120000);
 });

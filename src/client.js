@@ -48,6 +48,8 @@ module.exports = class Client {
   #ws;
 
   #logged = false;
+
+  #strictProtocol = false;
   
   // Connection management properties
   #reconnectionAttempts = 0;
@@ -335,7 +337,10 @@ module.exports = class Client {
   #parsePacket(str) {
     if (!this.isOpen) return;
 
-    protocol.parseWSPacket(str).forEach((packet) => {
+    protocol.parseWSPacket(str, {
+      strict: this.#strictProtocol,
+      onError: (err) => this.#handleError(err),
+    }).forEach((packet) => {
       if (global.TW_DEBUG) console.log('§90§30§107 CLIENT §0 PACKET', packet);
       if (typeof packet === 'number') { // Ping
         this.#ws.send(protocol.formatWSPacket(`~h~${packet}`));
@@ -394,6 +399,7 @@ module.exports = class Client {
    * @prop {string} [token] User auth token (in 'sessionid' cookie)
    * @prop {string} [signature] User auth token signature (in 'sessionid_sign' cookie)
    * @prop {boolean} [DEBUG] Enable debug mode
+   * @prop {boolean} [strictProtocol] Throw on websocket protocol parse errors (default: false)
    * @prop {'data' | 'prodata' | 'widgetdata'} [server] Server type
    * @prop {string} [location] Auth page location (For france: https://fr.tradingview.com/)
    */
@@ -404,6 +410,9 @@ module.exports = class Client {
    */
   constructor(clientOptions = {}) {
     if (clientOptions.DEBUG) global.TW_DEBUG = clientOptions.DEBUG;
+
+    // Strict mode flags (used for protocol parsing and other runtime hardening)
+    this.#strictProtocol = !!clientOptions.strictProtocol;
     
     // Store client options for reconnection purposes
     this.clientOptions = clientOptions;

@@ -267,7 +267,13 @@ module.exports = (chartSession) => class ChartStudy {
         }
 
         if (data.ns && data.ns.d) {
-          const parsed = JSON.parse(data.ns.d);
+          let parsed;
+          try {
+            parsed = JSON.parse(data.ns.d);
+          } catch (e) {
+            this.#handleError('Study JSON parse failed (ns.d):', e?.message || e);
+            return;
+          }
 
           if (parsed.graphicsCmds) {
             if (parsed.graphicsCmds.erase) {
@@ -341,7 +347,12 @@ module.exports = (chartSession) => class ChartStudy {
           };
 
           if (parsed.dataCompressed) {
-            updateStrategyReport((await parseCompressed(parsed.dataCompressed)).report);
+            try {
+              const decompressed = await parseCompressed(parsed.dataCompressed);
+              updateStrategyReport(decompressed.report);
+            } catch (e) {
+              this.#handleError('Study compressed report parse failed:', e?.message || e);
+            }
           }
 
           if (parsed.data && parsed.data.report) updateStrategyReport(parsed.data.report);
