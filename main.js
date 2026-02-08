@@ -7,6 +7,11 @@ const PinePermManager = require('./src/classes/PinePermManager');
 module.exports = { ...miscRequests };
 // Namespaced service helpers (non-breaking addition)
 module.exports.indicators = require('./src/services/indicators');
+module.exports.alerts = require('./src/services/alerts');
+module.exports.pine = {
+  ...require('./src/services/pine'),
+  ...require('./src/services/pine-enhanced'),
+};
 module.exports.Client = Client;
 module.exports.BuiltInIndicator = BuiltInIndicator;
 module.exports.PineIndicator = PineIndicator;
