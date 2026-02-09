@@ -254,10 +254,12 @@ module.exports = class Client {
     if (this.#endpoint === 'history-data' && this.#chartId) {
       const date = new Date().toISOString();
       const from = `chart/${this.#chartId}/`;
+      // Use actual session token if available, otherwise 'sessionid' as placeholder
+      const authToken = this.clientOptions?.token || 'sessionid';
       const params = new URLSearchParams({
         from,
         date,
-        auth: 'sessionid',
+        auth: authToken,
       });
       return `${baseUrl}?${params.toString()}`;
     }

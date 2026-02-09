@@ -14,6 +14,10 @@ module.exports.news = require('./src/services/news');
 module.exports.calendar = require('./src/services/calendar');
 module.exports.symbolDetails = require('./src/services/symbolDetails');
 module.exports.proPlan = require('./src/services/proPlan');
+module.exports.charts = require('./src/services/charts');
+module.exports.support = require('./src/services/support');
+module.exports.storage = require('./src/services/storage');
+module.exports.scripts = require('./src/services/scripts');
 module.exports.pine = {
   ...require('./src/services/pine'),
   ...require('./src/services/pine-enhanced'),

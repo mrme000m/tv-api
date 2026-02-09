@@ -11,6 +11,10 @@ const news = require('./services/news');
 const calendar = require('./services/calendar');
 const symbolDetails = require('./services/symbolDetails');
 const proPlan = require('./services/proPlan');
+const charts = require('./services/charts');
+const support = require('./services/support');
+const storage = require('./services/storage');
+const scripts = require('./services/scripts');
 
 // Re-export everything from the new services
 module.exports = {
@@ -27,4 +31,8 @@ module.exports = {
   ...calendar,
   ...symbolDetails,
   ...proPlan,
+  ...charts,
+  ...support,
+  ...storage,
+  ...scripts,
 };
