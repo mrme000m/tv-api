@@ -15,14 +15,20 @@ const BASE_URL = 'https://www.tradingview.com/api/v1/symbols_list';
  * @prop {number} id Watchlist ID
  * @prop {string} name Watchlist name
  * @prop {string} [description] Watchlist description
- * @prop {string} [type] List type (e.g., 'custom')
- * @prop {WatchlistSymbol[]} symbols List of symbols
- * @prop {number} [user_id] User ID
- * @prop {string} [created_at] Creation timestamp
- * @prop {string} [updated_at] Last update timestamp
- * @prop {boolean} [is_active] Whether this is the active watchlist
- * @prop {Object} [meta] Additional metadata
+ * @prop {string} type List type (e.g., 'custom')
+ * @prop {Array<string|Object>} symbols List of symbols (can be strings like 'COINBASE:BTCUSD' or section headers like '###Section')
+ * @prop {boolean} active Whether this is the active watchlist
+ * @prop {boolean} shared Whether this watchlist is shared
+ * @prop {string} [color] Watchlist color (if colored list)
+ * @prop {string} [created] Creation timestamp
+ * @prop {string} [modified] Last modification timestamp
  */
+
+/**
+ * Available colors for colored watchlists
+ * @constant {string[]}
+ */
+const COLORED_LIST_COLORS = ['red', 'green', 'blue', 'yellow', 'orange', 'purple'];
 
 /**
  * Build headers for watchlists API requests
@@ -47,6 +53,18 @@ function buildHeaders(options = {}) {
 }
 
 /**
+ * Handle API error responses
+ * @param {Object} data - Response data
+ * @param {string} context - Context for error message
+ */
+function handleApiError(data, context) {
+  if (data && (data.detail || data.error || data.code)) {
+    const message = data.detail || data.error || data.message || JSON.stringify(data);
+    throw new Error(`${context}: ${message}`);
+  }
+}
+
+/**
  * List all watchlists for the authenticated user
  * @param {Object} options
  * @param {string} options.session - Session ID
@@ -61,6 +79,8 @@ async function listWatchlists(options) {
   const { data } = await http.get(`${BASE_URL}/custom/`, {
     headers: buildHeaders(options),
   });
+
+  handleApiError(data, 'Failed to list watchlists');
 
   return Array.isArray(data) ? data : [];
 }
@@ -86,6 +106,8 @@ async function getWatchlist(id, options) {
     headers: buildHeaders(options),
   });
 
+  handleApiError(data, 'Failed to get watchlist');
+
   return data;
 }
 
@@ -93,7 +115,7 @@ async function getWatchlist(id, options) {
  * Create a new watchlist
  * @param {Object} watchlistData
  * @param {string} watchlistData.name - Watchlist name
- * @param {Array<string|WatchlistSymbol>} [watchlistData.symbols] - Symbols to add
+ * @param {Array<string>} [watchlistData.symbols] - Symbols to add (array of strings like 'COINBASE:BTCUSD')
  * @param {Object} options
  * @param {string} options.session - Session ID
  * @param {string} [options.signature] - Session signature
@@ -110,17 +132,14 @@ async function createWatchlist(watchlistData, options) {
 
   const payload = {
     name: watchlistData.name,
-    symbols: (watchlistData.symbols || []).map((sym) => {
-      if (typeof sym === 'string') {
-        return { id: sym, type: 'full' };
-      }
-      return { type: 'full', ...sym };
-    }),
+    symbols: watchlistData.symbols || [],
   };
 
   const { data } = await http.post(`${BASE_URL}/custom/`, payload, {
     headers: buildHeaders(options),
   });
+
+  handleApiError(data, 'Failed to create watchlist');
 
   return data;
 }
@@ -153,6 +172,8 @@ async function renameWatchlist(id, newName, options) {
     { headers: buildHeaders(options) }
   );
 
+  handleApiError(data, 'Failed to rename watchlist');
+
   return data;
 }
 
@@ -162,7 +183,7 @@ async function renameWatchlist(id, newName, options) {
  * @param {Object} options
  * @param {string} options.session - Session ID
  * @param {string} [options.signature] - Session signature
- * @returns {Promise<Object>}
+ * @returns {Promise<Watchlist>}
  */
 async function setActiveWatchlist(id, options) {
   if (!options?.session) {
@@ -179,17 +200,19 @@ async function setActiveWatchlist(id, options) {
     { headers: buildHeaders(options) }
   );
 
+  handleApiError(data, 'Failed to set active watchlist');
+
   return data;
 }
 
 /**
  * Add symbols to a watchlist
  * @param {number} id - Watchlist ID
- * @param {Array<string|WatchlistSymbol>} symbols - Symbols to add
+ * @param {Array<string>} symbols - Symbols to add (e.g., ['COINBASE:BTCUSD', 'NASDAQ:AAPL'])
  * @param {Object} options
  * @param {string} options.session - Session ID
  * @param {string} [options.signature] - Session signature
- * @returns {Promise<Watchlist>}
+ * @returns {Promise<string[]>} - Returns array of symbols
  */
 async function addSymbols(id, symbols, options) {
   if (!options?.session) {
@@ -204,20 +227,13 @@ async function addSymbols(id, symbols, options) {
     throw new Error('At least one symbol is required');
   }
 
-  const payload = {
-    symbols: symbols.map((sym) => {
-      if (typeof sym === 'string') {
-        return { id: sym, type: 'full' };
-      }
-      return { type: 'full', ...sym };
-    }),
-  };
-
   const { data } = await http.post(
     `${BASE_URL}/custom/${id}/append/`,
-    payload,
+    symbols,
     { headers: buildHeaders(options) }
   );
+
+  handleApiError(data, 'Failed to add symbols');
 
   return data;
 }
@@ -225,11 +241,11 @@ async function addSymbols(id, symbols, options) {
 /**
  * Remove symbols from a watchlist
  * @param {number} id - Watchlist ID
- * @param {Array<string>} symbolIds - Symbol IDs to remove
+ * @param {Array<string>} symbolIds - Symbol IDs to remove (e.g., ['NASDAQ:AAPL'])
  * @param {Object} options
  * @param {string} options.session - Session ID
  * @param {string} [options.signature] - Session signature
- * @returns {Promise<Watchlist>}
+ * @returns {Promise<Object>} - Returns status object
  */
 async function removeSymbols(id, symbolIds, options) {
   if (!options?.session) {
@@ -244,23 +260,102 @@ async function removeSymbols(id, symbolIds, options) {
     throw new Error('At least one symbol ID is required');
   }
 
-  const payload = {
-    symbols: symbolIds.map((id) => ({ id, type: 'full' })),
-  };
-
   const { data } = await http.post(
     `${BASE_URL}/custom/${id}/remove/`,
-    payload,
+    symbolIds,
     { headers: buildHeaders(options) }
   );
+
+  handleApiError(data, 'Failed to remove symbols');
 
   return data;
 }
 
 /**
- * Update watchlist metadata
+ * Replace all symbols in a watchlist (replaces entire content)
  * @param {number} id - Watchlist ID
- * @param {Object} meta - Metadata to update
+ * @param {Array<string>} symbols - New symbols array (can include section headers like '###Section Name')
+ * @param {Object} options
+ * @param {string} options.session - Session ID
+ * @param {string} [options.signature] - Session signature
+ * @param {boolean} [options.unsafe=false] - Use unsafe mode (for larger lists)
+ * @returns {Promise<string[]>} - Returns array of symbols
+ */
+async function replaceWatchlistSymbols(id, symbols, options) {
+  if (!options?.session) {
+    throw new Error('Session is required to replace symbols');
+  }
+
+  if (!id) {
+    throw new Error('Watchlist ID is required');
+  }
+
+  if (!Array.isArray(symbols)) {
+    throw new Error('Symbols must be an array');
+  }
+
+  const params = {};
+  if (options.unsafe) {
+    params.unsafe = true;
+  }
+
+  const { data } = await http.post(
+    `${BASE_URL}/custom/${id}/replace/`,
+    symbols,
+    { 
+      headers: buildHeaders(options),
+      params,
+    }
+  );
+
+  handleApiError(data, 'Failed to replace symbols');
+
+  return data;
+}
+
+/**
+ * Replace a single symbol in a watchlist
+ * @param {number} id - Watchlist ID
+ * @param {string} oldSymbol - Old symbol to replace (e.g., '###Old Section' or 'COINBASE:BTCUSD')
+ * @param {string} newSymbol - New symbol (e.g., '###New Section' or 'BITSTAMP:BTCUSD')
+ * @param {Object} options
+ * @param {string} options.session - Session ID
+ * @param {string} [options.signature] - Session signature
+ * @returns {Promise<string[]>} - Returns array of symbols
+ */
+async function replaceSymbol(id, oldSymbol, newSymbol, options) {
+  if (!options?.session) {
+    throw new Error('Session is required to replace symbol');
+  }
+
+  if (!id) {
+    throw new Error('Watchlist ID is required');
+  }
+
+  if (!oldSymbol || !newSymbol) {
+    throw new Error('Both old and new symbols are required');
+  }
+
+  const payload = {
+    old: oldSymbol,
+    new: newSymbol,
+  };
+
+  const { data } = await http.post(
+    `${BASE_URL}/custom/${id}/replace_symbol/`,
+    payload,
+    { headers: buildHeaders(options) }
+  );
+
+  handleApiError(data, 'Failed to replace symbol');
+
+  return data;
+}
+
+/**
+ * Update watchlist metadata (description, etc.)
+ * @param {number} id - Watchlist ID
+ * @param {Object} meta - Metadata to update (e.g., { description: 'My watchlist' })
  * @param {Object} options
  * @param {string} options.session - Session ID
  * @param {string} [options.signature] - Session signature
@@ -281,21 +376,21 @@ async function updateWatchlistMeta(id, meta, options) {
     { headers: buildHeaders(options) }
   );
 
+  handleApiError(data, 'Failed to update watchlist metadata');
+
   return data;
 }
 
 /**
- * Share a watchlist with other users
+ * Share or unshare a watchlist
  * @param {number} id - Watchlist ID
- * @param {Object} shareOptions - Sharing options
- * @param {string} [shareOptions.permission] - Permission level ('view', 'edit')
- * @param {string[]} [shareOptions.emails] - Email addresses to share with
+ * @param {boolean} shared - Whether to share (true) or unshare (false)
  * @param {Object} options
  * @param {string} options.session - Session ID
  * @param {string} [options.signature] - Session signature
- * @returns {Promise<Object>}
+ * @returns {Promise<Watchlist>}
  */
-async function shareWatchlist(id, shareOptions, options) {
+async function shareWatchlist(id, shared, options) {
   if (!options?.session) {
     throw new Error('Session is required to share watchlist');
   }
@@ -304,11 +399,17 @@ async function shareWatchlist(id, shareOptions, options) {
     throw new Error('Watchlist ID is required');
   }
 
+  const payload = {
+    shared: shared === true,
+  };
+
   const { data } = await http.post(
     `${BASE_URL}/custom/${id}/share/`,
-    shareOptions || {},
+    payload,
     { headers: buildHeaders(options) }
   );
+
+  handleApiError(data, 'Failed to share watchlist');
 
   return data;
 }
@@ -336,6 +437,73 @@ async function deleteWatchlist(id, options) {
     { headers: buildHeaders(options) }
   );
 
+  handleApiError(data, 'Failed to delete watchlist');
+
+  return data;
+}
+
+/**
+ * Add symbols to a colored list
+ * @param {string} color - Color name (red, green, blue, yellow, orange, purple)
+ * @param {Array<string>} symbols - Symbols to add (e.g., ['OANDA:XAUUSD'])
+ * @param {Object} options
+ * @param {string} options.session - Session ID
+ * @param {string} [options.signature] - Session signature
+ * @returns {Promise<string[]>} - Returns array of symbols in the colored list
+ */
+async function addToColoredList(color, symbols, options) {
+  if (!options?.session) {
+    throw new Error('Session is required to add to colored list');
+  }
+
+  if (!color) {
+    throw new Error('Color is required');
+  }
+
+  if (!COLORED_LIST_COLORS.includes(color)) {
+    throw new Error(`Invalid color: ${color}. Must be one of: ${COLORED_LIST_COLORS.join(', ')}`);
+  }
+
+  if (!Array.isArray(symbols) || symbols.length === 0) {
+    throw new Error('At least one symbol is required');
+  }
+
+  const { data } = await http.post(
+    `${BASE_URL}/colored/${color}/append/`,
+    symbols,
+    { headers: buildHeaders(options) }
+  );
+
+  handleApiError(data, `Failed to add symbols to ${color} list`);
+
+  return data;
+}
+
+/**
+ * Remove symbols from colored lists
+ * @param {Array<string>} symbols - Symbols to remove (e.g., ['OANDA:XAUUSD'])
+ * @param {Object} options
+ * @param {string} options.session - Session ID
+ * @param {string} [options.signature] - Session signature
+ * @returns {Promise<Object>} - Returns status object
+ */
+async function removeFromColoredLists(symbols, options) {
+  if (!options?.session) {
+    throw new Error('Session is required to remove from colored lists');
+  }
+
+  if (!Array.isArray(symbols) || symbols.length === 0) {
+    throw new Error('At least one symbol is required');
+  }
+
+  const { data } = await http.post(
+    `${BASE_URL}/colored/bulk_remove/`,
+    symbols,
+    { headers: buildHeaders(options) }
+  );
+
+  handleApiError(data, 'Failed to remove symbols from colored lists');
+
   return data;
 }
 
@@ -354,8 +522,13 @@ function createWatchlistsClient(defaults = {}) {
     setActive: (id, opts = {}) => setActiveWatchlist(id, { ...defaults, ...opts }),
     addSymbols: (id, symbols, opts = {}) => addSymbols(id, symbols, { ...defaults, ...opts }),
     removeSymbols: (id, symbolIds, opts = {}) => removeSymbols(id, symbolIds, { ...defaults, ...opts }),
+    replaceSymbols: (id, symbols, opts = {}) => replaceWatchlistSymbols(id, symbols, { ...defaults, ...opts }),
+    replaceSymbol: (id, oldSym, newSym, opts = {}) => replaceSymbol(id, oldSym, newSym, { ...defaults, ...opts }),
     updateMeta: (id, meta, opts = {}) => updateWatchlistMeta(id, meta, { ...defaults, ...opts }),
-    share: (id, shareOpts, opts = {}) => shareWatchlist(id, shareOpts, { ...defaults, ...opts }),
+    share: (id, shared, opts = {}) => shareWatchlist(id, shared, { ...defaults, ...opts }),
+    addToColoredList: (color, symbols, opts = {}) => addToColoredList(color, symbols, { ...defaults, ...opts }),
+    removeFromColoredLists: (symbols, opts = {}) => removeFromColoredLists(symbols, { ...defaults, ...opts }),
+    COLORED_LIST_COLORS,
   };
 }
 
@@ -368,7 +541,12 @@ module.exports = {
   setActiveWatchlist,
   addSymbols,
   removeSymbols,
+  replaceWatchlistSymbols,
+  replaceSymbol,
   updateWatchlistMeta,
   shareWatchlist,
+  addToColoredList,
+  removeFromColoredLists,
   createWatchlistsClient,
+  COLORED_LIST_COLORS,
 };

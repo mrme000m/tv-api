@@ -3,6 +3,23 @@ const http = require('../http');
 const BASE_URL = 'https://www.tradingview.com';
 
 /**
+ * Handle API error responses
+ * @param {any} data - Response data
+ * @param {string} context - Context for error message
+ */
+function handleApiError(data, context) {
+  // Check if response is HTML (likely auth error)
+  if (typeof data === 'string' && data.trim().startsWith('<')) {
+    throw new Error(`${context}: Authentication required or endpoint not available (received HTML response)`);
+  }
+  
+  if (data && (data.detail || data.error || data.code || data.status === 'error')) {
+    const message = data.detail || data.error || data.message || JSON.stringify(data);
+    throw new Error(`${context}: ${message}`);
+  }
+}
+
+/**
  * @typedef {Object} SymbolDetails
  * @prop {number} [High.1M] 1-month high
  * @prop {number} [Low.1M] 1-month low
@@ -79,6 +96,8 @@ async function getSymbolDetails(symbol, options = {}) {
     },
   });
 
+  handleApiError(data, 'Failed to get symbol details');
+
   return data;
 }
 
@@ -102,6 +121,8 @@ async function getSymbolInfo(symbol, options = {}) {
       referer: 'https://www.tradingview.com/',
     },
   });
+
+  handleApiError(data, 'Failed to get symbol info');
 
   if (!data.symbols || data.symbols.length === 0) {
     throw new Error(`Symbol not found: ${symbol}`);

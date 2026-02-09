@@ -44,6 +44,18 @@ const PUBLIC_NEWS_BASE = 'https://www.tradingview.com';
  */
 
 /**
+ * Handle API error responses
+ * @param {Object} data - Response data
+ * @param {string} context - Context for error message
+ */
+function handleApiError(data, context) {
+  if (data && (data.detail || data.error || data.code || data.s === 'error')) {
+    const message = data.detail || data.error || data.message || data.errmsg || JSON.stringify(data);
+    throw new Error(`${context}: ${message}`);
+  }
+}
+
+/**
  * Get news for a specific symbol
  * @param {string} symbol - Symbol (e.g., 'COINBASE:BTCUSD', 'NASDAQ:AAPL')
  * @param {Object} [options] - Options
@@ -72,6 +84,8 @@ async function getSymbolNews(symbol, options = {}) {
       referer: `https://www.tradingview.com/symbols/${symbol.replace(':', '-')}/`,
     },
   });
+
+  handleApiError(data, 'Failed to get symbol news');
 
   return {
     items: data.items || [],
@@ -116,6 +130,8 @@ async function getMarketNews(options = {}) {
       referer: 'https://www.tradingview.com/',
     },
   });
+
+  handleApiError(data, 'Failed to get market news');
 
   return {
     items: data.items || [],
@@ -201,6 +217,8 @@ async function searchNews(query, options = {}) {
     },
   });
 
+  handleApiError(data, 'Failed to search news');
+
   return {
     items: data.items || [],
     hasMore: data.hasMore || false,
@@ -226,6 +244,8 @@ async function getNewsProviders(options = {}) {
       referer: 'https://www.tradingview.com/',
     },
   });
+
+  handleApiError(data, 'Failed to get news providers');
 
   return data.providers || [];
 }

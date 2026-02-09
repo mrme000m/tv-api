@@ -4,6 +4,18 @@ const EVENTS_BASE = 'https://economic-calendar.tradingview.com';
 const PUBLIC_EVENTS_BASE = 'https://www.tradingview.com';
 
 /**
+ * Handle API error responses
+ * @param {Object} data - Response data
+ * @param {string} context - Context for error message
+ */
+function handleApiError(data, context) {
+  if (data && (data.detail || data.error || data.code || data.status === 'error')) {
+    const message = data.detail || data.error || data.message || JSON.stringify(data);
+    throw new Error(`${context}: ${message}`);
+  }
+}
+
+/**
  * @typedef {Object} EconomicEvent
  * @prop {string} id Event ID
  * @prop {string} title Event title/name
@@ -139,6 +151,8 @@ async function getEconomicEvents(filter = {}, options = {}) {
       referer: 'https://www.tradingview.com/economic-calendar/',
     },
   });
+
+  handleApiError(data, 'Failed to get economic events');
 
   return {
     events: data.result || [],

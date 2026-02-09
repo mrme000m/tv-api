@@ -12,3 +12,5 @@ data/**
 *.har
 *curl*.sh
 Network_Logs_Filtered.json
+Watchlist_har.json
+Watchlist.json
