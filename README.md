@@ -439,7 +439,7 @@ client.onDisconnected(() => {
 
 ### Development Setup
 1. Fork the repository
-2. Clone your fork: `git clone https://github.com/your-username/tradingview-api.git`
+2. Clone your fork: `git clone https://github.com/mrme000m/tv-api.git`
 3. Install dependencies:
    - Using npm: `npm install`
    - Using yarn: `yarn install`

@@ -21,8 +21,7 @@
     "serve:tools:dev": "nodemon tools/sh/server.js",
     "example": "node --env-file=.env",
     "example:dev": "nodemon --env-file=.env",
-    "postinstall": "pnpm run prepare",
-    "prepare": "husky install",
+    "prepare": "husky install || true",
     "clean": "rm -rf node_modules",
     "install:pnpm": "pnpm install",
     "update:deps": "pnpm update",
@@ -30,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mathieu2301/TradingView-API.git"
+    "url": "git+https://github.com/mrme000m/tv-api.git"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -47,6 +46,13 @@
   ],
   "author": "Mathieu Colmon",
   "license": "ISC",
+  "files": [
+    "main.js",
+    "src/**/*.js",
+    "src/**/*.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
   "dependencies": {
     "axios": "^1.7.9",
     "cors": "^2.8.6",

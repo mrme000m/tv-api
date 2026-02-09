@@ -34,8 +34,8 @@ Once mise is installed, setting up the project is simple:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/tradingview-api.git
-cd tradingview-api
+git clone https://github.com/mrme000m/tv-api.git
+cd tv-api
 
 # Install the correct Node.js and pnpm versions (defined in .tool-versions)
 mise install
