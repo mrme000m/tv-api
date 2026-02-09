@@ -1,9 +1,17 @@
 const JSZip = require('jszip');
+const zlib = require('zlib');
 
 /**
  * @typedef {Object} TWPacket
  * @prop {string} [m] Packet type
  * @prop {[session: string, {}]} [p] Packet data
+ */
+
+/**
+ * @typedef {Object} ParseOptions
+ * @prop {(err: Error) => void} [onError] Error handler callback
+ * @prop {boolean} [strict] Throw on parse errors
+ * @prop {boolean} [decompress] Decompress gzip payloads (default: true)
  */
 
 // TradingView websocket frames are encoded as:
@@ -106,15 +114,85 @@ function parseFrames(s, options = {}) {
   return out;
 }
 
+/**
+ * Decompress gzip data if needed
+ * @param {Buffer|string} data Data to decompress
+ * @returns {Promise<string>} Decompressed string
+ */
+async function decompressIfNeeded(data) {
+  // If it's already a string, return as-is
+  if (typeof data === 'string') return data;
+  
+  // Check for gzip magic number
+  if (Buffer.isBuffer(data) && data.length > 2 && data[0] === 0x1f && data[1] === 0x8b) {
+    try {
+      const decompressed = await zlib.promises.gunzip(data);
+      return decompressed.toString('utf8');
+    } catch (e) {
+      // If decompression fails, try as string
+      return data.toString('utf8');
+    }
+  }
+  
+  return data.toString('utf8');
+}
+
+/**
+ * Synchronous version of decompress for non-async contexts
+ * @param {Buffer} data Data to decompress
+ * @returns {string} Decompressed string
+ */
+function decompressSync(data) {
+  if (!Buffer.isBuffer(data)) return String(data);
+  
+  // Check for gzip magic number
+  if (data.length > 2 && data[0] === 0x1f && data[1] === 0x8b) {
+    try {
+      return zlib.gunzipSync(data).toString('utf8');
+    } catch (e) {
+      return data.toString('utf8');
+    }
+  }
+  
+  return data.toString('utf8');
+}
+
 module.exports = {
   /**
    * Parse websocket packet
    * @function parseWSPacket
    * @param {string|Buffer} str Websocket raw data
-   * @param {{ onError?: (err: Error) => void, strict?: boolean }} [options]
+   * @param {ParseOptions} [options]
    * @returns {TWPacket[]} TradingView packets
    */
   parseWSPacket(str, options = {}) {
+    // Handle compressed binary data
+    if (Buffer.isBuffer(str)) {
+      const decompressed = decompressSync(str);
+      return parseFrames(decompressed, options);
+    }
+    
+    const s = (typeof str === 'string')
+      ? str
+      : (str && typeof str.toString === 'function' ? str.toString('utf8') : String(str));
+
+    return parseFrames(s, options);
+  },
+  
+  /**
+   * Parse websocket packet asynchronously (supports decompression)
+   * @function parseWSPacketAsync
+   * @param {string|Buffer} str Websocket raw data
+   * @param {ParseOptions} [options]
+   * @returns {Promise<TWPacket[]>} TradingView packets
+   */
+  async parseWSPacketAsync(str, options = {}) {
+    // Handle compressed binary data
+    if (Buffer.isBuffer(str)) {
+      const decompressed = await decompressIfNeeded(str);
+      return parseFrames(decompressed, options);
+    }
+    
     const s = (typeof str === 'string')
       ? str
       : (str && typeof str.toString === 'function' ? str.toString('utf8') : String(str));

@@ -6,6 +6,7 @@ const protocol = require('./protocol');
 
 const quoteSessionGenerator = require('./quote/session');
 const chartSessionGenerator = require('./chart/session');
+const historySessionGenerator = require('./history/session');
 
 // Reconnection configuration defaults (override via ClientOptions.reconnect*)
 const DEFAULT_RECONNECTION_CONFIG = {
@@ -51,6 +52,15 @@ const DEFAULT_RECONNECTION_CONFIG = {
  * } ClientEvent
  */
 
+/**
+ * @typedef {'data' | 'prodata' | 'widgetdata' | 'history-data'} ServerEndpoint
+ * TradingView server endpoints:
+ * - 'data': Main data server (default)
+ * - 'prodata': Pro data server
+ * - 'widgetdata': Widget data server
+ * - 'history-data': Deep backtesting server (requires chartId and date params)
+ */
+
 /** @class */
 module.exports = class Client {
   #ws;
@@ -84,6 +94,12 @@ module.exports = class Client {
   #authTokenPromise = null;
 
   #autoRehydrate = true;
+
+  #endpoint = 'data';
+
+  #chartId = null;
+
+  #compression = true;
 
   /** If the client is logged in */
   get isLogged() {
@@ -228,6 +244,64 @@ module.exports = class Client {
   }
 
   /**
+   * Create WebSocket URL based on endpoint configuration
+   * @returns {string} WebSocket URL
+   */
+  #getWebSocketUrl() {
+    const baseUrl = `wss://${this.#endpoint}.tradingview.com/socket.io/websocket`;
+    
+    // For history-data endpoint, we need special query params
+    if (this.#endpoint === 'history-data' && this.#chartId) {
+      const date = new Date().toISOString();
+      const from = `chart/${this.#chartId}/`;
+      const params = new URLSearchParams({
+        from,
+        date,
+        auth: 'sessionid',
+      });
+      return `${baseUrl}?${params.toString()}`;
+    }
+    
+    // Standard endpoints use type=chart
+    return `${baseUrl}?type=chart`;
+  }
+
+  /**
+   * Get WebSocket connection options
+   * @returns {Object} WebSocket options
+   */
+  #getWebSocketOptions() {
+    const options = {
+      origin: 'https://www.tradingview.com',
+    };
+
+    // Enable compression if supported and not disabled
+    if (this.#compression) {
+      options.perMessageDeflate = {
+        clientNoContextTakeover: false,
+        serverNoContextTakeover: false,
+        clientMaxWindowBits: 15,
+        serverMaxWindowBits: 15,
+      };
+    }
+
+    return options;
+  }
+
+  /**
+   * Create a new WebSocket instance
+   * @returns {WebSocket} WebSocket instance
+   */
+  #createWebSocket() {
+    const url = this.#getWebSocketUrl();
+    const options = this.#getWebSocketOptions();
+    
+    this.#logDebug('Connecting to:', url);
+    
+    return new WebSocket(url, options);
+  }
+
+  /**
    * Attempt to reconnect the WebSocket
    */
   async #attemptReconnection() {
@@ -237,15 +311,11 @@ module.exports = class Client {
         this.#ws.removeAllListeners();
       }
 
-      // Reinitialize the WebSocket connection
-      const server = this.clientOptions?.server || 'data';
-
       // Refresh auth token fetch attempt for this connection cycle.
       this.#prepareAuthTokenFetch();
 
-      this.#ws = new WebSocket(`wss://${server}.tradingview.com/socket.io/websocket?type=chart`, {
-        origin: 'https://www.tradingview.com',
-      });
+      // Create new WebSocket with current configuration
+      this.#ws = this.#createWebSocket();
 
       // Setup event listeners for the new connection
       this.#setupWebSocketEventHandlers();
@@ -615,8 +685,10 @@ module.exports = class Client {
    * @prop {number} [reconnectMaxDelayMs] Max reconnect delay in ms (default: 30000)
    * @prop {number} [reconnectMultiplier] Exponential backoff multiplier (default: 2)
    * @prop {boolean} [reconnectJitter] Add jitter (default: true)
-   * @prop {'data' | 'prodata' | 'widgetdata'} [server] Server type
+   * @prop {ServerEndpoint} [server] Server type
    * @prop {string} [location] Auth page location (For france: https://fr.tradingview.com/)
+   * @prop {string} [chartId] Chart ID (required for history-data endpoint)
+   * @prop {boolean} [compression] Enable WebSocket compression (default: true)
    */
 
   /**
@@ -649,6 +721,11 @@ module.exports = class Client {
     // Store client options for reconnection purposes
     this.clientOptions = clientOptions;
 
+    // Endpoint configuration
+    this.#endpoint = clientOptions.server || 'data';
+    this.#chartId = clientOptions.chartId || null;
+    this.#compression = clientOptions.compression !== false;
+
     this.#clientBridge = {
       sessions: this.#sessions,
       send: (t, p) => this.send(t, p),
@@ -672,10 +749,7 @@ module.exports = class Client {
     // Start fetching auth token early so it's ready when the socket opens.
     this.#prepareAuthTokenFetch();
 
-    const server = clientOptions.server || 'data';
-    this.#ws = new WebSocket(`wss://${server}.tradingview.com/socket.io/websocket?type=chart`, {
-      origin: 'https://www.tradingview.com',
-    });
+    this.#ws = this.#createWebSocket();
 
     // For authenticated clients, we delay flushing queued packets until after auth is sent.
     // For unauthenticated clients, we can mark logged immediately.
@@ -695,10 +769,16 @@ module.exports = class Client {
     this.Session = {
       Quote: quoteSessionGenerator(this.#clientBridge),
       Chart: chartSessionGenerator(this.#clientBridge),
+      History: historySessionGenerator(this.#clientBridge),
     };
   }
 
-  /** @namespace Session */
+  /**
+   * @namespace Session
+   * @prop {import('./quote/session')} Quote Quote session for real-time market data
+   * @prop {import('./chart/session')} Chart Chart session for OHLCV data and indicators
+   * @prop {import('./history/session')} History History session for deep backtesting
+   */
   Session;
 
   /**

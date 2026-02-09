@@ -12,6 +12,7 @@ The library uses a **Session factory pattern**. The Client creates session insta
 const client = new TradingView.Client();
 const chart = new client.Session.Chart();      // For OHLCV data
 const quote = new client.Session.Quote();      // For real-time quotes
+const history = new client.Session.History();  // For deep backtesting (NEW)
 ```
 
 **Why this pattern matters:**
@@ -19,6 +20,13 @@ const quote = new client.Session.Quote();      // For real-time quotes
 - Each session type has its own event emitter and state
 - Sessions are NOT directly exposed to the user; examples show `client.Session.Chart()`
 - All session implementations follow: constructor→attach to client→emit events when data arrives
+
+**Session Types:**
+| Session | Endpoint | Use Case |
+|---------|----------|----------|
+| `Chart` | `data.tradingview.com` | Real-time streaming, indicators |
+| `Quote` | `data.tradingview.com` | Real-time quotes |
+| `History` | `history-data.tradingview.com` | Deep backtesting, large historical datasets |
 
 ### Key Components & Their Responsibilities
 
@@ -45,7 +53,13 @@ const quote = new client.Session.Quote();      // For real-time quotes
    - Emits `study.periods` (indicator plot values) and `study.strategyReport` for Pine strategies
    - Strategy reports contain: `performance`, `trades`, `history`
 
-5. **HTTP Client** (`src/http.js`): Static REST calls
+5. **History Session** (`src/history/session.js`): Deep backtesting session (NEW)
+   - Uses `history-data.tradingview.com` endpoint for large historical datasets
+   - Methods: `getHistoricalData()`, `backtestStrategy()`, `requestHistoryData()`
+   - Events: `onLoaded`, `onData`, `onComplete`, `onError`
+   - Supports WebSocket compression for efficient data transfer
+
+6. **HTTP Client** (`src/http.js`): Static REST calls
    - Used for one-time requests (search, login, fetch indicator metadata)
    - 15-second default timeout; includes origin header enforcement
 
@@ -110,6 +124,41 @@ console.log(report.performance); // Profit factor, win rate, etc.
 ```
 **Pattern**: Strategy report arrives asynchronously in later updates; always use timeout to prevent hanging.
 
+### 5. Deep Backtesting with History Session (NEW)
+```javascript
+const client = new TradingView.Client({
+  server: 'data',
+  compression: true,  // Enable for large datasets
+});
+
+const history = new client.Session.History();
+
+// Calculate date range (last 90 days)
+const to = Math.floor(Date.now() / 1000);
+const from = to - (90 * 24 * 60 * 60);
+
+// Fetch historical data
+const periods = await history.getHistoricalData(
+  'COINBASE:BTCUSD',
+  '240',  // 4-hour timeframe
+  from,
+  to
+);
+
+// Or run a strategy backtest
+const result = await history.backtestStrategy({
+  symbol: 'COINBASE:BTCUSD',
+  timeframe: '240',
+  from,
+  to,
+  scriptText: encodedStrategyScript,
+});
+
+console.log(result.report.performance.all);
+history.delete();
+```
+**Pattern**: HistorySession uses `history_create_session`/`request_history_data`/`history_delete_session` protocol. Use `utils.getBacktestRange()` for date calculations. Always clean up with `history.delete()`.
+
 ## Protocol & Message Formats
 
 ### Pine Script ID Formats
@@ -130,6 +179,58 @@ Reports may arrive as:
 - Plain JSON in `study.strategyReport`
 - Compressed blobs that the library decompresses automatically
 - Async arrival (in `du` or `timescale_update` protocol messages, not immediate)
+
+### WebSocket Endpoints & Compression (NEW)
+The client supports multiple TradingView endpoints and compression:
+
+```javascript
+const client = new TradingView.Client({
+  server: 'data',           // 'data' | 'prodata' | 'widgetdata' | 'history-data'
+  compression: true,        // Enable permessage-deflate compression
+  chartId: 'abc123',        // Required for 'history-data' endpoint
+});
+```
+
+**Endpoints:**
+| Endpoint | Server Option | Use Case |
+|----------|---------------|----------|
+| `data.tradingview.com` | `'data'` (default) | Standard real-time data |
+| `prodata.tradingview.com` | `'prodata'` | Pro user data feeds |
+| `widgetdata.tradingview.com` | `'widgetdata'` | Widget integrations |
+| `history-data.tradingview.com` | `'history-data'` | Deep backtesting |
+
+**Compression**: Enabled by default. Reduces bandwidth significantly for large historical data transfers.
+
+## Utility Functions (NEW)
+
+The `TradingView.utils` namespace provides helper functions:
+
+```javascript
+// Timeframe normalization
+TradingView.utils.normalizeTimeframe('5m');     // '5'
+TradingView.utils.normalizeTimeframe('1h');     // '60'
+TradingView.utils.normalizeTimeframe('1D');     // 'D'
+
+// Date/timestamp utilities
+TradingView.utils.toTVTimestamp(new Date());           // Unix seconds
+TradingView.utils.getBacktestRange({ days: 30 });      // { from, to }
+TradingView.utils.getBacktestRange({ 
+  from: '2024-01-01', 
+  to: '2024-03-01' 
+});
+
+// Symbol utilities
+TradingView.utils.parseSymbol('COINBASE:BTCUSD');  // { exchange: 'COINBASE', ticker: 'BTCUSD' }
+TradingView.utils.isValidSymbol('BTCUSD');         // true
+
+// Data formatting
+TradingView.utils.formatPrice(12345.6789, 2);      // '12345.68'
+TradingView.utils.percentChange(110, 100);         // 10
+
+// Async utilities
+await TradingView.utils.sleep(1000);               // 1 second delay
+await TradingView.utils.retry(asyncFn, { maxRetries: 3 });
+```
 
 ## Testing & Development
 
@@ -435,9 +536,10 @@ console.log('Your scripts:', myScripts.map(s => s.id));
 ```
 src/
   client.js                 # WebSocket hub, session registry
-  protocol.js               # Packet framing (~m~ format)
+  protocol.js               # Packet framing (~m~ format), gzip decompression
   http.js                   # REST client for static requests
   miscRequests.js           # Exported API methods (search, login, etc.)
+  utils.js                  # Utility functions (timeframe, dates, symbols)
   chart/
     session.js              # Market data streaming, timeframe management
     study.js                # Indicator/strategy wrapping
@@ -445,6 +547,8 @@ src/
   quote/
     session.js              # Real-time quote updates
     market.js               # Single symbol quote state
+  history/                  # NEW: Deep backtesting
+    session.js              # History session for backtesting
   classes/
     PineIndicator.js        # Pine script indicator object
     BuiltInIndicator.js     # TradingView built-in indicator
@@ -453,6 +557,7 @@ examples/
   SimpleChart.js            # Basic streaming example (canonical)
   FullWorkflow.js           # Complex multi-feature example
   ReplayMode.js             # Historical replay pattern
+  HistorySession.js         # NEW: Deep backtesting example
   [others]                  # Task-specific patterns
 tests/
   simpleChart.test.ts       # Integration test baseline
@@ -465,11 +570,14 @@ tests/
 |--------|---------|-----|
 | Forgetting `chart.delete()` | Memory leak, orphaned sessions | Always call in cleanup or error handlers |
 | Accessing `periods[0]` before load | undefined crash | Wait for `onSymbolLoaded()` or check `.length > 0` |
-| Wrong timeframe string | Symbol loads but bars don't appear | Use `'5'` not `'5m'`; see chart.ts in LPB repo for normalization helper |
+| Wrong timeframe string | Symbol loads but bars don't appear | Use `'5'` not `'5m'`; use `utils.normalizeTimeframe()` |
 | Setting options after `new Study()` | Options don't apply | Move `setOption()` calls BEFORE study creation |
 | No auth for private script | `study_not_auth` error | Pass `SESSION`/`SIGNATURE` to `getIndicator()` |
 | Not handling `onError()` | Silent failures, orphaned state | Always attach error handler to sessions |
 | Assuming `strategyReport` is immediate | Undefined report | Wait with timeout; report arrives in later protocol messages |
+| Forgetting `history.delete()` | Orphaned history sessions | Always clean up HistorySession like Chart sessions |
+| Using ChartSession for large backtests | Slow/timeout on deep history | Use HistorySession for backtests > 1000 bars |
+| Wrong timestamps for history | Empty results or wrong range | Use `utils.getBacktestRange()` or `utils.toTVTimestamp()` |
 
 ## When to Reference Other Files
 
@@ -477,8 +585,10 @@ tests/
 - **Packet routing**: See `src/client.js` lines ~200–250 (protocol message → session dispatch)
 - **Indicator loading**: See `examples/FullWorkflow.js` or `examples/GraphicIndicator.js`
 - **Error recovery**: See `TROUBLESHOOTING.md` and `examples/Errors.js`
+- **History/Backtesting**: See `examples/HistorySession.js` and `src/history/session.js`
+- **Utility functions**: See `src/utils.js` for timeframe, date, and symbol helpers
 
 ---
 
-**Last Updated**: 2026-02-03  
+**Last Updated**: 2026-02-08  
 **Node.js**: ≥14.0.0 | **ws**: ^8.18.0 | **axios**: ^1.7.9
