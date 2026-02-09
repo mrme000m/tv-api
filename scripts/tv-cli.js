@@ -1131,12 +1131,12 @@ async function cmdInputs(store, args) {
 }
 
 async function cmdRun(store, client, args) {
-	// Requires mrme000m/tv-api for chart session
+	// Requires @mrme000m/tv-api for chart session
 	let TradingView;
 	try {
-		TradingView = require('mrme000m/tv-api');
+		TradingView = require('@mrme000m/tv-api');
 	} catch {
-		throw new Error('Run requires mrme000m/tv-api package. Install with: pnpm install mrme000m/tv-api');
+		throw new Error('Run requires @mrme000m/tv-api package. Install with: pnpm install @mrme000m/tv-api');
 	}
 
 	const target = args.positional[0];
