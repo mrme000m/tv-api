@@ -11,3 +11,4 @@ package-lock.json
 data/**
 *.har
 *curl*.sh
+Network_Logs_Filtered.json
