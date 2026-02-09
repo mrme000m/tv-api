@@ -1,5 +1,5 @@
 {
-  "name": "@mathieuc/tradingview",
+  "name": "mrme000m/tv-api",
   "version": "3.5.2",
   "description": "Tradingview instant stocks API, indicator alerts, trading bot, and more !",
   "main": "main.js",

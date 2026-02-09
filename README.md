@@ -45,17 +45,17 @@ This library provides a complete interface to TradingView's APIs, enabling devel
 
 ### Install via npm
 ```bash
-npm install @mathieuc/tradingview
+npm install mrme000m/tv-api
 ```
 
 ### Install via yarn
 ```bash
-yarn add @mathieuc/tradingview
+yarn add mrme000m/tv-api
 ```
 
 ### Install via pnpm
 ```bash
-pnpm add @mathieuc/tradingview
+pnpm add mrme000m/tv-api
 ```
 
 ## Quick Start
@@ -79,7 +79,7 @@ pnpm run example examples/FetchPublicScriptSource.js
 
 ### Basic Chart Example
 ```javascript
-const TradingView = require('@mathieuc/tradingview');
+const TradingView = require('mrme000m/tv-api');
 
 // Create a WebSocket client
 const client = new TradingView.Client();
@@ -117,7 +117,7 @@ setTimeout(() => {
 
 ### Market Search Example
 ```javascript
-const TradingView = require('@mathieuc/tradingview');
+const TradingView = require('mrme000m/tv-api');
 
 // Search for markets
 TradingView.searchMarketV3('BINANCE:').then((results) => {
@@ -132,7 +132,7 @@ TradingView.searchIndicator('RSI').then((results) => {
 
 ### Authentication Example
 ```javascript
-const TradingView = require('@mathieuc/tradingview');
+const TradingView = require('mrme000m/tv-api');
 
 // Login with credentials
 TradingView.loginUser('your_username', 'your_password')
