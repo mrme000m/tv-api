@@ -9,6 +9,10 @@ module.exports = { ...miscRequests };
 // Namespaced service helpers (non-breaking addition)
 module.exports.indicators = require('./src/services/indicators');
 module.exports.alerts = require('./src/services/alerts');
+module.exports.watchlists = require('./src/services/watchlists');
+module.exports.news = require('./src/services/news');
+module.exports.calendar = require('./src/services/calendar');
+module.exports.symbolDetails = require('./src/services/symbolDetails');
 module.exports.pine = {
   ...require('./src/services/pine'),
   ...require('./src/services/pine-enhanced'),

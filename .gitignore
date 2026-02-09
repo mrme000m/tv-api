@@ -9,3 +9,5 @@ dist/
 # Remove npm lock file since we're using pnpm
 package-lock.json
 data/**
+*.har
+*curl*.sh

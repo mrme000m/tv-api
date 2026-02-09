@@ -457,6 +457,100 @@ async function deactivateAlert(alertId, options) {
 }
 
 /**
+ * List alert fires (triggered alerts history)
+ * @param {Object} options
+ * @param {string} options.session - Session ID
+ * @param {string} [options.signature] - Session signature
+ * @param {number} [options.limit=50] - Maximum number of results
+ * @returns {Promise<Object>}
+ */
+async function listFires(options) {
+  if (!options?.session) {
+    throw new Error('Session is required to list fires');
+  }
+
+  const payload = {
+    limit: options.limit || 50,
+  };
+
+  const params = buildQueryParams(options);
+
+  const { data } = await http.post(
+    `${ALERTS_BASE}/list_fires`,
+    JSON.stringify({ payload }),
+    {
+      params,
+      headers: buildHeaders(options),
+    }
+  );
+
+  return data;
+}
+
+/**
+ * Delete/clear all alert fires
+ * @param {Object} options
+ * @param {string} options.session - Session ID
+ * @param {string} [options.signature] - Session signature
+ * @returns {Promise<Object>}
+ */
+async function deleteAllFires(options) {
+  if (!options?.session) {
+    throw new Error('Session is required to delete fires');
+  }
+
+  const params = buildQueryParams(options);
+
+  const { data } = await http.post(
+    `${ALERTS_BASE}/delete_all_fires`,
+    JSON.stringify({ payload: {} }),
+    {
+      params,
+      headers: buildHeaders(options),
+    }
+  );
+
+  return data;
+}
+
+/**
+ * Clear offline fires for specific alerts
+ * @param {number|number[]} alertIds - Alert ID or array of alert IDs
+ * @param {Object} options
+ * @param {string} options.session - Session ID
+ * @param {string} [options.signature] - Session signature
+ * @returns {Promise<Object>}
+ */
+async function clearOfflineFires(alertIds, options) {
+  if (!options?.session) {
+    throw new Error('Session is required to clear offline fires');
+  }
+
+  const ids = Array.isArray(alertIds) ? alertIds : [alertIds];
+
+  if (ids.length === 0) {
+    throw new Error('At least one alert ID is required');
+  }
+
+  const payload = {
+    alert_ids: ids,
+  };
+
+  const params = buildQueryParams(options);
+
+  const { data } = await http.post(
+    `${ALERTS_BASE}/clear_offline_fires`,
+    JSON.stringify({ payload }),
+    {
+      params,
+      headers: buildHeaders(options),
+    }
+  );
+
+  return data;
+}
+
+/**
  * High-level wrapper for alert operations
  * @param {Object} defaults - Default options (session, signature)
  * @returns {Object} Alerts client
@@ -470,6 +564,9 @@ function createAlertsClient(defaults = {}) {
     toggle: (id, active, opts = {}) => toggleAlert(id, active, { ...defaults, ...opts }),
     activate: (id, opts = {}) => activateAlert(id, { ...defaults, ...opts }),
     deactivate: (id, opts = {}) => deactivateAlert(id, { ...defaults, ...opts }),
+    listFires: (opts = {}) => listFires({ ...defaults, ...opts }),
+    deleteAllFires: (opts = {}) => deleteAllFires({ ...defaults, ...opts }),
+    clearOfflineFires: (ids, opts = {}) => clearOfflineFires(ids, { ...defaults, ...opts }),
     getOfflineFires: (opts = {}) => getOfflineFires({ ...defaults, ...opts }),
     getOfflineFireControls: (opts = {}) => getOfflineFireControls({ ...defaults, ...opts }),
     createPriceAlert: (params, opts = {}) => createPriceAlert(params, { ...defaults, ...opts }),
@@ -481,6 +578,9 @@ module.exports = {
   createAlert,
   updateAlert,
   deleteAlerts,
+  listFires,
+  deleteAllFires,
+  clearOfflineFires,
   getOfflineFires,
   getOfflineFireControls,
   createPriceAlert,
